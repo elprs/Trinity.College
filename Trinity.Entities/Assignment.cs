@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trinity.Entities
 {
-    public class Course
+    public class Assignment
     {
-        public int CourseId { get; set; }
+        public int AssignmentId { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Title { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<Subject> Subjects { get; set; }
-
+        public virtual Subject Subject { get; set; }
     }
 }
