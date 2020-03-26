@@ -15,7 +15,6 @@ namespace Trinity.Entities
         public string FirstName { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
-        public virtual ICollection<Payment> Payments { get; set; }
        
     }
 }
