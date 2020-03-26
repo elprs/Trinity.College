@@ -10,6 +10,7 @@ namespace Trinity.Entities
 {
     public class Assignment
     {
+        [ForeignKey("Subject")]
         public int AssignmentId { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Title { get; set; }
