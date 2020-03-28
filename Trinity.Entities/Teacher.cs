@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Trinity.Entities.CustomValidations;
 
 namespace Trinity.Entities
 {
@@ -16,10 +17,14 @@ namespace Trinity.Entities
         public string Telephone { get; set; }
         [Required(ErrorMessage = "Required field"), EmailAddress]
         public string Email { get; set; }
-        public List<string> ImagesURL { get; set; } //images from the lessons
-        [Required, Range(0D, 100000D)]
+        public List<string> ImagesURL { get; set; } = new List<string> { "Trinity.College\\Images\\no-image-available.png" }; //images from the lessons
+                                                                                                                              // [Required, Range(0D, double.MaxValue)]
+        [CustomValidation(typeof(ValidationMethods), "ValidateGreaterOrEqualToZero")]
         public double Salary { get; set; }
-        public string VideoURL { get; set; } //images from the lessons
+        public string VideoURL { get; set; } = "Trinity.College\\Images\\no-image-available.png";
+        //video from the lessons
+
+
         //Navigation Properties
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
     }

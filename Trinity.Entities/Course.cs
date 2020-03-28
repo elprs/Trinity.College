@@ -11,8 +11,7 @@ namespace Trinity.Entities
         public string Title { get; set; }
         [Required(ErrorMessage = "Required field")]
         public DateTime StartDate { get; set; }
-        [Required(ErrorMessage = "Required field")]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         [Required(ErrorMessage = "Required field")]
         Type Type { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]

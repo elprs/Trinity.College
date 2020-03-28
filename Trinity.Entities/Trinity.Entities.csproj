@@ -54,6 +54,7 @@
     <Compile Include="Assignment.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="CourseStudent.cs" />
+    <Compile Include="CustomValidations\ValidationMethods.cs" />
     <Compile Include="Mark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />

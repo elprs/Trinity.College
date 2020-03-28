@@ -8,7 +8,7 @@ namespace Trinity.Entities
         public int SubjectId { get; set; }
         [Required(ErrorMessage = "Required field"), MinLength(2), MaxLength(50)]
         public string Title { get; set; }
-        public string PhotoURL { get; set; } = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png";
+        public string PhotoURL { get; set; } = "Trinity.College\\Images\\no-image-available.png";
         //Navigation Properties
         public int CourseId { get; set; }
         public virtual Course Course { get; set; }
