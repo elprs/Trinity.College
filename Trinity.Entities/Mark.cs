@@ -10,7 +10,7 @@ namespace Trinity.Entities
         public int AssignmentMark { get; set; }
         [Required, Range(0, 100)]
         public int OralMark { get; set; }
-        public double TotalMark { get; set; }
+        public double? TotalMark { get; set; }
         //Navigation Properties
         public int StudentId { get; set; }
         public virtual Student Student { get; set; }

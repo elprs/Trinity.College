@@ -25,4 +25,5 @@ namespace Trinity.Entities.CustomValidations
                 return new ValidationResult(string.Format("The field {0} must be greater than or EEEEEEEEEEEEEEEEEEEequal to 0.", context.MemberName), new List<string> { context.MemberName });
             }
         }
+    }
 }

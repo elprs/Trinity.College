@@ -13,7 +13,7 @@ namespace Trinity.Entities
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         [Required(ErrorMessage = "Required field")]
-        Type Type { get; set; }
+       public Type Type { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Description { get; set; }
         [Required(ErrorMessage = "Required field")]
