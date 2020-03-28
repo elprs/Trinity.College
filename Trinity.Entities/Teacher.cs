@@ -13,7 +13,8 @@ namespace Trinity.Entities
         public int TeacherId { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string FirstName { get; set; }
-
-        public virtual ICollection<Subject> Subjects { get; set; }
+        public string LastName { get; set; }
+        //Navigation Properties
+        public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
     }
 }

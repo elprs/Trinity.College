@@ -53,9 +53,12 @@
   <ItemGroup>
     <Compile Include="Assignment.cs" />
     <Compile Include="Course.cs" />
+    <Compile Include="CourseStudent.cs" />
+    <Compile Include="Mark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
+    <Compile Include="SubjectTeacher.cs" />
     <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>

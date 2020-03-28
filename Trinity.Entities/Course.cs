@@ -13,7 +13,8 @@ namespace Trinity.Entities
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Title { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        //Navigation Properties
+        public virtual ICollection<CourseStudent> CourseStudents { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
 
     }
