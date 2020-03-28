@@ -13,12 +13,11 @@ namespace Trinity.Entities
         public int SubjectId { get; set; }
         [Required(ErrorMessage = "Required field"), MinLength(2), MaxLength(50)]
         public string Title { get; set; }
+        public string PhotoURL { get; set; }
 
         //Navigation Properties
         public int CourseId { get; set; }
         public virtual Course Course { get; set; }
-        public int AssignmentId { get; set; }
-
         public virtual Assignment Assignment { get; set; }
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
     }
