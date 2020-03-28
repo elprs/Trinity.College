@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trinity.Entities
 {
@@ -13,8 +8,7 @@ namespace Trinity.Entities
         public int SubjectId { get; set; }
         [Required(ErrorMessage = "Required field"), MinLength(2), MaxLength(50)]
         public string Title { get; set; }
-        public string PhotoURL { get; set; }
-
+        public string PhotoURL { get; set; } = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png";
         //Navigation Properties
         public int CourseId { get; set; }
         public virtual Course Course { get; set; }

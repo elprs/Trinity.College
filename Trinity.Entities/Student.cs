@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trinity.Entities
 {
@@ -14,8 +9,7 @@ namespace Trinity.Entities
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
-        public string LastName { get; set; }
-
+        public string LastName { get; set; } 
         [DataType(DataType.PhoneNumber), Display(Name = "Phone Number")]
         [Required(ErrorMessage = "Required field")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trinity.Entities
 {
-   public class Teacher
+    public class Teacher
     {
         public int TeacherId { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
@@ -21,7 +16,10 @@ namespace Trinity.Entities
         public string Telephone { get; set; }
         [Required(ErrorMessage = "Required field"), EmailAddress]
         public string Email { get; set; }
-        public int ImageURL { get; set; }
+        public List<string> ImagesURL { get; set; } //images from the lessons
+        [Required, Range(0D, 100000D)]
+        public double Salary { get; set; }
+        public string VideoURL { get; set; } //images from the lessons
         //Navigation Properties
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
     }

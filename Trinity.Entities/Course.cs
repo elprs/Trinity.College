@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Trinity.Entities
 {
@@ -12,12 +9,17 @@ namespace Trinity.Entities
         public int CourseId { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Title { get; set; }
+        [Required(ErrorMessage = "Required field")]
         public DateTime StartDate { get; set; }
+        [Required(ErrorMessage = "Required field")]
         public DateTime EndDate { get; set; }
-        public Type Type { get; set; }
+        [Required(ErrorMessage = "Required field")]
+        Type Type { get; set; }
+        [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Description { get; set; }
-        public int Fee { get; set; }
-
+        [Required(ErrorMessage = "Required field")]
+        [Range(0, 1000000)]
+        public double Fee { get; set; }
         //Navigation Properties
         public virtual ICollection<CourseStudent> CourseStudents { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Trinity.Entities
 {
@@ -10,10 +6,11 @@ namespace Trinity.Entities
     {
         //This class references the Marks of a Subject for every Student
         public int MarkId { get; set; }
+        [Required, Range(0, 100)]
         public int AssignmentMark { get; set; }
+        [Required, Range(0, 100)]
         public int OralMark { get; set; }
-        public int TotalMark { get; set; }
-
+        public double TotalMark { get; set; }
         //Navigation Properties
         public int StudentId { get; set; }
         public virtual Student Student { get; set; }
