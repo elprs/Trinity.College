@@ -39,7 +39,7 @@
             Subject su12 = new Subject() { Title = "Python - A full application", PhotoURL = "#", CourseId = 3 };
             #endregion
 
-            //#region Assignments' seeding ==========================
+            #region Assignments' seeding ==========================
 
             //Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 04, 02) };
             //Assignment a2 = new Assignment() { Title = "First Java Assignment" };
@@ -56,7 +56,7 @@
 
             //a1.Subject = su3;
             //a2.Subject = su4;
-            //#endregion
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             #region Teachers' seeding ==========================
             Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891"};
@@ -65,43 +65,44 @@
             Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos", Email = "Panou@gmail.com", Salary = 40000, Telephone = "1234567894" };
             Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios", Email = "Minaidis@gmail.com", Salary = 45000, Telephone = "1234567895" };
 
-            #endregion
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            //#region Students' seeding ==========================
-            //Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni" };
-            //Student s2 = new Student() { LastName = "Periklidis", FirstName = "Mixalis" };
-            //Student s3 = new Student() { LastName = "Papadopoulos", FirstName = "Vaso" };
-            //Student s4 = new Student() { LastName = "Kanellis", FirstName = "Stathis" };
-            //Student s5 = new Student() { LastName = "katrakis", FirstName = "Thanos" };
-            //Student s6 = new Student() { LastName = "Veggos", FirstName = "Thanasis" };
-            //Student s7 = new Student() { LastName = "Papatrexas", FirstName = "Athanasios" };
-            //Student s8 = new Student() { LastName = "Elefsiniotis", FirstName = "Giannis" };
-            //Student s9 = new Student() { LastName = "Saris", FirstName = "Ioannis" };
-            //Student s10 = new Student() { LastName = "Poulakos", FirstName = "Giorgos" };
-            //Student s11 = new Student() { LastName = "Vlaxogiannis", FirstName = "Xenofontas" };
-            //Student s12 = new Student() { LastName = "Sakarakas", FirstName = "Panagiotis" };
-            //Student s13 = new Student() { LastName = "Karwww", FirstName = "Karolos" };
-            //Student s14 = new Student() { LastName = "Kuriakou", FirstName = "Adam" };
-            //Student s15 = new Student() { LastName = "Papandreou", FirstName = "Albi" };
-            //Student s16 = new Student() { LastName = "Perikleoys", FirstName = "Alex" };
-            //Student s17 = new Student() { LastName = "Kontodimas", FirstName = "Bagggelis" };
-            //Student s18 = new Student() { LastName = "Makrys", FirstName = "Xristos" };
-            //Student s19 = new Student() { LastName = "Sxoinas", FirstName = "Dionusis" };
-            //Student s20 = new Student() { LastName = "Xatzixristou", FirstName = "Maria" };
-            //Student s21 = new Student() { LastName = "Fotiou", FirstName = "Fotis" };
-            //Student s22 = new Student() { LastName = "Karampas", FirstName = "Takis" };
-            //Student s23 = new Student() { LastName = "Telis", FirstName = "Periklis" };
-            //Student s24 = new Student() { LastName = "Katsaros", FirstName = "Kosta" };
-            //Student s25 = new Student() { LastName = "Dimitriou", FirstName = "Dimitris" };
-            //Student s26 = new Student() { LastName = "Katerinaki", FirstName = "Katerina" };
-            //Student s27 = new Student() { LastName = "Sofianou", FirstName = "Sofia" };
-            //Student s28 = new Student() { LastName = "Karakosta", FirstName = "Mairi" };
-            //Student s29 = new Student() { LastName = "Marikaki", FirstName = "Meni" };
-            //Student s30 = new Student() { LastName = "Lyraki", FirstName = "Lina" };
+            #region Students' seeding ==========================
+            Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni" , Email = "parisi@gmail.com", Telephone = "1234567810"};
+            Student s2 = new Student() { LastName = "Periklidis", FirstName = "Mixalis", Email = "Periklidis@gmail.com", Telephone = "1234567811" };
+            Student s3 = new Student() { LastName = "Papadopoulos", FirstName = "Vaso", Email = "Papadopoulos@gmail.com", Telephone = "1234567812" };
+            Student s4 = new Student() { LastName = "Kanellis", FirstName = "Stathis", Email = "Kanellis@gmail.com", Telephone = "1234567813" };
+            Student s5 = new Student() { LastName = "katrakis", FirstName = "Thanos", Email = "katrakis@gmail.com", Telephone = "1234567814" };
+            Student s6 = new Student() { LastName = "Veggos", FirstName = "Thanasis", Email = "Veggos@gmail.com", Telephone = "1234567815" };
+            Student s7 = new Student() { LastName = "Papatrexas", FirstName = "Athanasios", Email = "Papatrexas@gmail.com", Telephone = "1234567816" };
+            Student s8 = new Student() { LastName = "Elefsiniotis", FirstName = "Giannis", Email = "Elefsiniotis@gmail.com", Telephone = "1234567817" };
+            Student s9 = new Student() { LastName = "Saris", FirstName = "Ioannis", Email = "Saris@gmail.com", Telephone = "1234567818" };
+            Student s10 = new Student() { LastName = "Poulakos", FirstName = "Giorgos", Email = "Poulakos@gmail.com", Telephone = "1234567819" };
+            Student s11 = new Student() { LastName = "Vlaxogiannis", FirstName = "Xenofontas", Email = "Vlaxogiannis@gmail.com", Telephone = "1234567820" };
+            Student s12 = new Student() { LastName = "Sakarakas", FirstName = "Panagiotis", Email = "Sakarakas@gmail.com", Telephone = "1234567821" };
+            Student s13 = new Student() { LastName = "Karowich", FirstName = "Karolos", Email = "Karowich@gmail.com", Telephone = "1234567822" };
+            Student s14 = new Student() { LastName = "Kuriakou", FirstName = "Adam", Email = "Kuriakou@gmail.com", Telephone = "1234567823" };
+            Student s15 = new Student() { LastName = "Papandreou", FirstName = "Albi", Email = "Papandreou@gmail.com", Telephone = "1234567824" };
+            Student s16 = new Student() { LastName = "Perikleoys", FirstName = "Alex", Email = "Perikleoys@gmail.com", Telephone = "1234567825" };
+            Student s17 = new Student() { LastName = "Kontodimas", FirstName = "Bagggelis", Email = "Kontodimas@gmail.com", Telephone = "1234567826" };
+            Student s18 = new Student() { LastName = "Makrys", FirstName = "Xristos", Email = "Makrys@gmail.com", Telephone = "1234567827" };
+            Student s19 = new Student() { LastName = "Sxoinas", FirstName = "Dionusis", Email = "Sxoinas@gmail.com", Telephone = "1234567828" };
+            Student s20 = new Student() { LastName = "Xatzixristou", FirstName = "Maria", Email = "Xatzixristou@gmail.com", Telephone = "1234567829" };
+            Student s21 = new Student() { LastName = "Fotiou", FirstName = "Fotis", Email = "Fotiou@gmail.com", Telephone = "1234567830" };
+            Student s22 = new Student() { LastName = "Karampas", FirstName = "Takis", Email = "Karampas@gmail.com", Telephone = "1234567831" };
+            Student s23 = new Student() { LastName = "Telopoulos", FirstName = "Periklis", Email = "Telopoulos@gmail.com", Telephone = "1234567832" };
+            Student s24 = new Student() { LastName = "Katsaros", FirstName = "Kosta", Email = "Katsaros@gmail.com", Telephone = "1234567833" };
+            Student s25 = new Student() { LastName = "Dimitriou", FirstName = "Dimitris", Email = "Dimitriou@gmail.com", Telephone = "1234567834" };
+            Student s26 = new Student() { LastName = "Katerinaki", FirstName = "Katerina", Email = "Katerinaki@gmail.com", Telephone = "1234567835" };
+            Student s27 = new Student() { LastName = "Sofianou", FirstName = "Sofia", Email = "Sofianou@gmail.com", Telephone = "1234567836" };
+            Student s28 = new Student() { LastName = "Karakosta", FirstName = "Mairi", Email = "Karakosta@gmail.com", Telephone = "1234567837" };
+            Student s29 = new Student() { LastName = "Marikaki", FirstName = "Meni", Email = "Marikaki@gmail.com", Telephone = "1234567838" };
+            Student s30 = new Student() { LastName = "Lyraki", FirstName = "Lina", Email = "Lyraki@gmail.com", Telephone = "1234567839" };
 
-            //#endregion
-            #region SubjectTeacher=======================
-            
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            #region SubjectTeachers=======================
+
             SubjectTeacher suT1 = new SubjectTeacher() { Subject = su1, Teacher = t1 };
             SubjectTeacher suT2 = new SubjectTeacher() { Subject = su2, Teacher = t1 };
             SubjectTeacher suT3 = new SubjectTeacher() { Subject = su3, Teacher = t1 };
@@ -130,11 +131,48 @@
             t5.SubjectTeachers = new List<SubjectTeacher>() { suT15, suT16 };
             #endregion
 
+            #region StudentCourses==============================
+
+            CourseStudent cs1 = new CourseStudent() { Course = c1, Student = s1, IsFeePayed = true };
+            CourseStudent cs2 = new CourseStudent() { Course = c1, Student = s2, IsFeePayed = true };
+            CourseStudent cs3 = new CourseStudent() { Course = c1, Student = s3, IsFeePayed = true };
+            c1.CourseStudents = new List<CourseStudent>() { cs1 , cs2, cs3};
+
+            // s1.Courses = new List<Course>() { c1 };
+            //s2.Courses = new List<Course>() { c1, c2 };
+            //s3.Courses = new List<Course>() { c1, c2, c3 };
+            //s4.Courses = new List<Course>() { c1 };
+            //s5.Courses = new List<Course>() { c1 };
+            //s6.Courses = new List<Course>() { c1 };
+            //s7.Courses = new List<Course>() { c1 };
+            //s8.Courses = new List<Course>() { c1 };
+            //s9.Courses = new List<Course>() { c1 };
+            //s10.Courses = new List<Course>() { c1 };
+            //s11.Courses = new List<Course>() { c1 };
+            //s12.Courses = new List<Course>() { c1, c2 };
+            //s13.Courses = new List<Course>() { c1, c2, c3 };
+            //s14.Courses = new List<Course>() { c1 };
+            //s15.Courses = new List<Course>() { c1 };
+            //s16.Courses = new List<Course>() { c1 };
+            //s17.Courses = new List<Course>() { c1 };
+            //s18.Courses = new List<Course>() { c1 };
+            //s19.Courses = new List<Course>() { c1 };
+            //s20.Courses = new List<Course>() { c3 };
+            //s21.Courses = new List<Course>() { c1 };
+            //s22.Courses = new List<Course>() { c1, c2 };
+            //s23.Courses = new List<Course>() { c1, c2, c3 };
+            //s24.Courses = new List<Course>() { c1 };
+            //s25.Courses = new List<Course>() { c1 };
+            //s26.Courses = new List<Course>() { c1 };
+            //s27.Courses = new List<Course>() { c1 };
+            //s28.Courses = new List<Course>() { c1 };
+            //s29.Courses = new List<Course>() { c1 };
+            //s30.Courses = new List<Course>() { c3 };
 
 
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-            //#region Marks' seeding ======================
+            #region Marks' seeding ======================
             ////Για το assignment 1 (tou c1, s3 pou to exoun oloi oi mathites)
             //Mark m1 = new Mark() {StudentId =   1, AssignmentMark = 60 };
             //Mark m2 = new Mark() {StudentId =   2, AssignmentMark = 61 };
@@ -216,9 +254,9 @@
             //Mark m69 = new Mark() {StudentId = 30 , AssignmentMark = 70 };
 
 
-            //#endregion
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            //#region Συσχετισεις============================
+            #region Συσχετισεις============================
 
 
             ////ASSIGNMENT'S NAVIGATION RELATED PROPERTIES 
@@ -287,48 +325,14 @@
 
             ////su1.Teachers = new List<Teacher>() { t1, t2, t3, t4, t5 };
 
-            ////s1.Courses = new List<Course>() { c1 };
-            ////s2.Courses = new List<Course>() { c1, c2 };
-            ////s3.Courses = new List<Course>() { c1, c2, c3 };
-            ////s4.Courses = new List<Course>() { c1 };
-            ////s5.Courses = new List<Course>() { c1 };
-            ////s6.Courses = new List<Course>() { c1 };
-            ////s7.Courses = new List<Course>() { c1 };
-            ////s8.Courses = new List<Course>() { c1 };
-            ////s9.Courses = new List<Course>() { c1 };
-            ////s10.Courses = new List<Course>() { c1 };
-            ////s11.Courses = new List<Course>() { c1 };
-            ////s12.Courses = new List<Course>() { c1, c2 };
-            ////s13.Courses = new List<Course>() { c1, c2, c3 };
-            ////s14.Courses = new List<Course>() { c1 };
-            ////s15.Courses = new List<Course>() { c1 };
-            ////s16.Courses = new List<Course>() { c1 };
-            ////s17.Courses = new List<Course>() { c1 };
-            ////s18.Courses = new List<Course>() { c1 };
-            ////s19.Courses = new List<Course>() { c1 };
-            ////s20.Courses = new List<Course>() { c3 };
-            ////s21.Courses = new List<Course>() { c1 };
-            ////s22.Courses = new List<Course>() { c1, c2 };
-            ////s23.Courses = new List<Course>() { c1, c2, c3 };
-            ////s24.Courses = new List<Course>() { c1 };
-            ////s25.Courses = new List<Course>() { c1 };
-            ////s26.Courses = new List<Course>() { c1 };
-            ////s27.Courses = new List<Course>() { c1 };
-            ////s28.Courses = new List<Course>() { c1 };
-            ////s29.Courses = new List<Course>() { c1 };
-            ////s30.Courses = new List<Course>() { c3 };
 
 
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-            //#endregion
-
-
-            context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
-            context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
-            context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
-
-
+            //context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
+            //context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
+            //context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
             //context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
             //context.Assignments.AddOrUpdate(x => x.Title, a1);
             //context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
