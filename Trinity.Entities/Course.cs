@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Trinity.Entities.CustomValidations;
 
 namespace Trinity.Entities
 {
@@ -10,7 +11,12 @@ namespace Trinity.Entities
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Title { get; set; }
         [Required(ErrorMessage = "Required field")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
+        [DataType(DataType.Date)]
+        [DateGreaterThan("StartDate")]
+        [Display(Name = "End Date")]
         public DateTime? EndDate { get; set; }
         [Required(ErrorMessage = "Required field")]
        public Type Type { get; set; }

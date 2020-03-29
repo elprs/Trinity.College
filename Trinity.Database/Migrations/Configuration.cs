@@ -4,6 +4,7 @@
     using Trinity.Entities;
     using System;
     using Trinity.Entities.CustomValidations;
+    using System.Collections.Generic;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MyDatabase>
     {
@@ -57,14 +58,14 @@
             //a2.Subject = su4;
             //#endregion
 
-            //#region Teachers' seeding ==========================
-            //Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor" };
-            //Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos" };
-            //Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis" };
-            //Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos" };
-            //Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios" };
+            #region Teachers' seeding ==========================
+            Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891"};
+           Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos", Email = "Pasparakis@gmail.com", Salary = 90000, Telephone = "1234567892" };
+            Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis", Email = "Tzelepidis@gmail.com", Salary = 30000, Telephone = "1234567893" };
+            Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos", Email = "Panou@gmail.com", Salary = 40000, Telephone = "1234567894" };
+            Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios", Email = "Minaidis@gmail.com", Salary = 45000, Telephone = "1234567895" };
 
-            //#endregion
+            #endregion
 
             //#region Students' seeding ==========================
             //Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni" };
@@ -99,6 +100,39 @@
             //Student s30 = new Student() { LastName = "Lyraki", FirstName = "Lina" };
 
             //#endregion
+            #region SubjectTeacher=======================
+            
+            SubjectTeacher suT1 = new SubjectTeacher() { Subject = su1, Teacher = t1 };
+            SubjectTeacher suT2 = new SubjectTeacher() { Subject = su2, Teacher = t1 };
+            SubjectTeacher suT3 = new SubjectTeacher() { Subject = su3, Teacher = t1 };
+            SubjectTeacher suT8 = new SubjectTeacher() { Subject = su8, Teacher = t1 };
+            SubjectTeacher suT10 = new SubjectTeacher() { Subject = su10, Teacher = t1 };
+            t1.SubjectTeachers = new List<SubjectTeacher>() { suT1, suT2, suT3, suT8, suT10 };
+
+            SubjectTeacher suT4 = new SubjectTeacher() { Subject = su4, Teacher = t2 };
+            SubjectTeacher suT6 = new SubjectTeacher() { Subject = su6, Teacher = t2 };
+            SubjectTeacher suT7 = new SubjectTeacher() { Subject = su7, Teacher = t2 };
+            SubjectTeacher suT9 = new SubjectTeacher() { Subject = su9, Teacher = t2 };
+            SubjectTeacher suT11 = new SubjectTeacher() { Subject = su11, Teacher = t2 };
+            t2.SubjectTeachers = new List<SubjectTeacher>() { suT4, suT6, suT7, suT9, suT11 };
+
+            SubjectTeacher suT5 = new SubjectTeacher() { Subject = su5, Teacher = t3 };
+            SubjectTeacher suT12 = new SubjectTeacher() { Subject = su12, Teacher = t3 };
+            t3.SubjectTeachers = new List<SubjectTeacher>() { suT5, suT12};
+
+            SubjectTeacher suT13 = new SubjectTeacher() { Subject = su5, Teacher = t4 };
+            SubjectTeacher suT14 = new SubjectTeacher() { Subject = su12, Teacher = t4 };
+            t4.SubjectTeachers = new List<SubjectTeacher>() { suT13, suT14};
+
+
+            SubjectTeacher suT15 = new SubjectTeacher() { Subject = su1, Teacher = t5 };
+            SubjectTeacher suT16 = new SubjectTeacher() { Subject = su2, Teacher = t5 };
+            t5.SubjectTeachers = new List<SubjectTeacher>() { suT15, suT16 };
+            #endregion
+
+
+
+
 
             //#region Marks' seeding ======================
             ////Για το assignment 1 (tou c1, s3 pou to exoun oloi oi mathites)
@@ -292,17 +326,13 @@
 
             context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
             context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
+            context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
 
-            //context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
 
             //context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
             //context.Assignments.AddOrUpdate(x => x.Title, a1);
             //context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
-
-
-
-
-
+            context.SaveChanges();
 
 
 
