@@ -215,135 +215,51 @@
 
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
-
-
-            //TO BEA ADDED
-
-
             #region Assignments' seeding ==========================
 
-            //Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 04, 02) };
-            //Assignment a2 = new Assignment() { Title = "First Java Assignment" };
-            //Assignment a3 = new Assignment() { Title = "First Python Assignment" };
-            //Assignment a4 = new Assignment() { Title = "Functionlity to HTML" };
-            //Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites" };
-            //Assignment a6 = new Assignment() { Title = "Well presented data with Java" };
-            //Assignment a7 = new Assignment() { Title = "Java & Javascript" };
-            //Assignment a8 = new Assignment() { Title = "Entity Assignment" };
-            //Assignment a9 = new Assignment() { Title = "Assignment - Java & Algorithms" };
-            //Assignment a10 = new Assignment() { Title = "MVC project" };
-            //Assignment a11 = new Assignment() { Title = " Java Team Project" };
-            //Assignment a12 = new Assignment() { Title = "Python - Team Project" };
-
-            //a1.Subject = su3;
-            //a2.Subject = su4;
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-            #region Marks' seeding ======================
-            ////Για το assignment 1 (tou c1, s3 pou to exoun oloi oi mathites)
-            //Mark m1 = new Mark() {StudentId =   1, AssignmentMark = 60 };
-            //Mark m2 = new Mark() {StudentId =   2, AssignmentMark = 61 };
-            //Mark m3 = new Mark() {StudentId =   3, AssignmentMark = 62 };
-            //Mark m4 = new Mark() {StudentId =   4, AssignmentMark = 63 };
-            //Mark m5 = new Mark() {StudentId =   5, AssignmentMark = 64 };
-            //Mark m6 = new Mark() {StudentId =   6, AssignmentMark = 65 };
-            //Mark m7 = new Mark() {StudentId =   7, AssignmentMark = 66 };
-            //Mark m8 = new Mark() {StudentId =   8, AssignmentMark = 67 };
-            //Mark m9 = new Mark() {StudentId =   9, AssignmentMark = 68 };
-            //Mark m10 = new Mark() {StudentId = 10 , AssignmentMark = 60 };
-            //Mark m11 = new Mark() {StudentId = 11 , AssignmentMark = 60 };
-            //Mark m12 = new Mark() {StudentId = 12 , AssignmentMark = 60 };
-            //Mark m13 = new Mark() {StudentId = 13 , AssignmentMark = 60 };
-            //Mark m14 = new Mark() {StudentId = 14 , AssignmentMark = 60 };
-            //Mark m15 = new Mark() {StudentId = 15 , AssignmentMark = 60 };
-            //Mark m16 = new Mark() {StudentId = 16 , AssignmentMark = 60 };
-            //Mark m17 = new Mark() {StudentId = 17 , AssignmentMark = 60 };
-            //Mark m18 = new Mark() {StudentId = 18 , AssignmentMark = 60 };
-            //Mark m19 = new Mark() {StudentId = 19 , AssignmentMark = 60 };
-            //Mark m20 = new Mark() {StudentId = 20 , AssignmentMark = 60 };
-            //Mark m21 = new Mark() {StudentId = 21 , AssignmentMark = 60 };
-            //Mark m22 = new Mark() {StudentId = 22 , AssignmentMark = 60 };
-            //Mark m23 = new Mark() {StudentId = 23 , AssignmentMark = 60 };
-            //Mark m24 = new Mark() {StudentId = 24 , AssignmentMark = 60 };
-            //Mark m25 = new Mark() {StudentId = 25 , AssignmentMark = 60 };
-            //Mark m26 = new Mark() {StudentId = 26 , AssignmentMark = 60 };
-            //Mark m27 = new Mark() {StudentId = 27 , AssignmentMark = 60 };
-            //Mark m28 = new Mark() {StudentId = 28 , AssignmentMark = 60 };
-            //Mark m29 = new Mark() {StudentId = 29 , AssignmentMark = 60 };
-            //Mark m30 = new Mark() {StudentId = 30 , AssignmentMark = 60 };
 
 
 
-            ////Για το assignment 2 (tou c2, s4 pou to exoun 6  mathites)
-            //Mark m31 = new Mark() {StudentId = 2, AssignmentMark = 70 };
-            //Mark m32 = new Mark() {StudentId = 3, AssignmentMark = 71 };
-            //Mark m33 = new Mark() {StudentId = 12, AssignmentMark = 82 };
-            //Mark m34 = new Mark() {StudentId = 13, AssignmentMark = 83 };
-            //Mark m35 = new Mark() {StudentId = 22, AssignmentMark = 84 };
-            //Mark m36 = new Mark() {StudentId = 23, AssignmentMark = 85 };
+            Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 03, 01), SubjectId = 3};
+            Assignment a2 = new Assignment() { Title = "First Java Assignment", SubDate = new DateTime(2020, 04, 01), SubjectId = 4 };
+            Assignment a3 = new Assignment() { Title = "First Python Assignment", SubDate = new DateTime(2020, 05, 01), SubjectId = 5};
+            Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), SubjectId = 2 };
+            Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites", SubDate = new DateTime(2020, 05, 05), SubjectId = 1 };
+            Assignment a6 = new Assignment() { Title = "Well presented data with Java", SubDate = new DateTime(2020, 06, 02), SubjectId = 6 };
+            Assignment a7 = new Assignment() { Title = "Java & Javascript", SubDate = new DateTime(2020, 07, 25), SubjectId = 7};
+            Assignment a8 = new Assignment() { Title = "Entity Assignment", SubDate = new DateTime(2020, 02, 25), SubjectId = 8 };
+            Assignment a9 = new Assignment() { Title = "Assignment - Java & Algorithms", SubDate = new DateTime(2020, 03, 02), SubjectId = 9 };
+            Assignment a10 = new Assignment() { Title = "MVC project", SubDate = new DateTime(2020, 04, 15), SubjectId = 10 };
+            Assignment a11 = new Assignment() { Title = " Java Team Project", SubDate = new DateTime(2020, 02, 15), SubjectId = 11 };
+            Assignment a12 = new Assignment() { Title = "Python - Team Project", SubDate = new DateTime(2020, 12, 15), SubjectId = 12 };
+
+            su1.Assignment = a5;
+            su2.Assignment = a4;
+            su3.Assignment = a1;
+            su4.Assignment = a2;
+            su5.Assignment = a3;
+            su6.Assignment = a6;
+            su7.Assignment = a7;
+            su8.Assignment = a8;
+            su9.Assignment = a9;
+            su10.Assignment = a10;
+            su11.Assignment = a11;
+            su12.Assignment = a12;
 
 
-            ////Για το assignment 3 (tou c3, s5 pou to exoun 3 mathites)
-            //Mark m37 = new Mark() {StudentId = 3, AssignmentMark = 66 };
-            //Mark m38 = new Mark() {StudentId = 13, AssignmentMark = 67 };
-            //Mark m39 = new Mark() {StudentId = 23, AssignmentMark = 68 };
+            //Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 04, 02), Subject = su3};
+            //Assignment a2 = new Assignment() { Title = "First Java Assignment", SubDate = new DateTime(2020, 04, 02), Subject = su4};
+            //Assignment a3 = new Assignment() { Title = "First Python Assignment", SubDate = new DateTime(2020, 04, 02), Subject = su5 };
+            //Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 02), Subject = su2 };
+            //Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites", SubDate = new DateTime(2020, 04, 02), Subject = su1 };
+            //Assignment a6 = new Assignment() { Title = "Well presented data with Java", SubDate = new DateTime(2020, 04, 02), Subject = su6 };
+            //Assignment a7 = new Assignment() { Title = "Java & Javascript", SubDate = new DateTime(2020, 04, 02), Subject = su7 };
+            //Assignment a8 = new Assignment() { Title = "Entity Assignment", SubDate = new DateTime(2020, 04, 02), Subject = su8 };
+            //Assignment a9 = new Assignment() { Title = "Assignment - Java & Algorithms", SubDate = new DateTime(2020, 04, 02), Subject = su9};
+            //Assignment a10 = new Assignment() { Title = "MVC project", SubDate = new DateTime(2020, 04, 02), Subject = su10 };
+            //Assignment a11 = new Assignment() { Title = " Java Team Project", SubDate = new DateTime(2020, 04, 02), Subject = su11 };
+            //Assignment a12 = new Assignment() { Title = "Python - Team Project", SubDate = new DateTime(2020, 04, 02), Subject = su12};
 
-            ////Για το assignment 4 (tou c1, s2 pou to exoun oloi oi mathites)
-            //Mark m40 = new Mark() {StudentId =  1 , AssignmentMark = 70 };
-            //Mark m41 = new Mark() {StudentId =  2 , AssignmentMark = 74 };
-            //Mark m42 = new Mark() {StudentId =  3 , AssignmentMark = 74 };
-            //Mark m43 = new Mark() {StudentId =  4 , AssignmentMark = 74 };
-            //Mark m44 = new Mark() {StudentId =  5 , AssignmentMark = 74 };
-            //Mark m45 = new Mark() {StudentId =  6 , AssignmentMark = 74 };
-            //Mark m46 = new Mark() {StudentId =  7 , AssignmentMark = 99 };
-            //Mark m47 = new Mark() {StudentId =  8 , AssignmentMark = 99 };
-            //Mark m48 = new Mark() {StudentId =  9 , AssignmentMark = 99 };
-            //Mark m49 = new Mark() {StudentId = 10 , AssignmentMark = 78 };
-            //Mark m50 = new Mark() {StudentId = 11 , AssignmentMark = 78 };
-            //Mark m51 = new Mark() {StudentId = 12 , AssignmentMark = 78 };
-            //Mark m52 = new Mark() {StudentId = 13 , AssignmentMark = 90 };
-            //Mark m53 = new Mark() {StudentId = 14 , AssignmentMark = 90 };
-            //Mark m54 = new Mark() {StudentId = 15 , AssignmentMark = 90 };
-            //Mark m55 = new Mark() {StudentId = 16 , AssignmentMark = 90 };
-            //Mark m56 = new Mark() {StudentId = 17 , AssignmentMark = 96 };
-            //Mark m57 = new Mark() {StudentId = 18 , AssignmentMark = 96 };
-            //Mark m58 = new Mark() {StudentId = 19 , AssignmentMark = 64 };
-            //Mark m59 = new Mark() {StudentId = 20 , AssignmentMark = 74 };
-            //Mark m60 = new Mark() {StudentId = 21 , AssignmentMark = 74 };
-            //Mark m61 = new Mark() {StudentId = 22 , AssignmentMark = 74 };
-            //Mark m62 = new Mark() {StudentId = 23 , AssignmentMark = 74 };
-            //Mark m63 = new Mark() {StudentId = 24 , AssignmentMark = 64 };
-            //Mark m64 = new Mark() {StudentId = 25 , AssignmentMark = 64 };
-            //Mark m65 = new Mark() {StudentId = 26 , AssignmentMark = 70 };
-            //Mark m66 = new Mark() {StudentId = 27 , AssignmentMark = 80 };
-            //Mark m67 = new Mark() {StudentId = 28 , AssignmentMark = 70 };
-            //Mark m68 = new Mark() {StudentId = 29 , AssignmentMark = 100 };
-            //Mark m69 = new Mark() {StudentId = 30 , AssignmentMark = 70 };
-
-
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-            #region Συσχετισεις============================
-
-
-            ////ASSIGNMENT'S NAVIGATION RELATED PROPERTIES 
-
-            //a1.Marks = new List<Mark>() { m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30 };
-            //a2.Marks = new List<Mark>() { m31, m32, m33, m34, m35, m36 };
-            //a3.Marks = new List<Mark>() { m37, m38, m39 };
-            //a4.Marks = new List<Mark>() { m40, m41, m42, m43, m44, m45, m46, m47, m48, m49, m50, m51, m52, m53, m54, m55, m56, m57, m58, m59, m60, m61, m62, m63, m64, m65, m66, m67, m68, m69 };
-            //// to be continued-----!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!!!!!
-
-            ////a5.Marks =
-            ////a6.Marks = 
-            ////a7.Marks = 
-            ////a8.Marks = 
-            ////a9.Marks = 
-            ////a10.Marks = 
-            ////a11.Marks = 
-            ////a12.Marks = 
 
             //a1.Subject = su3;
             //a2.Subject = su4;
@@ -359,45 +275,237 @@
             //a12.Subject = su12;
 
 
-            //// Subject.Assignment=Assignment;
-
-            //su1.Assignment = a5;
-            //        su2.Assignment = a4;
-            //        su3.Assignment = a1;
-            //        su4.Assignment = a2;
-            //        su5.Assignment = a3;
-            //su6.Assignment = a6;
-            //su7.Assignment = a7;
-            //su8.Assignment = a8;
-            //su9.Assignment = a9;
-            //su10.Assignment = a10;
-            //su11.Assignment = a11;
-            //su12.Assignment = a12;
-
-
-
-
-
-
-
-
-
 
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            #region Marks' seeding ======================
+            //Για το assignment 1 (tou c1, s3 pou to exoun oloi oi mathites)
+            Mark m1 = new Mark() { StudentId = 1, AssignmentMark = 60 };
+            Mark m2 = new Mark() { StudentId = 2, AssignmentMark = 61 };
+            Mark m3 = new Mark() { StudentId = 3, AssignmentMark = 62 };
+            Mark m4 = new Mark() { StudentId = 4, AssignmentMark = 63 };
+            Mark m5 = new Mark() { StudentId = 5, AssignmentMark = 64 };
+            Mark m6 = new Mark() { StudentId = 6, AssignmentMark = 65 };
+            Mark m7 = new Mark() { StudentId = 7, AssignmentMark = 66 };
+            Mark m8 = new Mark() { StudentId = 8, AssignmentMark = 67 };
+            Mark m9 = new Mark() { StudentId = 9, AssignmentMark = 68 };
+            Mark m10 = new Mark() { StudentId = 10, AssignmentMark = 69 };
+            Mark m11 = new Mark() { StudentId = 11, AssignmentMark = 70 };
+            Mark m12 = new Mark() { StudentId = 12, AssignmentMark = 71 };
+            Mark m13 = new Mark() { StudentId = 13, AssignmentMark = 72 };
+            Mark m14 = new Mark() { StudentId = 14, AssignmentMark = 73 };
+            Mark m15 = new Mark() { StudentId = 15, AssignmentMark = 74 };
+            Mark m16 = new Mark() { StudentId = 16, AssignmentMark = 75 };
+            Mark m17 = new Mark() { StudentId = 17, AssignmentMark = 76 };
+            Mark m18 = new Mark() { StudentId = 18, AssignmentMark = 77 };
+            Mark m19 = new Mark() { StudentId = 19, AssignmentMark = 78 };
+            Mark m20 = new Mark() { StudentId = 20, AssignmentMark = 79 };
+            Mark m21 = new Mark() { StudentId = 21, AssignmentMark = 80 };
+            Mark m22 = new Mark() { StudentId = 22, AssignmentMark = 81 };
+            Mark m23 = new Mark() { StudentId = 23, AssignmentMark = 82 };
+            Mark m24 = new Mark() { StudentId = 24, AssignmentMark = 83 };
+            Mark m25 = new Mark() { StudentId = 25, AssignmentMark = 84 };
+            Mark m26 = new Mark() { StudentId = 26, AssignmentMark = 85 };
+            Mark m27 = new Mark() { StudentId = 27, AssignmentMark = 86 };
+            Mark m28 = new Mark() { StudentId = 28, AssignmentMark = 87 };
+            Mark m29 = new Mark() { StudentId = 29, AssignmentMark = 88 };
+            Mark m30 = new Mark() { StudentId = 30, AssignmentMark = 89 };
+            a1.Marks = new List<Mark>() { m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30 };
+
+
+            //Για το assignment 2 (tou c2, s4 pou to exoun 6  mathites)
+            Mark m31 = new Mark() { StudentId = 2, AssignmentMark = 90 };
+            Mark m32 = new Mark() { StudentId = 3, AssignmentMark = 91 };
+            Mark m33 = new Mark() { StudentId = 12, AssignmentMark = 92 };
+            Mark m34 = new Mark() { StudentId = 13, AssignmentMark = 93 };
+            Mark m35 = new Mark() { StudentId = 22, AssignmentMark = 94 };
+            Mark m36 = new Mark() { StudentId = 23, AssignmentMark = 95 };
+            a2.Marks = new List<Mark>() { m31, m32, m33, m34, m35, m36 };
+
+
+
+            //Για το assignment 3 (tou c3, s5 pou to exoun 3 mathites)
+            Mark m37 = new Mark() { StudentId = 3, AssignmentMark = 96 };
+            Mark m38 = new Mark() { StudentId = 13, AssignmentMark = 97 };
+            Mark m39 = new Mark() { StudentId = 23, AssignmentMark = 98 };
+            a3.Marks = new List<Mark>() { m37, m38, m39 };
+
+            //Για το assignment 4 (tou c1, s2 pou to exoun oloi oi mathites)
+            Mark m40 = new Mark() { StudentId = 1, AssignmentMark = 10 };
+            Mark m41 = new Mark() { StudentId = 2, AssignmentMark = 11 };
+            Mark m42 = new Mark() { StudentId = 3, AssignmentMark = 12 };
+            Mark m43 = new Mark() { StudentId = 4, AssignmentMark = 13 };
+            Mark m44 = new Mark() { StudentId = 5, AssignmentMark = 14 };
+            Mark m45 = new Mark() { StudentId = 6, AssignmentMark = 15 };
+            Mark m46 = new Mark() { StudentId = 7, AssignmentMark = 16 };
+            Mark m47 = new Mark() { StudentId = 8, AssignmentMark = 17 };
+            Mark m48 = new Mark() { StudentId = 9, AssignmentMark = 18 };
+            Mark m49 = new Mark() { StudentId = 10, AssignmentMark = 19 };
+            Mark m50 = new Mark() { StudentId = 11, AssignmentMark = 20 };
+            Mark m51 = new Mark() { StudentId = 12, AssignmentMark = 21 };
+            Mark m52 = new Mark() { StudentId = 13, AssignmentMark = 22 };
+            Mark m53 = new Mark() { StudentId = 14, AssignmentMark = 23 };
+            Mark m54 = new Mark() { StudentId = 15, AssignmentMark = 24 };
+            Mark m55 = new Mark() { StudentId = 16, AssignmentMark = 25 };
+            Mark m56 = new Mark() { StudentId = 17, AssignmentMark = 26 };
+            Mark m57 = new Mark() { StudentId = 18, AssignmentMark = 27 };
+            Mark m58 = new Mark() { StudentId = 19, AssignmentMark = 28 };
+            Mark m59 = new Mark() { StudentId = 20, AssignmentMark = 29 };
+            Mark m60 = new Mark() { StudentId = 21, AssignmentMark = 30 };
+            Mark m61 = new Mark() { StudentId = 22, AssignmentMark = 31 };
+            Mark m62 = new Mark() { StudentId = 23, AssignmentMark = 32 };
+            Mark m63 = new Mark() { StudentId = 24, AssignmentMark = 33 };
+            Mark m64 = new Mark() { StudentId = 25, AssignmentMark = 34 };
+            Mark m65 = new Mark() { StudentId = 26, AssignmentMark = 35 };
+            Mark m66 = new Mark() { StudentId = 27, AssignmentMark = 36 };
+            Mark m67 = new Mark() { StudentId = 28, AssignmentMark = 37 };
+            Mark m68 = new Mark() { StudentId = 29, AssignmentMark = 38 };
+            Mark m69 = new Mark() { StudentId = 30, AssignmentMark = 39 };
+            a4.Marks = new List<Mark>() { m40, m41, m42, m43, m44, m45, m46, m47, m48, m49, m50, m51, m52, m53, m54, m55, m56, m57, m58, m59, m60, m61, m62, m63, m64, m65, m66, m67, m68, m69 };
+
+
+
+         
+            //a5.Subject = su1;
+            //a6.Subject = su6;
+            //a7.Subject = su7;
+            //a8.Subject = su8;
+            //a9.Subject = su9;
+            //a10.Subject = su10;
+            //a11.Subject = su11;
+            //a12.Subject = su12;
+
+
+            //Για το assignment 5 (tou c1, su1 pou to exoun oloi oi mathites)
+            Mark m70 = new Mark() { StudentId = 30, AssignmentMark = 89 };
+            Mark m71 = new Mark() { StudentId = 1, AssignmentMark = 60 };
+            Mark m72 = new Mark() { StudentId = 2, AssignmentMark = 61 };
+            Mark m73 = new Mark() { StudentId = 3, AssignmentMark = 62 };
+            Mark m74 = new Mark() { StudentId = 4, AssignmentMark = 63 };
+            Mark m75 = new Mark() { StudentId = 5, AssignmentMark = 64 };
+            Mark m76 = new Mark() { StudentId = 6, AssignmentMark = 65 };
+            Mark m77 = new Mark() { StudentId = 7, AssignmentMark = 66 };
+            Mark m78 = new Mark() { StudentId = 8, AssignmentMark = 67 };
+            Mark m79 = new Mark() { StudentId = 9, AssignmentMark = 68 };
+            Mark m80 = new Mark() { StudentId = 10, AssignmentMark = 69 };
+            Mark m81 = new Mark() { StudentId = 11, AssignmentMark = 70 };
+            Mark m82 = new Mark() { StudentId = 12, AssignmentMark = 71 };
+            Mark m83 = new Mark() { StudentId = 13, AssignmentMark = 72 };
+            Mark m84 = new Mark() { StudentId = 14, AssignmentMark = 73 };
+            Mark m85 = new Mark() { StudentId = 15, AssignmentMark = 74 };
+            Mark m86 = new Mark() { StudentId = 16, AssignmentMark = 75 };
+            Mark m87 = new Mark() { StudentId = 17, AssignmentMark = 76 };
+            Mark m88 = new Mark() { StudentId = 18, AssignmentMark = 77 };
+            Mark m89 = new Mark() { StudentId = 19, AssignmentMark = 78 };
+            Mark m90 = new Mark() { StudentId = 20, AssignmentMark = 79 };
+            Mark m91 = new Mark() { StudentId = 21, AssignmentMark = 80 };
+            Mark m92 = new Mark() { StudentId = 22, AssignmentMark = 81 };
+            Mark m93 = new Mark() { StudentId = 23, AssignmentMark = 82 };
+            Mark m94 = new Mark() { StudentId = 24, AssignmentMark = 83 };
+            Mark m95 = new Mark() { StudentId = 25, AssignmentMark = 84 };
+            Mark m96 = new Mark() { StudentId = 26, AssignmentMark = 85 };
+            Mark m97 = new Mark() { StudentId = 27, AssignmentMark = 86 };
+            Mark m98 = new Mark() { StudentId = 28, AssignmentMark = 87 };
+            Mark m99 = new Mark() { StudentId = 29, AssignmentMark = 88 };
+            a1.Marks = new List<Mark>() { m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30 };
+
+
+            //Για το assignment 2 (tou c2, s4 pou to exoun 6  mathites)
+            Mark m100 = new Mark() { StudentId = 2, AssignmentMark = 90 };
+            Mark m101 = new Mark() { StudentId = 2, AssignmentMark = 90 };
+            Mark m102 = new Mark() { StudentId = 3, AssignmentMark = 91 };
+            Mark m103 = new Mark() { StudentId = 12, AssignmentMark = 92 };
+            Mark m104 = new Mark() { StudentId = 13, AssignmentMark = 93 };
+            Mark m105 = new Mark() { StudentId = 22, AssignmentMark = 94 };
+            Mark m106 = new Mark() { StudentId = 23, AssignmentMark = 95 };
+            a2.Marks = new List<Mark>() { m31, m32, m33, m34, m35, m36 };
+
+
+
+            //Για το assignment 3 (tou c3, s5 pou to exoun 3 mathites)
+            Mark m107 = new Mark() { StudentId = 3, AssignmentMark = 96 };
+            Mark m108 = new Mark() { StudentId = 13, AssignmentMark = 97 };
+            Mark m109 = new Mark() { StudentId = 23, AssignmentMark = 98 };
+            a3.Marks = new List<Mark>() { m37, m38, m39 };
+
+            //Για το assignment 4 (tou c1, s2 pou to exoun oloi oi mathites)
+            Mark m110 = new Mark() { StudentId = 1, AssignmentMark = 10 };
+            Mark m111 = new Mark() { StudentId = 2, AssignmentMark = 11 };
+            Mark m112 = new Mark() { StudentId = 3, AssignmentMark = 12 };
+            Mark m113 = new Mark() { StudentId = 4, AssignmentMark = 13 };
+            Mark m114 = new Mark() { StudentId = 5, AssignmentMark = 14 };
+            Mark m115 = new Mark() { StudentId = 6, AssignmentMark = 15 };
+            Mark m116 = new Mark() { StudentId = 7, AssignmentMark = 16 };
+            Mark m117 = new Mark() { StudentId = 8, AssignmentMark = 17 };
+            Mark m118 = new Mark() { StudentId = 9, AssignmentMark = 18 };
+            Mark m119 = new Mark() { StudentId = 10, AssignmentMark = 19 };
+            Mark m120 = new Mark() { StudentId = 11, AssignmentMark = 20 };
+            Mark m121 = new Mark() { StudentId = 12, AssignmentMark = 21 };
+            Mark m122 = new Mark() { StudentId = 13, AssignmentMark = 22 };
+            Mark m123 = new Mark() { StudentId = 14, AssignmentMark = 23 };
+            Mark m124 = new Mark() { StudentId = 15, AssignmentMark = 24 };
+            Mark m125 = new Mark() { StudentId = 16, AssignmentMark = 25 };
+            Mark m126 = new Mark() { StudentId = 17, AssignmentMark = 26 };
+            Mark m127 = new Mark() { StudentId = 18, AssignmentMark = 27 };
+            Mark m128 = new Mark() { StudentId = 19, AssignmentMark = 28 };
+            Mark m129 = new Mark() { StudentId = 20, AssignmentMark = 29 };
+            Mark m130 = new Mark() { StudentId = 21, AssignmentMark = 30 };
+            Mark m131 = new Mark() { StudentId = 22, AssignmentMark = 31 };
+            Mark m132 = new Mark() { StudentId = 23, AssignmentMark = 32 };
+            Mark m133 = new Mark() { StudentId = 24, AssignmentMark = 33 };
+            Mark m134 = new Mark() { StudentId = 25, AssignmentMark = 34 };
+            Mark m135 = new Mark() { StudentId = 26, AssignmentMark = 35 };
+            Mark m136 = new Mark() { StudentId = 27, AssignmentMark = 36 };
+            Mark m137 = new Mark() { StudentId = 28, AssignmentMark = 37 };
+            Mark m138 = new Mark() { StudentId = 29, AssignmentMark = 38 };
+            Mark m139 = new Mark() { StudentId = 30, AssignmentMark = 39 };
+            a4.Marks = new List<Mark>() { m40, m41, m42, m43, m44, m45, m46, m47, m48, m49, m50, m51, m52, m53, m54, m55, m56, m57, m58, m59, m60, m61, m62, m63, m64, m65, m66, m67, m68, m69 };
+
+
+
+            ////a5.Marks =
+            ////a6.Marks = 
+            ////a7.Marks = 
+            ////a8.Marks = 
+            ////a9.Marks = 
+            ////a10.Marks = 
+            ////a11.Marks = 
+            ////a12.Marks = 
+
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
             context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
             context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
             context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
             context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
-            //context.Assignments.AddOrUpdate(x => x.Title, a1);
-            //context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
+            context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
+            context.Marks.AddOrUpdate(x => x.AssignmentMark, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30, m31, m32, m33, m34, m35, m36, m37, m38, m39, m40, m41, m42, m43, m44, m45, m46, m47, m48, m49, m50, m51, m52, m53, m54, m55, m56, m57, m58, m59, m60, m61, m62, m63, m64, m65, m66, m67, m68, m69);
+
+
             context.SaveChanges();
 
+        }                                          
+    }                                              
+}                                                  
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   
 
-
-
-
-        }
-    }
-}
+ 

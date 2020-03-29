@@ -18,9 +18,10 @@ namespace Trinity.Database
         public DbSet<CourseStudent> CourseStudents { get; set; }
 
 
-        //Το be added
-        //public DbSet<Assignment> Assignments { get; set; }
-        //public DbSet<Mark> Marks { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+
+
+        public DbSet<Mark> Marks { get; set; }
 
 
 

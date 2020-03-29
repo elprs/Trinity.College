@@ -7,9 +7,9 @@ namespace Trinity.Entities
         //This class references the Marks of a Subject for every Student
         public int MarkId { get; set; }
         [Required, Range(0, 100)]
-        public int AssignmentMark { get; set; }
+        public int AssignmentMark { get; set; } = 0;
         [Required, Range(0, 100)]
-        public int OralMark { get; set; }
+        public int OralMark { get; set; } = 0;
         public double? TotalMark { get; set; }
         //Navigation Properties
         public int StudentId { get; set; }
