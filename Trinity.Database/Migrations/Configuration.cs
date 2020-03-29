@@ -37,38 +37,69 @@
             Subject su10 = new Subject() { Title = "C# - MVC", PhotoURL = "#", CourseId = 1 };
             Subject su11 = new Subject() { Title = "Java - A full java system", PhotoURL = "#", CourseId = 2 };
             Subject su12 = new Subject() { Title = "Python - A full application", PhotoURL = "#", CourseId = 3 };
+
+            //////// Subject.Cource=Course;
+
+            //////su1.Course = c1;
+            //////su2.Course = c1;
+            //////su3.Course = c1;
+            //////su8.Course = c1;
+            //////su10.Course = c1;
+            //////su4.Course = c2;
+            //////su6.Course = c2;
+            //////su7.Course = c2;
+            //////su9.Course = c2;
+            //////su11.Course = c2;
+            //////su5.Course = c3;
+            //////su12.Course = c3;
+
+
             #endregion
 
-            #region Assignments' seeding ==========================
-
-            //Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 04, 02) };
-            //Assignment a2 = new Assignment() { Title = "First Java Assignment" };
-            //Assignment a3 = new Assignment() { Title = "First Python Assignment" };
-            //Assignment a4 = new Assignment() { Title = "Functionlity to HTML" };
-            //Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites" };
-            //Assignment a6 = new Assignment() { Title = "Well presented data with Java" };
-            //Assignment a7 = new Assignment() { Title = "Java & Javascript" };
-            //Assignment a8 = new Assignment() { Title = "Entity Assignment" };
-            //Assignment a9 = new Assignment() { Title = "Assignment - Java & Algorithms" };
-            //Assignment a10 = new Assignment() { Title = "MVC project" };
-            //Assignment a11 = new Assignment() { Title = " Java Team Project" };
-            //Assignment a12 = new Assignment() { Title = "Python - Team Project" };
-
-            //a1.Subject = su3;
-            //a2.Subject = su4;
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
             #region Teachers' seeding ==========================
-            Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891"};
-           Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos", Email = "Pasparakis@gmail.com", Salary = 90000, Telephone = "1234567892" };
+            Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891" };
+            Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos", Email = "Pasparakis@gmail.com", Salary = 90000, Telephone = "1234567892" };
             Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis", Email = "Tzelepidis@gmail.com", Salary = 30000, Telephone = "1234567893" };
             Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos", Email = "Panou@gmail.com", Salary = 40000, Telephone = "1234567894" };
             Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios", Email = "Minaidis@gmail.com", Salary = 45000, Telephone = "1234567895" };
 
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+            #region SubjectTeachers=======================
+
+            SubjectTeacher suT1 = new SubjectTeacher() { Subject = su1, Teacher = t1 };
+            SubjectTeacher suT2 = new SubjectTeacher() { Subject = su2, Teacher = t1 };
+            SubjectTeacher suT3 = new SubjectTeacher() { Subject = su3, Teacher = t1 };
+            SubjectTeacher suT8 = new SubjectTeacher() { Subject = su8, Teacher = t1 };
+            SubjectTeacher suT10 = new SubjectTeacher() { Subject = su10, Teacher = t1 };
+            t1.SubjectTeachers = new List<SubjectTeacher>() { suT1, suT2, suT3, suT8, suT10 };
+
+            SubjectTeacher suT4 = new SubjectTeacher() { Subject = su4, Teacher = t2 };
+            SubjectTeacher suT6 = new SubjectTeacher() { Subject = su6, Teacher = t2 };
+            SubjectTeacher suT7 = new SubjectTeacher() { Subject = su7, Teacher = t2 };
+            SubjectTeacher suT9 = new SubjectTeacher() { Subject = su9, Teacher = t2 };
+            SubjectTeacher suT11 = new SubjectTeacher() { Subject = su11, Teacher = t2 };
+            t2.SubjectTeachers = new List<SubjectTeacher>() { suT4, suT6, suT7, suT9, suT11 };
+
+            SubjectTeacher suT5 = new SubjectTeacher() { Subject = su5, Teacher = t3 };
+            SubjectTeacher suT12 = new SubjectTeacher() { Subject = su12, Teacher = t3 };
+            t3.SubjectTeachers = new List<SubjectTeacher>() { suT5, suT12 };
+
+            SubjectTeacher suT13 = new SubjectTeacher() { Subject = su5, Teacher = t4 };
+            SubjectTeacher suT14 = new SubjectTeacher() { Subject = su12, Teacher = t4 };
+            t4.SubjectTeachers = new List<SubjectTeacher>() { suT13, suT14 };
+
+
+            SubjectTeacher suT15 = new SubjectTeacher() { Subject = su1, Teacher = t5 };
+            SubjectTeacher suT16 = new SubjectTeacher() { Subject = su2, Teacher = t5 };
+            t5.SubjectTeachers = new List<SubjectTeacher>() { suT15, suT16 };
+
+
+            ////su1.Teachers = new List<Teacher>() { t1, t2, t3, t4, t5 };
+            #endregion
+
             #region Students' seeding ==========================
-            Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni" , Email = "parisi@gmail.com", Telephone = "1234567810"};
+            Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni", Email = "parisi@gmail.com", Telephone = "1234567810" };
             Student s2 = new Student() { LastName = "Periklidis", FirstName = "Mixalis", Email = "Periklidis@gmail.com", Telephone = "1234567811" };
             Student s3 = new Student() { LastName = "Papadopoulos", FirstName = "Vaso", Email = "Papadopoulos@gmail.com", Telephone = "1234567812" };
             Student s4 = new Student() { LastName = "Kanellis", FirstName = "Stathis", Email = "Kanellis@gmail.com", Telephone = "1234567813" };
@@ -101,42 +132,54 @@
 
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            #region SubjectTeachers=======================
-
-            SubjectTeacher suT1 = new SubjectTeacher() { Subject = su1, Teacher = t1 };
-            SubjectTeacher suT2 = new SubjectTeacher() { Subject = su2, Teacher = t1 };
-            SubjectTeacher suT3 = new SubjectTeacher() { Subject = su3, Teacher = t1 };
-            SubjectTeacher suT8 = new SubjectTeacher() { Subject = su8, Teacher = t1 };
-            SubjectTeacher suT10 = new SubjectTeacher() { Subject = su10, Teacher = t1 };
-            t1.SubjectTeachers = new List<SubjectTeacher>() { suT1, suT2, suT3, suT8, suT10 };
-
-            SubjectTeacher suT4 = new SubjectTeacher() { Subject = su4, Teacher = t2 };
-            SubjectTeacher suT6 = new SubjectTeacher() { Subject = su6, Teacher = t2 };
-            SubjectTeacher suT7 = new SubjectTeacher() { Subject = su7, Teacher = t2 };
-            SubjectTeacher suT9 = new SubjectTeacher() { Subject = su9, Teacher = t2 };
-            SubjectTeacher suT11 = new SubjectTeacher() { Subject = su11, Teacher = t2 };
-            t2.SubjectTeachers = new List<SubjectTeacher>() { suT4, suT6, suT7, suT9, suT11 };
-
-            SubjectTeacher suT5 = new SubjectTeacher() { Subject = su5, Teacher = t3 };
-            SubjectTeacher suT12 = new SubjectTeacher() { Subject = su12, Teacher = t3 };
-            t3.SubjectTeachers = new List<SubjectTeacher>() { suT5, suT12};
-
-            SubjectTeacher suT13 = new SubjectTeacher() { Subject = su5, Teacher = t4 };
-            SubjectTeacher suT14 = new SubjectTeacher() { Subject = su12, Teacher = t4 };
-            t4.SubjectTeachers = new List<SubjectTeacher>() { suT13, suT14};
-
-
-            SubjectTeacher suT15 = new SubjectTeacher() { Subject = su1, Teacher = t5 };
-            SubjectTeacher suT16 = new SubjectTeacher() { Subject = su2, Teacher = t5 };
-            t5.SubjectTeachers = new List<SubjectTeacher>() { suT15, suT16 };
-            #endregion
-
             #region StudentCourses==============================
 
             CourseStudent cs1 = new CourseStudent() { Course = c1, Student = s1, IsFeePayed = true };
             CourseStudent cs2 = new CourseStudent() { Course = c1, Student = s2, IsFeePayed = true };
             CourseStudent cs3 = new CourseStudent() { Course = c1, Student = s3, IsFeePayed = true };
-            c1.CourseStudents = new List<CourseStudent>() { cs1 , cs2, cs3};
+            CourseStudent cs4 = new CourseStudent() { Course = c1, Student = s4, IsFeePayed = true };
+            CourseStudent cs5 = new CourseStudent() { Course = c1, Student = s5, IsFeePayed = false };
+            CourseStudent cs6 = new CourseStudent() { Course = c1, Student = s6, IsFeePayed = true };
+            CourseStudent cs7 = new CourseStudent() { Course = c1, Student = s7, IsFeePayed = false };
+            CourseStudent cs8 = new CourseStudent() { Course = c1, Student = s8, IsFeePayed = true };
+            CourseStudent cs9 = new CourseStudent() { Course = c1, Student = s9, IsFeePayed = false };
+            CourseStudent cs10 = new CourseStudent() { Course = c1, Student = s10, IsFeePayed = false };
+            CourseStudent cs11 = new CourseStudent() { Course = c1, Student = s11, IsFeePayed = false };
+            CourseStudent cs12 = new CourseStudent() { Course = c1, Student = s12, IsFeePayed = false };
+            CourseStudent cs13 = new CourseStudent() { Course = c1, Student = s13, IsFeePayed = true };
+            CourseStudent cs14 = new CourseStudent() { Course = c1, Student = s14, IsFeePayed = true };
+            CourseStudent cs15 = new CourseStudent() { Course = c1, Student = s15, IsFeePayed = false };
+            CourseStudent cs16 = new CourseStudent() { Course = c1, Student = s16, IsFeePayed = true };
+            CourseStudent cs17 = new CourseStudent() { Course = c1, Student = s17, IsFeePayed = false };
+            CourseStudent cs18 = new CourseStudent() { Course = c1, Student = s18, IsFeePayed = true };
+            CourseStudent cs19 = new CourseStudent() { Course = c1, Student = s19, IsFeePayed = false };
+            CourseStudent cs20 = new CourseStudent() { Course = c1, Student = s20, IsFeePayed = false };
+            CourseStudent cs21 = new CourseStudent() { Course = c1, Student = s21, IsFeePayed = false };
+            CourseStudent cs22 = new CourseStudent() { Course = c1, Student = s22, IsFeePayed = false };
+            CourseStudent cs23 = new CourseStudent() { Course = c1, Student = s23, IsFeePayed = true };
+            CourseStudent cs24 = new CourseStudent() { Course = c1, Student = s24, IsFeePayed = true };
+            CourseStudent cs25 = new CourseStudent() { Course = c1, Student = s25, IsFeePayed = false };
+            CourseStudent cs26 = new CourseStudent() { Course = c1, Student = s26, IsFeePayed = true };
+            CourseStudent cs27 = new CourseStudent() { Course = c1, Student = s27, IsFeePayed = false };
+            CourseStudent cs28 = new CourseStudent() { Course = c1, Student = s28, IsFeePayed = true };
+            CourseStudent cs29 = new CourseStudent() { Course = c1, Student = s29, IsFeePayed = false };
+            c1.CourseStudents = new List<CourseStudent>() { cs1, cs2, cs3, cs4, cs5, cs6, cs7, cs8, cs9, cs10, cs11, cs12, cs13, cs14, cs15, cs16, cs17, cs18, cs19, cs20, cs21, cs22, cs23, cs24, cs25, cs26, cs27, cs28, cs29 };
+
+           
+            CourseStudent cs31 = new CourseStudent() { Course = c2, Student = s2, IsFeePayed = true };
+            CourseStudent cs32 = new CourseStudent() { Course = c2, Student = s3, IsFeePayed = false };
+            CourseStudent cs33 = new CourseStudent() { Course = c2, Student = s12, IsFeePayed = true };
+            CourseStudent cs34 = new CourseStudent() { Course = c2, Student = s13, IsFeePayed = true };
+            CourseStudent cs35 = new CourseStudent() { Course = c2, Student = s22, IsFeePayed = false };
+            CourseStudent cs36 = new CourseStudent() { Course = c2, Student = s23, IsFeePayed = true };
+            c2.CourseStudents = new List<CourseStudent>() { cs31, cs32, cs33, cs34, cs35, cs36 };
+
+
+            CourseStudent cs30 = new CourseStudent() { Course = c3, Student = s9, IsFeePayed = false };
+            CourseStudent cs37 = new CourseStudent() { Course = c3, Student = s3, IsFeePayed = false };
+            CourseStudent cs38 = new CourseStudent() { Course = c3, Student = s13, IsFeePayed = true };
+            CourseStudent cs39 = new CourseStudent() { Course = c3, Student = s23, IsFeePayed = true };
+            c3.CourseStudents = new List<CourseStudent>() { cs30, cs37, cs38, cs39 };
 
             // s1.Courses = new List<Course>() { c1 };
             //s2.Courses = new List<Course>() { c1, c2 };
@@ -170,6 +213,32 @@
             //s30.Courses = new List<Course>() { c3 };
 
 
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+            //TO BEA ADDED
+
+
+            #region Assignments' seeding ==========================
+
+            //Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 04, 02) };
+            //Assignment a2 = new Assignment() { Title = "First Java Assignment" };
+            //Assignment a3 = new Assignment() { Title = "First Python Assignment" };
+            //Assignment a4 = new Assignment() { Title = "Functionlity to HTML" };
+            //Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites" };
+            //Assignment a6 = new Assignment() { Title = "Well presented data with Java" };
+            //Assignment a7 = new Assignment() { Title = "Java & Javascript" };
+            //Assignment a8 = new Assignment() { Title = "Entity Assignment" };
+            //Assignment a9 = new Assignment() { Title = "Assignment - Java & Algorithms" };
+            //Assignment a10 = new Assignment() { Title = "MVC project" };
+            //Assignment a11 = new Assignment() { Title = " Java Team Project" };
+            //Assignment a12 = new Assignment() { Title = "Python - Team Project" };
+
+            //a1.Subject = su3;
+            //a2.Subject = su4;
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             #region Marks' seeding ======================
@@ -305,35 +374,22 @@
             //su11.Assignment = a11;
             //su12.Assignment = a12;
 
-            //// Subject.Cource=Course;
-
-            //su1.Course = c1;
-            //su2.Course = c1;
-            //su3.Course = c1;
-            //su8.Course = c1;
-            //su10.Course = c1;
-            //su4.Course = c2;
-            //su6.Course = c2;
-            //su7.Course = c2;
-            //su9.Course = c2;
-            //su11.Course = c2;
-            //su5.Course = c3;
-            //su12.Course = c3;
 
 
 
 
-            ////su1.Teachers = new List<Teacher>() { t1, t2, t3, t4, t5 };
+
+
 
 
 
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-            //context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
-            //context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
-            //context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
-            //context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
+            context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
+            context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
+            context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
+            context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
             //context.Assignments.AddOrUpdate(x => x.Title, a1);
             //context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
             context.SaveChanges();

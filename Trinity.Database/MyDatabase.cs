@@ -5,10 +5,11 @@ namespace Trinity.Database
 {
     public class MyDatabase : DbContext
     {
-        public MyDatabase() : base("Link")
-        {
+        public MyDatabase() : base("Link") {}
 
-        }
+
+
+
         public DbSet<Course> Courses { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
