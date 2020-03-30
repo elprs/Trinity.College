@@ -14,8 +14,8 @@ namespace Trinity.Entities
         [DataType(DataType.Date)]
         public DateTime SubDate { get; set; }
         //Navigation Properties
-        public int SubjectId { get; set; }
-        public virtual Subject Subject { get; set; }
+        //public int SubjectId { get; set; }
+        //public virtual Subject Subject { get; set; }
         public virtual ICollection<Mark> Marks { get; set; }
 
     }
