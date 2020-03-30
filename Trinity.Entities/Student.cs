@@ -6,6 +6,7 @@ namespace Trinity.Entities
     public class Student
     {
         public int StudentId { get; set; }
+
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]

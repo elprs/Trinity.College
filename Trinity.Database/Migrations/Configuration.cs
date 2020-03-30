@@ -87,53 +87,55 @@
             Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), SubjectId = 2 }; //+
             Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites", SubDate = new DateTime(2020, 05, 05), SubjectId = 1 };
 
-            //su1.Assignments = new List<Assignment> { a5};
-            //su2.Assignments = new List<Assignment> { a4};//+
-            //su4.Assignments = new List<Assignment> { a2};
-            //su5.Assignments = new List<Assignment> { a3};         
+            su1.Assignments = new List<Assignment> { a5 };
+            su2.Assignments = new List<Assignment> { a4 };//+
+            su4.Assignments = new List<Assignment> { a2 };
+            su5.Assignments = new List<Assignment> { a3 };
 
-            su1.Assignment = a5 ;
-            su2.Assignment = a4 ;//+
-            su4.Assignment = a2 ;
-            su5.Assignment = a3 ;
+
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             #region Marks' seeding ======================
             //////Για το assignment 1 (tou c1, s3 pou to exoun oloi oi mathites)
             ///
+            Mark m31 = new Mark() { Student = s2, UniqueCode = 90, OralMark = 100 };
+            Mark m32 = new Mark() { Student = s3, UniqueCode = 91, OralMark = 100 };
+            a2.Marks = new List<Mark>() { m31, m32 };
+
 
             // The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_dbo.Marks_dbo.Assignments_AssignmentId".The //conflict occurred in database "TrinityDatabase", table "dbo.Assignments", column 'AssignmentId'.
-
+            /*
             //Για το assignment 2 (tou c2, s4 pou to exoun 6  mathites)
-            Mark m31 = new Mark() { Student = s2, MarkUniqueCode = 90, Assignment = a2, OralMark = 100 };
-            Mark m32 = new Mark() { Student = s3, MarkUniqueCode = 91, Assignment = a2, OralMark = 100 };
+            Mark m31 = new Mark() { Student = s2, UniqueCode = 90, Assignment = a2, OralMark = 100 };
+            Mark m32 = new Mark() { Student = s3, UniqueCode = 91, Assignment = a2, OralMark = 100 };
             a2.Marks = new List<Mark>() { m31, m32 };
 
             //Για το assignment 3 (tou c3, s5 pou to exoun 3 mathites)
-            Mark m37 = new Mark() { Student = s3, MarkUniqueCode = 96, Assignment = a3, OralMark = 80 };
+            Mark m37 = new Mark() { Student = s3, UniqueCode = 96, Assignment = a3, OralMark = 80 };
             a3.Marks = new List<Mark>() { m37};
 
             //Για το assignment 4 (tou c1, su2 pou to exoun oloi oi mathites)
-            Mark m40 = new Mark() { Student = s1, MarkUniqueCode = 10, Assignment = a5, OralMark = 60 };//+
-            Mark m41 = new Mark() { Student = s2, MarkUniqueCode = 11, Assignment = a5, OralMark = 73 };//+
-            Mark m42 = new Mark() { Student = s3, MarkUniqueCode = 12, Assignment = a5, OralMark = 63 };//+
-            Mark m43 = new Mark() { Student = s4, MarkUniqueCode = 13, Assignment = a5, OralMark = 93 };//+
-            Mark m44 = new Mark() { Student = s5, MarkUniqueCode = 14, Assignment = a5, OralMark = 68}; //+
+            Mark m40 = new Mark() { Student = s1, UniqueCode = 10, Assignment = a5, OralMark = 60 };//+
+            Mark m41 = new Mark() { Student = s2, UniqueCode = 11, Assignment = a5, OralMark = 73 };//+
+            Mark m42 = new Mark() { Student = s3, UniqueCode = 12, Assignment = a5, OralMark = 63 };//+
+            Mark m43 = new Mark() { Student = s4, UniqueCode = 13, Assignment = a5, OralMark = 93 };//+
+            Mark m44 = new Mark() { Student = s5, UniqueCode = 14, Assignment = a5, OralMark = 68}; //+
             a4.Marks = new List<Mark>() { m40, m41, m42, m43, m44};
 
             //Για το assignment 5 (tou c1, su1 pou to exoun oloi oi mathites)
 
-            Mark m71 = new Mark() { Student = s1, MarkUniqueCode = 40.9, Assignment = a5, OralMark = 60 };
-            Mark m72 = new Mark() { Student = s2, MarkUniqueCode = 41.9, Assignment = a5, OralMark = 63 };
-            Mark m73 = new Mark() { Student = s3, MarkUniqueCode = 42.9, Assignment = a5, OralMark = 87 };
-            Mark m74 = new Mark() { Student = s4, MarkUniqueCode = 43.9, Assignment = a5, OralMark = 60 };
-            Mark m75 = new Mark() { Student = s5, MarkUniqueCode = 44.9, Assignment = a5, OralMark = 64 };
+            Mark m71 = new Mark() { Student = s1, UniqueCode = 40.9, Assignment = a5, OralMark = 60 };
+            Mark m72 = new Mark() { Student = s2, UniqueCode = 41.9, Assignment = a5, OralMark = 63 };
+            Mark m73 = new Mark() { Student = s3, UniqueCode = 42.9, Assignment = a5, OralMark = 87 };
+            Mark m74 = new Mark() { Student = s4, UniqueCode = 43.9, Assignment = a5, OralMark = 60 };
+            Mark m75 = new Mark() { Student = s5, UniqueCode = 44.9, Assignment = a5, OralMark = 64 };
             a5.Marks = new List<Mark>() { m71, m72, m73, m74, m75};
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+            */
             //Conflicting changes to the role 'Teacher_SubjectTeachers_Source' of the relationship 'Trinity.Database.Teacher_SubjectTeachers' have been detected.
             //+   //Conflicting changes to the role 'Mark_Assignment_Target' of the relationship 'Trinity.Database.Mark_Assignment' have been detected. 
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
             context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su4, su5);
