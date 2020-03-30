@@ -6,9 +6,11 @@ namespace Trinity.Entities
     public class Mark
     {
         //This class references the Marks of a Subject for every Student
-        [Key, Column(Order = 1)]
+        public int MarkId { get; set; }
+        [ForeignKey("Student")]
         public int StudentId { get; set; }
-        [Key, Column(Order = 2)]
+        
+        [ForeignKey("Assignment")]
         public int AssignmentId { get; set; }
 
         [Required(ErrorMessage = "Required field"), Range(0.0D, 200.0D)]

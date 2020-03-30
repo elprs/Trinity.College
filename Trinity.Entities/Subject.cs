@@ -11,7 +11,10 @@ namespace Trinity.Entities
         public string PhotoURL { get; set; } = "Trinity.College\\Images\\no-image-available.png";
         //Navigation Properties
         public int CourseId { get; set; }
+
         public virtual Course Course { get; set; }
+        //public virtual ICollection<Assignment> Assignments { get; set; }
+        public int AssignmentId { get; set; }
         public virtual Assignment Assignment { get; set; }
         public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
     }

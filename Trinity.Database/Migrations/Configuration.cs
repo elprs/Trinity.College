@@ -42,13 +42,17 @@
             #region SubjectTeacherss' seeding ==========================
             SubjectTeacher suT1 = new SubjectTeacher() { Subject = su1, Teacher = t1 };
             SubjectTeacher suT2 = new SubjectTeacher() { Subject = su2, Teacher = t1 }; //+
-            t1.SubjectTeachers = new List<SubjectTeacher>() { suT1};
+            t1.SubjectTeachers = new List<SubjectTeacher>() { suT1, suT2};
+
             SubjectTeacher suT4 = new SubjectTeacher() { Subject = su4, Teacher = t2 };
             t2.SubjectTeachers = new List<SubjectTeacher>() { suT4 };
+
             SubjectTeacher suT5 = new SubjectTeacher() { Subject = su5, Teacher = t3 };
             t3.SubjectTeachers = new List<SubjectTeacher>() { suT5 };
+
             SubjectTeacher suT13 = new SubjectTeacher() { Subject = su5, Teacher = t4 };
             t4.SubjectTeachers = new List<SubjectTeacher>() { suT13 };
+
             SubjectTeacher suT15 = new SubjectTeacher() { Subject = su1, Teacher = t5 };
             t5.SubjectTeachers = new List<SubjectTeacher>() { suT2, suT15 };
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,10 +87,15 @@
             Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), SubjectId = 2 }; //+
             Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites", SubDate = new DateTime(2020, 05, 05), SubjectId = 1 };
 
-            su1.Assignment = a5;
-            su2.Assignment = a4;//+
-            su4.Assignment = a2;
-            su5.Assignment = a3;
+            //su1.Assignments = new List<Assignment> { a5};
+            //su2.Assignments = new List<Assignment> { a4};//+
+            //su4.Assignments = new List<Assignment> { a2};
+            //su5.Assignments = new List<Assignment> { a3};         
+
+            su1.Assignment = a5 ;
+            su2.Assignment = a4 ;//+
+            su4.Assignment = a2 ;
+            su5.Assignment = a3 ;
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             #region Marks' seeding ======================
@@ -104,13 +113,13 @@
             Mark m37 = new Mark() { Student = s3, MarkUniqueCode = 96, Assignment = a3, OralMark = 80 };
             a3.Marks = new List<Mark>() { m37};
 
-            //Για το assignment 4 (tou c1, s2 pou to exoun oloi oi mathites)
+            //Για το assignment 4 (tou c1, su2 pou to exoun oloi oi mathites)
             Mark m40 = new Mark() { Student = s1, MarkUniqueCode = 10, Assignment = a5, OralMark = 60 };//+
             Mark m41 = new Mark() { Student = s2, MarkUniqueCode = 11, Assignment = a5, OralMark = 73 };//+
             Mark m42 = new Mark() { Student = s3, MarkUniqueCode = 12, Assignment = a5, OralMark = 63 };//+
             Mark m43 = new Mark() { Student = s4, MarkUniqueCode = 13, Assignment = a5, OralMark = 93 };//+
             Mark m44 = new Mark() { Student = s5, MarkUniqueCode = 14, Assignment = a5, OralMark = 68}; //+
-
+            a4.Marks = new List<Mark>() { m40, m41, m42, m43, m44};
 
             //Για το assignment 5 (tou c1, su1 pou to exoun oloi oi mathites)
 
@@ -124,7 +133,7 @@
 
 
             //Conflicting changes to the role 'Teacher_SubjectTeachers_Source' of the relationship 'Trinity.Database.Teacher_SubjectTeachers' have been detected.
-
+            //+   //Conflicting changes to the role 'Mark_Assignment_Target' of the relationship 'Trinity.Database.Mark_Assignment' have been detected. 
 
             context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
             context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su4, su5);
@@ -132,6 +141,11 @@
             context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5);
             context.Assignments.AddOrUpdate(x => x.Title, a5, a2, a3, a4);
             context.SaveChanges();
+
+
+
+
+
         }                                          
     }                                              
 }                                                  
