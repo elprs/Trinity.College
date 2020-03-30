@@ -16,16 +16,41 @@ namespace Trinity.Desktop
 
 
 
-        //    MyDatabase db = new MyDatabase();
-        //    foreach (var course in db.Courses.ToList())
-        //    {
-        //        Console.WriteLine("course : " + course.Title);
-        //        foreach (var subject in course.Subjects)
-        //        {
-        //            Console.WriteLine("Subject: " + subject.Title);
-        //            // ... Console.WriteLine("Teacher: " + subject.SubjectTeachers.;
-        //        }
-        //    }
+            MyDatabase db = new MyDatabase();
+            foreach (var course in db.Courses.ToList())
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Course : " + course.Title);
+                
+
+                foreach (var subject in course.Subjects)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\tSubject: " + subject.Title);
+
+                    foreach (var teacher in subject.Teachers)
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("\t\tTeacher : " + teacher.FirstName + " " + teacher.LastName);
+                    }
+
+                    foreach (var assignment in subject.Assignments)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine(" {0, 40} {1}", "Assignment title : ", assignment.Title);
+                        foreach (var mark in assignment.Marks)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine(" {0, 40} {1} {2}", "Student : ", mark.Student.FirstName, mark.Student.LastName);
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine(" {0, 40} {1}", "Assignment mark : ", mark.AssignmentMark);
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
+                    }
+                }
+            }
+
+            Console.ReadKey();
 
             //using (MyDatabase db = new MyDatabase())
             //{

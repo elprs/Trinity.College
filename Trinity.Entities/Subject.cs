@@ -12,7 +12,7 @@ namespace Trinity.Entities
 
         [Required(ErrorMessage = "Required field"), MinLength(2), MaxLength(50)]
         public string Title { get; set; }
-        public string PhotoURL { get; set; } = "Trinity.College\\Images\\no-image-available.png";
+        public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
         //Navigation Properties
         
         public virtual Course Course { get; set; }

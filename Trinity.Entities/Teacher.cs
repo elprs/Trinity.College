@@ -18,10 +18,10 @@ namespace Trinity.Entities
         public string Telephone { get; set; }
         [Required(ErrorMessage = "Required field"), EmailAddress]
         public string Email { get; set; }
-        public List<string> ImagesURLs { get; set; } = new List<string> { "Trinity.College\\Images\\no-image-available.png" }; //images from the lessons
+        public List<string> ImagesURLs { get; set; } = new List<string> { @"Trinity.College\Images\no-image-available.png"}; //images from the lessons
         [CustomValidation(typeof(ValidationMethods), "ValidateGreaterOrEqualToZero")]
         public double Salary { get; set; }
-        public string VideoURL { get; set; } = "Trinity.College\\Images\\no-image-available.png"; //video from the lessons
+        public string VideoURL { get; set; } = @"Trinity.College\Images\no-image-available.png"; //video from the lessons
 
 
         //Navigation Properties
