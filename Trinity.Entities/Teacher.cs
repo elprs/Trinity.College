@@ -25,6 +25,6 @@ namespace Trinity.Entities
 
 
         //Navigation Properties
-        public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
     }
 }

@@ -17,7 +17,7 @@
         {
             // Μain Entities Seeding
 
-
+            
             #region Courses' seeding ==========================
             Course c1 = new Course() { Title = "BootCamp 1", Description = "C#", Type = Entities.Type.Part_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 06, 11), Fee = 900D };
             Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 900D };
@@ -29,6 +29,7 @@
             Subject su2 = new Subject() { Title = "JS & C#", PhotoURL = "#", CourseId = 1 }; //+
             Subject su4 = new Subject() { Title = "Java Architecture", PhotoURL = "#", CourseId = 2 };
             Subject su5 = new Subject() { Title = "Python Architecture", PhotoURL = "#", CourseId = 3 };
+
             #endregion
 
             #region Teachers' seeding ==========================
@@ -37,25 +38,18 @@
             Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis", Email = "Tzelepidis@gmail.com", Salary = 30000, Telephone = "1234567893" };
             Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos", Email = "Panou@gmail.com", Salary = 40000, Telephone = "1234567894" };
             Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios", Email = "Minaidis@gmail.com", Salary = 45000, Telephone = "1234567895" };
+
+
+            su1.Teachers = new List<Teacher> { t1, t5 };
+            su2.Teachers = new List<Teacher> { t1, t5 };
+            //                      su3.Teachers = new List<Teacher> { t1, t5 };
+            su4.Teachers = new List<Teacher> { t2 };
+            su5.Teachers = new List<Teacher> { t3, t4 };
+
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            #region SubjectTeacherss' seeding ==========================
-            SubjectTeacher suT1 = new SubjectTeacher() { Subject = su1, Teacher = t1 };
-            SubjectTeacher suT2 = new SubjectTeacher() { Subject = su2, Teacher = t1 }; //+
-            t1.SubjectTeachers = new List<SubjectTeacher>() { suT1, suT2};
 
-            SubjectTeacher suT4 = new SubjectTeacher() { Subject = su4, Teacher = t2 };
-            t2.SubjectTeachers = new List<SubjectTeacher>() { suT4 };
 
-            SubjectTeacher suT5 = new SubjectTeacher() { Subject = su5, Teacher = t3 };
-            t3.SubjectTeachers = new List<SubjectTeacher>() { suT5 };
-
-            SubjectTeacher suT13 = new SubjectTeacher() { Subject = su5, Teacher = t4 };
-            t4.SubjectTeachers = new List<SubjectTeacher>() { suT13 };
-
-            SubjectTeacher suT15 = new SubjectTeacher() { Subject = su1, Teacher = t5 };
-            t5.SubjectTeachers = new List<SubjectTeacher>() { suT2, suT15 };
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
             #region Students' seeding ==========================

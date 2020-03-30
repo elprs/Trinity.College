@@ -17,6 +17,6 @@ namespace Trinity.Entities
         
         public virtual Course Course { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
-        public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }
