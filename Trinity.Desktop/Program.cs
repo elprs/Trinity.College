@@ -13,16 +13,19 @@ namespace Trinity.Desktop
     {
         static void Main(string[] args)
         {
-            MyDatabase db = new MyDatabase();
-            foreach (var course in db.Courses.ToList())
-            {
-                Console.WriteLine("course : " + course.Title);
-                foreach (var subject in course.Subjects)
-                {
-                    Console.WriteLine("Subject: " + subject.Title);
-                    // ... Console.WriteLine("Teacher: " + subject.SubjectTeachers.;
-                }
-            }
+
+
+
+        //    MyDatabase db = new MyDatabase();
+        //    foreach (var course in db.Courses.ToList())
+        //    {
+        //        Console.WriteLine("course : " + course.Title);
+        //        foreach (var subject in course.Subjects)
+        //        {
+        //            Console.WriteLine("Subject: " + subject.Title);
+        //            // ... Console.WriteLine("Teacher: " + subject.SubjectTeachers.;
+        //        }
+        //    }
 
             //using (MyDatabase db = new MyDatabase())
             //{
