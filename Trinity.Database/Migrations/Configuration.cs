@@ -411,12 +411,12 @@
 
 
 
-            //context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
-            //context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
-            //context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
-            //context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
-            //context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
-            //context.SaveChanges();
+            context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
+            context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
+            context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
+            context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
+            context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
+            context.SaveChanges();
 
 
 
