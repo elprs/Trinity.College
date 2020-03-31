@@ -13,7 +13,7 @@ namespace Trinity.Database.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202003310815325_Initial"; }
+            get { return "202003311254204_Initial"; }
         }
         
         string IMigrationMetadata.Source

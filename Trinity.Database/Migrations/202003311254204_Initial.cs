@@ -29,13 +29,13 @@
                         AssignmentMark = c.Double(nullable: false),
                         OralMark = c.Double(nullable: false),
                         StudentId = c.Int(nullable: false),
-                        Assignment_AssignmentId = c.Int(),
+                        AssignmentId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.MarkId)
+                .ForeignKey("dbo.Assignments", t => t.AssignmentId, cascadeDelete: true)
                 .ForeignKey("dbo.Students", t => t.StudentId, cascadeDelete: true)
-                .ForeignKey("dbo.Assignments", t => t.Assignment_AssignmentId)
                 .Index(t => t.StudentId)
-                .Index(t => t.Assignment_AssignmentId);
+                .Index(t => t.AssignmentId);
             
             CreateTable(
                 "dbo.Students",
@@ -123,7 +123,6 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Marks", "Assignment_AssignmentId", "dbo.Assignments");
             DropForeignKey("dbo.Marks", "StudentId", "dbo.Students");
             DropForeignKey("dbo.CourseStudents", "StudentId", "dbo.Students");
             DropForeignKey("dbo.Subjects", "Course_CourseId", "dbo.Courses");
@@ -131,12 +130,13 @@
             DropForeignKey("dbo.TeacherSubjects", "Teacher_TeacherId", "dbo.Teachers");
             DropForeignKey("dbo.Assignments", "Subject_SubjectId", "dbo.Subjects");
             DropForeignKey("dbo.CourseStudents", "CourseId", "dbo.Courses");
+            DropForeignKey("dbo.Marks", "AssignmentId", "dbo.Assignments");
             DropIndex("dbo.TeacherSubjects", new[] { "Subject_SubjectId" });
             DropIndex("dbo.TeacherSubjects", new[] { "Teacher_TeacherId" });
             DropIndex("dbo.Subjects", new[] { "Course_CourseId" });
             DropIndex("dbo.CourseStudents", new[] { "StudentId" });
             DropIndex("dbo.CourseStudents", new[] { "CourseId" });
-            DropIndex("dbo.Marks", new[] { "Assignment_AssignmentId" });
+            DropIndex("dbo.Marks", new[] { "AssignmentId" });
             DropIndex("dbo.Marks", new[] { "StudentId" });
             DropIndex("dbo.Assignments", new[] { "Subject_SubjectId" });
             DropTable("dbo.TeacherSubjects");

@@ -12,7 +12,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Trinity.Database.MyDatabase context)
@@ -141,7 +141,7 @@
             CourseStudent cs37 = new CourseStudent() { Course = c3, Student = s3, IsFeePayed = false };
             CourseStudent cs38 = new CourseStudent() { Course = c3, Student = s13, IsFeePayed = true };
             CourseStudent cs39 = new CourseStudent() { Course = c3, Student = s23, IsFeePayed = true };
-            c3.CourseStudents = new List<CourseStudent>() {  cs37, cs38, cs39 };
+            c3.CourseStudents = new List<CourseStudent>() { cs37, cs38, cs39 };
 
 
 
@@ -149,7 +149,7 @@
             Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 03, 01) };
             Assignment a2 = new Assignment() { Title = "First Java Assignment", SubDate = new DateTime(2020, 04, 01) };
             Assignment a3 = new Assignment() { Title = "First Python Assignment", SubDate = new DateTime(2020, 05, 01) };
-            Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), }; 
+            Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), };
             Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites", SubDate = new DateTime(2020, 05, 05) };
             Assignment a6 = new Assignment() { Title = "Well presented data with Java", SubDate = new DateTime(2020, 06, 02) };
             Assignment a7 = new Assignment() { Title = "Java & Javascript", SubDate = new DateTime(2020, 07, 25) };
@@ -260,7 +260,7 @@
 
 
             //Για το assignment 5 (tou c1, su1 pou to exoun oloi oi mathites)
-
+            Mark m70 = new Mark() { Student = s30, UniqueCode = 9.9, OralMark = 80, AssignmentMark = 85 };
             Mark m71 = new Mark() { Student = s1, UniqueCode = 40.9, OralMark = 90, AssignmentMark = 100 };
             Mark m72 = new Mark() { Student = s2, UniqueCode = 41.9, OralMark = 93, AssignmentMark = 100 };
             Mark m73 = new Mark() { Student = s3, UniqueCode = 42.9, OralMark = 93, AssignmentMark = 57 };
@@ -289,8 +289,8 @@
             Mark m96 = new Mark() { Student = s26, UniqueCode = 5.9, OralMark = 99, AssignmentMark = 98 };
             Mark m97 = new Mark() { Student = s27, UniqueCode = 6.9, OralMark = 99, AssignmentMark = 100 };
             Mark m98 = new Mark() { Student = s28, UniqueCode = 7.9, OralMark = 89, AssignmentMark = 89 };
-            Mark m99 = new Mark() { Student = s29, UniqueCode = 8.9, OralMark = 89, AssignmentMark = 85};
-            Mark m70 = new Mark() { Student = s30, UniqueCode = 9.9, OralMark = 80, AssignmentMark = 85};
+            Mark m99 = new Mark() { Student = s29, UniqueCode = 8.9, OralMark = 89, AssignmentMark = 85 };
+
             a5.Marks = new List<Mark>() { m71, m72, m73, m74, m75, m76, m77, m78, m79, m80, m81, m82, m83, m84, m85, m86, m87, m88, m89, m90, m91, m92, m93, m94, m95, m96, m97, m98, m99, m70 };
 
 
