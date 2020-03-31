@@ -8,12 +8,12 @@ namespace Trinity.Database
         public MyDatabase() : base("Link") {}
 
 
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Teacher> Teachers { get; set; }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<CourseStudent> CourseStudents { get; set; }
-        public DbSet<Assignment> Assignments { get; set; }
-        public DbSet<Mark> Marks { get; set; }
+        //public DbSet<Course> Courses { get; set; }
+        //public DbSet<Subject> Subjects { get; set; }
+        //public DbSet<Teacher> Teachers { get; set; }
+        //public DbSet<Student> Students { get; set; }
+        //public DbSet<CourseStudent> CourseStudents { get; set; }
+        //public DbSet<Assignment> Assignments { get; set; }
+        //public DbSet<Mark> Marks { get; set; }
     }
 }
