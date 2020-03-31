@@ -17,9 +17,6 @@
 
         protected override void Seed(Trinity.Database.MyDatabase context)
         {
-
-
-
             #region=================  SEEDING  ==========================
             Course c1 = new Course() { Title = "BootCamp 1", Description = "C#", Type = Entities.Type.Part_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 06, 11), Fee = 900D };
             Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 800D };
@@ -429,7 +426,6 @@
 
 
             #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
         }
     }
 }
