@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Trinity.Database;
+using Trinity.Entities;
 using System.Threading.Tasks;
 
 namespace Trinity.Services
@@ -11,3 +12,4 @@ namespace Trinity.Services
     {
     }
 }
+

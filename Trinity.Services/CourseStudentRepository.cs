@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Trinity.Database;
+using Trinity.Entities;
 namespace Trinity.Services
 {
     public class CourseStudentRepository
