@@ -22,8 +22,8 @@ namespace Trinity.Entities
        public Type Type { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Description { get; set; }
-        [Required(ErrorMessage = "Required field")]
-        [Range(0, 1000000)]
+       
+        
         [Display(Name = "Image")]
         public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
         [Required(ErrorMessage = "Required field")]

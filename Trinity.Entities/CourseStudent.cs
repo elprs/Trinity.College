@@ -10,6 +10,7 @@ namespace Trinity.Entities
         [Key, Column(Order = 2)]
         public int StudentId { get; set; }
         [Required(ErrorMessage = "Required field")]
+        [Display(Name = "Is the fee payed?")]
         public bool IsFeePayed { get; set; } = false; 
         //Navigation Properties
         public virtual Course Course { get; set; }
