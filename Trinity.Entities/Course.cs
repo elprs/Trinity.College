@@ -27,6 +27,7 @@ namespace Trinity.Entities
         [Display(Name = "Image")]
         public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
         [Required(ErrorMessage = "Required field")]
+        [CustomValidation(typeof(ValidationMethods), "ValidateGreaterOrEqualToZero")]
         public double Fee { get; set; }
         //Navigation Properties
         public virtual ICollection<CourseStudent> CourseStudents { get; set; }

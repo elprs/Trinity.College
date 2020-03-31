@@ -128,7 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestAssignmentsController.cs" />
     <Compile Include="Controllers\TestCoursesController.cs" />
+    <Compile Include="Controllers\TestMarksController.cs" />
+    <Compile Include="Controllers\TestStudentsController.cs" />
+    <Compile Include="Controllers\TestTeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,6 +179,26 @@
     <Content Include="Views\TestCourses\Details.cshtml" />
     <Content Include="Views\TestCourses\Edit.cshtml" />
     <Content Include="Views\TestCourses\Index.cshtml" />
+    <Content Include="Views\TestAssignments\Create.cshtml" />
+    <Content Include="Views\TestAssignments\Delete.cshtml" />
+    <Content Include="Views\TestAssignments\Details.cshtml" />
+    <Content Include="Views\TestAssignments\Edit.cshtml" />
+    <Content Include="Views\TestAssignments\Index.cshtml" />
+    <Content Include="Views\TestStudents\Create.cshtml" />
+    <Content Include="Views\TestStudents\Delete.cshtml" />
+    <Content Include="Views\TestStudents\Details.cshtml" />
+    <Content Include="Views\TestStudents\Edit.cshtml" />
+    <Content Include="Views\TestStudents\Index.cshtml" />
+    <Content Include="Views\TestTeachers\Create.cshtml" />
+    <Content Include="Views\TestTeachers\Delete.cshtml" />
+    <Content Include="Views\TestTeachers\Details.cshtml" />
+    <Content Include="Views\TestTeachers\Edit.cshtml" />
+    <Content Include="Views\TestTeachers\Index.cshtml" />
+    <Content Include="Views\TestMarks\Create.cshtml" />
+    <Content Include="Views\TestMarks\Delete.cshtml" />
+    <Content Include="Views\TestMarks\Details.cshtml" />
+    <Content Include="Views\TestMarks\Edit.cshtml" />
+    <Content Include="Views\TestMarks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
