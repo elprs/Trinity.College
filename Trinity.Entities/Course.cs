@@ -25,7 +25,7 @@ namespace Trinity.Entities
        
         
         [Display(Name = "Image")]
-        public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
+        public string PhotoURL { get; set; } = @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg";
         [Required(ErrorMessage = "Required field")]
         [CustomValidation(typeof(ValidationMethods), "ValidateGreaterOrEqualToZero")]
         public double Fee { get; set; }

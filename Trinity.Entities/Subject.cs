@@ -11,7 +11,7 @@ namespace Trinity.Entities
         [Required(ErrorMessage = "Required field"), MinLength(2), MaxLength(50)]
         public string Title { get; set; }
         [Display(Name = "Image")]
-        public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
+        public string PhotoURL { get; set; } = @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg";
         //Navigation Properties
         //  public int CourseId { get; set; }
         //public virtual Course Course { get; set; }

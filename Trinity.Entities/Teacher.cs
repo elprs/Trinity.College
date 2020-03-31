@@ -21,12 +21,12 @@ namespace Trinity.Entities
         [Required(ErrorMessage = "Required field"), EmailAddress]
         public string Email { get; set; }
         [Display(Name = "Images")]
-        public List<string> ImagesURLs { get; set; } = new List<string> { @"Trinity.College\Images\no-image-available.png"}; //images from the lessons
+        public List<string> ImagesURLs { get; set; } = new List<string> { @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg" }; //images from the lessons
         [CustomValidation(typeof(ValidationMethods), "ValidateGreaterOrEqualToZero")]
         [Display(Name = "Monthly Salary")]
         public double Salary { get; set; }
         [Display(Name = "Lesson Video")]
-        public string VideoURL { get; set; } = @"Trinity.College\Images\no-image-available.png"; //video from the lessons
+        public string VideoURL { get; set; } = @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg"; //video from the lessons
 
 
         //Navigation Properties

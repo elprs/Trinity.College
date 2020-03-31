@@ -18,34 +18,34 @@
         protected override void Seed(Trinity.Database.MyDatabase context)
         {
             #region=================  SEEDING  ==========================
-            Course c1 = new Course() { Title = "BootCamp 1", Description = "C#", Type = Entities.Type.Part_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 06, 11), Fee = 900D };
-            Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 800D };
-            Course c3 = new Course() { Title = "BootCamp 3", Description = "Python", Type = Entities.Type.Full_Time, StartDate = new DateTime(2020, 1, 1), EndDate = new DateTime(2020, 06, 1), Fee = 1500D };
+            Course c1 = new Course() { Title = "BootCamp 1", Description = "C#", Type = Entities.Type.Part_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 06, 11), Fee = 900D, PhotoURL = "https://www.afdemp.org/bootcamp/wp-content/uploads/2017/09/Website-Icons1.png" };
+            Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 800D, PhotoURL = "https://www.afdemp.org/bootcamp/wp-content/themes/bootcamp-child/media/LP_Jobs.svg" };
+            Course c3 = new Course() { Title = "BootCamp 3", Description = "Python", Type = Entities.Type.Full_Time, StartDate = new DateTime(2020, 1, 1), EndDate = new DateTime(2020, 06, 1), Fee = 1500D , PhotoURL = "https://www.afdemp.org/bootcamp/wp-content/uploads/2016/08/logo.png" };
 
 
-            Subject su1 = new Subject() { Title = "HTML &  C#", PhotoURL = "#" };
-            Subject su2 = new Subject() { Title = "JS & C#", PhotoURL = "#" };
-            Subject su3 = new Subject() { Title = "C# Architecture", PhotoURL = "#" };
-            Subject su4 = new Subject() { Title = "Java Architecture", PhotoURL = "#" };
-            Subject su5 = new Subject() { Title = "Python Architecture", PhotoURL = "#" };
-            Subject su6 = new Subject() { Title = "HTML & java", PhotoURL = "#" };
-            Subject su7 = new Subject() { Title = "JS & java", PhotoURL = "#" };
-            Subject su8 = new Subject() { Title = "C# Entity", PhotoURL = "#" };
-            Subject su9 = new Subject() { Title = "Java & Algorithms", PhotoURL = "#" };
-            Subject su10 = new Subject() { Title = "C# - MVC", PhotoURL = "#" };
-            Subject su11 = new Subject() { Title = "Java - A full java system", PhotoURL = "#" };
-            Subject su12 = new Subject() { Title = "Python - A full application", PhotoURL = "#" };
+            Subject su1 = new Subject() { Title = "HTML &  C#", PhotoURL = "https://pbs.twimg.com/media/DLJgJOWXUAEqFz_?format=jpg&name=900x900" };
+            Subject su2 = new Subject() { Title = "JS & C#", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0HGDnYrKCOotu2HtHNPqwUK5duAzwteHESqgLVVPKmjxbnCvv&usqp=CAU" };
+            Subject su3 = new Subject() { Title = "C# Architecture", PhotoURL = "https://www.hrinasia.com/wp-content/uploads/2017/04/ID-100404985.jpg" };
+            Subject su4 = new Subject() { Title = "Java Architecture", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZcYiGqdbgFe4LKloU17Bk92Ccq9BhCpAYIZJoWdCInLvVZd-Z&usqp=CAU" };
+            Subject su5 = new Subject() { Title = "Python Architecture", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE68vikrtH0_OMTAA5TTJlrRqnhto63ODUzHgT7e0JXeY7FX24&usqp=CAU" };
+            Subject su6 = new Subject() { Title = "HTML & java", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSLODZYsPRRzMFmHCCoTltWuQiQOWLsVonOPk7pRhmMUAfWj-pu&usqp=CAU" };
+            Subject su7 = new Subject() { Title = "JS & java", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVFdcjGx67w55PlstGi77BKV7YtBfYzNwPhEkFUpwCLq3hs70y&usqp=CAU" };
+            Subject su8 = new Subject() { Title = "C# Entity", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBiNbPL4mdisDa5PVanrNxzFOK5zGfqVrIKKN1oDPTkp1eV9f-&usqp=CAU" };
+            Subject su9 = new Subject() { Title = "Java & Algorithms", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMTTkMizxjVNu7SyK6zGfjojF34fKH5O0JTTbcL-1FQmJ5GbGd&usqp=CAU" };
+            Subject su10 = new Subject() { Title = "C# - MVC", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMTTkMizxjVNu7SyK6zGfjojF34fKH5O0JTTbcL-1FQmJ5GbGd&usqp=CAU" };
+            Subject su11 = new Subject() { Title = "Java - A full java system", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSLODZYsPRRzMFmHCCoTltWuQiQOWLsVonOPk7pRhmMUAfWj-pu&usqp=CAU" };
+            Subject su12 = new Subject() { Title = "Python - A full application", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAhbhVxwpSX8aRJkUdJnxFxL7zbGYLgF08sGVS62871NTPsX6L&usqp=CAU" };
 
             c1.Subjects = new List<Subject>() { su1, su2, su3, su8, su10 };
             c2.Subjects = new List<Subject>() { su4, su6, su7, su9, su11 };
             c3.Subjects = new List<Subject>() { su5, su12 };
 
 
-            Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891" };
-            Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos", Email = "Pasparakis@gmail.com", Salary = 90000, Telephone = "1234567892" };
-            Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis", Email = "Tzelepidis@gmail.com", Salary = 30000, Telephone = "1234567893" };
-            Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos", Email = "Panou@gmail.com", Salary = 40000, Telephone = "1234567894" };
-            Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios", Email = "Minaidis@gmail.com", Salary = 45000, Telephone = "1234567895" };
+            Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891", ImagesURLs = new List<string>() { "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTkcPtPdcKB-krtcZi1BYu0xH7Yt8MU49bX_NvucKwtebd8-_m1&usqp=CAU", "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" } , VideoURL = "https://youtu.be/GhQdlIFylQ8" };
+            Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos", Email = "Pasparakis@gmail.com", Salary = 90000, Telephone = "1234567892", ImagesURLs = new List<string>() { "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbhwTDShylTBHIRNm6QEefdfTPjGNw27K9jPuZFxIPQrwAuiUO&usqp=CAU" }, VideoURL = "https://youtu.be/cFQLmHCguGs" };
+            Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis", Email = "Tzelepidis@gmail.com", Salary = 30000, Telephone = "1234567893", ImagesURLs = new List<string>() { "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60", "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" } , VideoURL = "https://youtu.be/J7Ho7HS7i_Y" };
+            Teacher t4 = new Teacher() { LastName = "Panou", FirstName = "Panos", Email = "Panou@gmail.com", Salary = 40000, Telephone = "1234567894", ImagesURLs = new List<string>() { "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80", "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" } , VideoURL = "https://www.youtube.com/watch?v=rfscVS0vtbw" };
+            Teacher t5 = new Teacher() { LastName = "Minaidis", FirstName = "Georgios", Email = "Minaidis@gmail.com", Salary = 45000, Telephone = "1234567895", ImagesURLs = new List<string>() { "https://images.unsplash.com/photo-1521737451536-00a86f630f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1522206038088-8698bcefa6a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" } , VideoURL = "https://youtu.be/2moh18sh5p4" };
 
 
             su1.Teachers = new List<Teacher> { t1, t5 };
@@ -64,36 +64,36 @@
 
 
 
-            Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni", Email = "parisi@gmail.com", Telephone = "1234567810" };
-            Student s2 = new Student() { LastName = "Periklidis", FirstName = "Mixalis", Email = "Periklidis@gmail.com", Telephone = "1234567811" };
-            Student s3 = new Student() { LastName = "Papadopoulos", FirstName = "Vaso", Email = "Papadopoulos@gmail.com", Telephone = "1234567812" };
-            Student s4 = new Student() { LastName = "Kanellis", FirstName = "Stathis", Email = "Kanellis@gmail.com", Telephone = "1234567813" };
-            Student s5 = new Student() { LastName = "katrakis", FirstName = "Thanos", Email = "katrakis@gmail.com", Telephone = "1234567814" };
-            Student s6 = new Student() { LastName = "Veggos", FirstName = "Thanasis", Email = "Veggos@gmail.com", Telephone = "1234567815" };
-            Student s7 = new Student() { LastName = "Papatrexas", FirstName = "Athanasios", Email = "Papatrexas@gmail.com", Telephone = "1234567816" };
-            Student s8 = new Student() { LastName = "Elefsiniotis", FirstName = "Giannis", Email = "Elefsiniotis@gmail.com", Telephone = "1234567817" };
-            Student s9 = new Student() { LastName = "Saris", FirstName = "Ioannis", Email = "Saris@gmail.com", Telephone = "1234567818" };
-            Student s10 = new Student() { LastName = "Poulakos", FirstName = "Giorgos", Email = "Poulakos@gmail.com", Telephone = "1234567819" };
-            Student s11 = new Student() { LastName = "Vlaxogiannis", FirstName = "Xenofontas", Email = "Vlaxogiannis@gmail.com", Telephone = "1234567820" };
-            Student s12 = new Student() { LastName = "Sakarakas", FirstName = "Panagiotis", Email = "Sakarakas@gmail.com", Telephone = "1234567821" };
-            Student s13 = new Student() { LastName = "Karowich", FirstName = "Karolos", Email = "Karowich@gmail.com", Telephone = "1234567822" };
-            Student s14 = new Student() { LastName = "Kuriakou", FirstName = "Adam", Email = "Kuriakou@gmail.com", Telephone = "1234567823" };
-            Student s15 = new Student() { LastName = "Papandreou", FirstName = "Albi", Email = "Papandreou@gmail.com", Telephone = "1234567824" };
-            Student s16 = new Student() { LastName = "Perikleoys", FirstName = "Alex", Email = "Perikleoys@gmail.com", Telephone = "1234567825" };
-            Student s17 = new Student() { LastName = "Kontodimas", FirstName = "Bagggelis", Email = "Kontodimas@gmail.com", Telephone = "1234567826" };
-            Student s18 = new Student() { LastName = "Makrys", FirstName = "Xristos", Email = "Makrys@gmail.com", Telephone = "1234567827" };
-            Student s19 = new Student() { LastName = "Sxoinas", FirstName = "Dionusis", Email = "Sxoinas@gmail.com", Telephone = "1234567828" };
-            Student s20 = new Student() { LastName = "Xatzixristou", FirstName = "Maria", Email = "Xatzixristou@gmail.com", Telephone = "1234567829" };
-            Student s21 = new Student() { LastName = "Fotiou", FirstName = "Fotis", Email = "Fotiou@gmail.com", Telephone = "1234567830" };
-            Student s22 = new Student() { LastName = "Karampas", FirstName = "Takis", Email = "Karampas@gmail.com", Telephone = "1234567831" };
-            Student s23 = new Student() { LastName = "Telopoulos", FirstName = "Periklis", Email = "Telopoulos@gmail.com", Telephone = "1234567832" };
-            Student s24 = new Student() { LastName = "Katsaros", FirstName = "Kosta", Email = "Katsaros@gmail.com", Telephone = "1234567833" };
-            Student s25 = new Student() { LastName = "Dimitriou", FirstName = "Dimitris", Email = "Dimitriou@gmail.com", Telephone = "1234567834" };
-            Student s26 = new Student() { LastName = "Katerinaki", FirstName = "Katerina", Email = "Katerinaki@gmail.com", Telephone = "1234567835" };
-            Student s27 = new Student() { LastName = "Sofianou", FirstName = "Sofia", Email = "Sofianou@gmail.com", Telephone = "1234567836" };
-            Student s28 = new Student() { LastName = "Karakosta", FirstName = "Mairi", Email = "Karakosta@gmail.com", Telephone = "1234567837" };
-            Student s29 = new Student() { LastName = "Marikaki", FirstName = "Meni", Email = "Marikaki@gmail.com", Telephone = "1234567838" };
-            Student s30 = new Student() { LastName = "Lyraki", FirstName = "Lina", Email = "Lyraki@gmail.com", Telephone = "1234567839" };
+            Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni", Email = "parisi@gmail.com", Telephone = "1234567810", PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxw0mB-d2KLWBU56wVO6QIDHQN6XSL8NHZFZJRI27OFoQ8TPBc&usqp=CAU" };
+            Student s2 = new Student() { LastName = "Periklidis", FirstName = "Mixalis", Email = "Periklidis@gmail.com", Telephone = "1234567811" , PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcxEpPpqfmDFuGcFeg836hglu22rcwWQqvlUufIzAtbXQoZB2n&usqp=CAU" };
+            Student s3 = new Student() { LastName = "Papadopoulos", FirstName = "Vaso", Email = "Papadopoulos@gmail.com", Telephone = "1234567812" , PhotoURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcsZiW-0GGW4_9HSKL-k1D2epUfaWamRMp7FHu60b0ClwMH9QN&usqp=CAU" };
+            Student s4 = new Student() { LastName = "Kanellis", FirstName = "Stathis", Email = "Kanellis@gmail.com", Telephone = "1234567813" , PhotoURL = "https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s5 = new Student() { LastName = "katrakis", FirstName = "Thanos", Email = "katrakis@gmail.com", Telephone = "1234567814" , PhotoURL = "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s6 = new Student() { LastName = "Veggos", FirstName = "Thanasis", Email = "Veggos@gmail.com", Telephone = "1234567815" , PhotoURL = "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s7 = new Student() { LastName = "Papatrexas", FirstName = "Athanasios", Email = "Papatrexas@gmail.com", Telephone = "1234567816" , PhotoURL = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s8 = new Student() { LastName = "Elefsiniotis", FirstName = "Giannis", Email = "Elefsiniotis@gmail.com", Telephone = "1234567817" , PhotoURL = "https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s9 = new Student() { LastName = "Saris", FirstName = "Ioannis", Email = "Saris@gmail.com", Telephone = "1234567818" , PhotoURL = "https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s10 = new Student() { LastName = "Poulakos", FirstName = "Giorgos", Email = "Poulakos@gmail.com", Telephone = "1234567819" , PhotoURL = "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s11 = new Student() { LastName = "Vlaxogiannis", FirstName = "Xenofontas", Email = "Vlaxogiannis@gmail.com", Telephone = "1234567820" , PhotoURL = "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s12 = new Student() { LastName = "Sakarakas", FirstName = "Panagiotis", Email = "Sakarakas@gmail.com", Telephone = "1234567821" , PhotoURL = "https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s13 = new Student() { LastName = "Karowich", FirstName = "Karolos", Email = "Karowich@gmail.com", Telephone = "1234567822" , PhotoURL = "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s14 = new Student() { LastName = "Kuriakou", FirstName = "Adam", Email = "Kuriakou@gmail.com", Telephone = "1234567823" , PhotoURL = "https://images.unsplash.com/photo-1506634572416-48cdfe530110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s15 = new Student() { LastName = "Papandreou", FirstName = "Albi", Email = "Papandreou@gmail.com", Telephone = "1234567824" , PhotoURL = "https://images.unsplash.com/photo-1509460913899-515f1df34fea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s16 = new Student() { LastName = "Perikleoys", FirstName = "Alex", Email = "Perikleoys@gmail.com", Telephone = "1234567825" , PhotoURL = "https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s17 = new Student() { LastName = "Kontodimas", FirstName = "Baggelis", Email = "Kontodimas@gmail.com", Telephone = "1234567826" , PhotoURL = "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s18 = new Student() { LastName = "Makrys", FirstName = "Xristos", Email = "Makrys@gmail.com", Telephone = "1234567827" , PhotoURL = "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s19 = new Student() { LastName = "Sxoinas", FirstName = "Dionusis", Email = "Sxoinas@gmail.com", Telephone = "1234567828" , PhotoURL = "https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s20 = new Student() { LastName = "Xatzixristou", FirstName = "Maria", Email = "Xatzixristou@gmail.com", Telephone = "1234567829" , PhotoURL = "https://images.unsplash.com/photo-1577854807863-e13e704c97c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s21 = new Student() { LastName = "Fotiou", FirstName = "Fotis", Email = "Fotiou@gmail.com", Telephone = "1234567830" , PhotoURL = "https://images.unsplash.com/photo-1504834636679-cd3acd047c06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s22 = new Student() { LastName = "Karampas", FirstName = "Takis", Email = "Karampas@gmail.com", Telephone = "1234567831" , PhotoURL = "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s23 = new Student() { LastName = "Telopoulos", FirstName = "Periklis", Email = "Telopoulos@gmail.com", Telephone = "1234567832" , PhotoURL = "https://images.unsplash.com/photo-1508215302842-8a015a452a20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s24 = new Student() { LastName = "Katsaros", FirstName = "Kosta", Email = "Katsaros@gmail.com", Telephone = "1234567833" , PhotoURL = "https://images.unsplash.com/photo-1520409364224-63400afe26e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s25 = new Student() { LastName = "Dimitriou", FirstName = "Dimitris", Email = "Dimitriou@gmail.com", Telephone = "1234567834" , PhotoURL = "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s26 = new Student() { LastName = "Katerinaki", FirstName = "Katerina", Email = "Katerinaki@gmail.com", Telephone = "1234567835" , PhotoURL = "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s27 = new Student() { LastName = "Sofianou", FirstName = "Sofia", Email = "Sofianou@gmail.com", Telephone = "1234567836" , PhotoURL = "https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s28 = new Student() { LastName = "Karakosta", FirstName = "Mairi", Email = "Karakosta@gmail.com", Telephone = "1234567837" , PhotoURL = "https://images.unsplash.com/photo-1516239482977-b550ba7253f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
+            Student s29 = new Student() { LastName = "Marikaki", FirstName = "Meni", Email = "Marikaki@gmail.com", Telephone = "1234567838" , PhotoURL = "https://ak5.picdn.net/shutterstock/videos/24691385/thumb/1.jpg" };
+            Student s30 = new Student() { LastName = "Lyraki", FirstName = "Lina", Email = "Lyraki@gmail.com", Telephone = "1234567839" , PhotoURL = "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" };
 
 
 

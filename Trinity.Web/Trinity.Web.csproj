@@ -132,6 +132,7 @@
     <Compile Include="Controllers\TestCoursesController.cs" />
     <Compile Include="Controllers\TestMarksController.cs" />
     <Compile Include="Controllers\TestStudentsController.cs" />
+    <Compile Include="Controllers\TestSubjectsController.cs" />
     <Compile Include="Controllers\TestTeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +200,11 @@
     <Content Include="Views\TestMarks\Details.cshtml" />
     <Content Include="Views\TestMarks\Edit.cshtml" />
     <Content Include="Views\TestMarks\Index.cshtml" />
+    <Content Include="Views\TestSubjects\Create.cshtml" />
+    <Content Include="Views\TestSubjects\Delete.cshtml" />
+    <Content Include="Views\TestSubjects\Details.cshtml" />
+    <Content Include="Views\TestSubjects\Edit.cshtml" />
+    <Content Include="Views\TestSubjects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

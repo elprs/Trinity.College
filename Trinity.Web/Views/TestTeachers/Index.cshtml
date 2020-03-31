@@ -50,7 +50,10 @@
             @Html.DisplayFor(modelItem => item.Salary)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.VideoURL)
+            @foreach (var img in item.ImagesURLs)
+            {
+                <img src = "@Html.DisplayFor(modelItem => img)" alt = "Alternate Text" />
+            }
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TeacherId }) |
