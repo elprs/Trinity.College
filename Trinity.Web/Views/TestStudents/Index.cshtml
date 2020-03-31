@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PhotoURL)
+            <img src="@Html.DisplayFor(modelItem => item.PhotoURL)" alt="Alternate Text" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |

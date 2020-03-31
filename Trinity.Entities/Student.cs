@@ -22,7 +22,7 @@ namespace Trinity.Entities
         [Required(ErrorMessage = "Required field"), EmailAddress]
         public string Email { get; set; }
         [Display(Name = "Student's photo")]
-        public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
+        public string PhotoURL { get; set; } = @"~Trinity.College\Images\no-image-available.png";
 
         //Navigation Properties
         public virtual ICollection<CourseStudent> CourseStudents { get; set; }
