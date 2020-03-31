@@ -16,7 +16,7 @@ namespace Trinity.Entities
         public DateTime StartDate { get; set; }
         [DataType(DataType.Date)]
         [DateGreaterThan("StartDate")]
-        [Display(Name = "End Date")]
+        [Display(Name = "Finish Date")]
         public DateTime? EndDate { get; set; }
         [Required(ErrorMessage = "Required field")]
        public Type Type { get; set; }
@@ -24,6 +24,9 @@ namespace Trinity.Entities
         public string Description { get; set; }
         [Required(ErrorMessage = "Required field")]
         [Range(0, 1000000)]
+        [Display(Name = "Image")]
+        public string PhotoURL { get; set; } = @"Trinity.College\Images\no-image-available.png";
+        [Required(ErrorMessage = "Required field")]
         public double Fee { get; set; }
         //Navigation Properties
         public virtual ICollection<CourseStudent> CourseStudents { get; set; }

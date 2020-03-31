@@ -15,31 +15,30 @@
 
         protected override void Seed(MyDatabase context)
         {
-            // Seeding
+         
 
-            #region Courses' seeding ==========================
+            #region=================  SEEDING  ==========================
             Course c1 = new Course() { Title = "BootCamp 1", Description = "C#", Type = Entities.Type.Part_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 06, 11), Fee = 900D };
-            Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 900D };
+            Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 800D };
             Course c3 = new Course() { Title = "BootCamp 3", Description = "Python", Type = Entities.Type.Full_Time, StartDate = new DateTime(2020, 1, 1), EndDate = new DateTime(2020, 06, 1), Fee = 1500D };
-            #endregion
+          
 
-            #region Subjects' seeding ==========================
-            Subject su1 = new Subject() { Title = "HTML &  C#", PhotoURL = "#", CourseId = 1 };
-            Subject su2 = new Subject() { Title = "JS & C#", PhotoURL = "#", CourseId = 1 }; //+
-            Subject su3 = new Subject() { Title = "C# Architecture", PhotoURL = "#", CourseId = 1 };
-            Subject su4 = new Subject() { Title = "Java Architecture", PhotoURL = "#", CourseId = 2 };
-            Subject su5 = new Subject() { Title = "Python Architecture", PhotoURL = "#", CourseId = 3 };
-            Subject su6 = new Subject() { Title = "HTML & java", PhotoURL = "#", CourseId = 2 };
-            Subject su7 = new Subject() { Title = "JS & java", PhotoURL = "#", CourseId = 2 };
-            Subject su8 = new Subject() { Title = "C# Entity", PhotoURL = "#", CourseId = 1 };
-            Subject su9 = new Subject() { Title = "Java & Algorithms", PhotoURL = "#", CourseId = 2 };
-            Subject su10 = new Subject() { Title = "C# - MVC", PhotoURL = "#", CourseId = 1 };
-            Subject su11 = new Subject() { Title = "Java - A full java system", PhotoURL = "#", CourseId = 2 };
-            Subject su12 = new Subject() { Title = "Python - A full application", PhotoURL = "#", CourseId = 3 };
+            Subject su1 = new Subject() { Title = "HTML &  C#", PhotoURL = "#", Course = c1 };
+            Subject su2 = new Subject() { Title = "JS & C#", PhotoURL = "#", Course = c1 }; 
+            Subject su3 = new Subject() { Title = "C# Architecture", PhotoURL = "#", Course = c1 };
+            Subject su4 = new Subject() { Title = "Java Architecture", PhotoURL = "#", Course = c2 };
+            Subject su5 = new Subject() { Title = "Python Architecture", PhotoURL = "#", Course = c3 };
+            Subject su6 = new Subject() { Title = "HTML & java", PhotoURL = "#", Course = c2 };
+            Subject su7 = new Subject() { Title = "JS & java", PhotoURL = "#", Course = c2 };
+            Subject su8 = new Subject() { Title = "C# Entity", PhotoURL = "#", Course = c1 };
+            Subject su9 = new Subject() { Title = "Java & Algorithms", PhotoURL = "#", Course = c2 };
+            Subject su10 = new Subject() { Title = "C# - MVC", PhotoURL = "#", Course = c1 };
+            Subject su11 = new Subject() { Title = "Java - A full java system", PhotoURL = "#", Course = c2 };
+            Subject su12 = new Subject() { Title = "Python - A full application", PhotoURL = "#", Course = c3 };
 
-            #endregion
+        
 
-            #region Teachers' seeding ==========================
+          
             Teacher t1 = new Teacher() { LastName = "Gatsos", FirstName = "Hektor", Email = "gatsos@gmail.com", Salary = 50000, Telephone = "1234567891" };
             Teacher t2 = new Teacher() { LastName = "Pasparakis", FirstName = "Giorgos", Email = "Pasparakis@gmail.com", Salary = 90000, Telephone = "1234567892" };
             Teacher t3 = new Teacher() { LastName = "Tzelepidis", FirstName = "Basilis", Email = "Tzelepidis@gmail.com", Salary = 30000, Telephone = "1234567893" };
@@ -60,9 +59,9 @@
             su11.Teachers = new List<Teacher> { t2, t4 };
             su12.Teachers = new List<Teacher> { t3, t4 };
 
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
 
-            #region Students' seeding ==========================
+           
             Student s1 = new Student() { LastName = "Parisi", FirstName = "Eleni", Email = "parisi@gmail.com", Telephone = "1234567810" };
             Student s2 = new Student() { LastName = "Periklidis", FirstName = "Mixalis", Email = "Periklidis@gmail.com", Telephone = "1234567811" };
             Student s3 = new Student() { LastName = "Papadopoulos", FirstName = "Vaso", Email = "Papadopoulos@gmail.com", Telephone = "1234567812" };
@@ -94,9 +93,8 @@
             Student s29 = new Student() { LastName = "Marikaki", FirstName = "Meni", Email = "Marikaki@gmail.com", Telephone = "1234567838" };
             Student s30 = new Student() { LastName = "Lyraki", FirstName = "Lina", Email = "Lyraki@gmail.com", Telephone = "1234567839" };
 
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          
 
-            #region CourseStudents==============================
             CourseStudent cs1 = new CourseStudent() { Course = c1, Student = s1, IsFeePayed = true };
             CourseStudent cs2 = new CourseStudent() { Course = c1, Student = s2, IsFeePayed = true };
             CourseStudent cs3 = new CourseStudent() { Course = c1, Student = s3, IsFeePayed = true };
@@ -142,14 +140,14 @@
             CourseStudent cs38 = new CourseStudent() { Course = c3, Student = s13, IsFeePayed = true };
             CourseStudent cs39 = new CourseStudent() { Course = c3, Student = s23, IsFeePayed = true };
             c3.CourseStudents = new List<CourseStudent>() { cs30, cs37, cs38, cs39 };
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       
 
-            #region Assignment's seeding==============================
+      
 
             Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 03, 01) };
             Assignment a2 = new Assignment() { Title = "First Java Assignment", SubDate = new DateTime(2020, 04, 01)};
             Assignment a3 = new Assignment() { Title = "First Python Assignment", SubDate = new DateTime(2020, 05, 01)};
-            Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), }; //+
+            Assignment a4 = new Assignment() { Title = "Functionlity to HTML", SubDate = new DateTime(2020, 04, 05), }; 
             Assignment a5 = new Assignment() { Title = "Provide Structure to WebSites", SubDate = new DateTime(2020, 05, 05)};
             Assignment a6 = new Assignment() { Title = "Well presented data with Java", SubDate = new DateTime(2020, 06, 02) };
             Assignment a7 = new Assignment() { Title = "Java & Javascript", SubDate = new DateTime(2020, 07, 25)};
@@ -174,9 +172,6 @@
             su12.Assignments = new List<Assignment>() { a12};
 
 
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-            #region Marks' seeding ======================
             //////Για το assignment 1 (tou c1, s3 pou to exoun oloi oi mathites)
             
             Mark m1 = new Mark() { UniqueCode = 60.5, Student = s1, OralMark = 100, AssignmentMark = 88};
@@ -410,17 +405,17 @@
             Mark m186 = new Mark() { StudentId = 13, UniqueCode = 97.6 , OralMark = 98, AssignmentMark = 72};
             Mark m187 = new Mark() { StudentId = 23, UniqueCode = 98.6 , OralMark = 97, AssignmentMark = 100};
             a12.Marks = new List<Mark>() { m185, m186, m187 };
-            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-            context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
-            context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
-            context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
-            context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
-            context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
 
-            context.SaveChanges();
+            //context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3);
+            //context.Subjects.AddOrUpdate(x => x.Title, su1, su2, su3, su4, su5, su6, su7, su8, su9, su10, su11, su12);
+            //context.Teachers.AddOrUpdate(x => x.FirstName, t1, t2, t3, t4, t5);
+            //context.Students.AddOrUpdate(x => x.LastName, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30);
+            //context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a8, a9, a10, a11, a12);
+
+            //context.SaveChanges();
 
 
             ////context.Marks.AddOrUpdate(x => x.AssignmentMark, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30, m31, m32, m33, m34, m35, m36, m37, m38, m39, m40, m41, m42, m43, m44, m45, m46, m47, m48, m49, m50, m51, m52, m53, m54, m55, m56, m57, m58, m59, m60, m61, m62, m63, m64, m65, m66, m67, m68, m69, m70, m71, m72, m73, m74, m75, m76, m77, m78, m79, m80, m81, m82, m83, m84, m85, m86, m87, m88, m89, m90, m91, m92, m93, m94, m95, m96, m97, m98, m99, m100, m101, m102, m103, m104, m105, m106, m107, m108, m109, m110, m111, m112, m113, m114, m115, m116, m117, m118, m119, m120, m121, m122, m123, m124, m125, m126, m127, m128, m129, m130, m131, m132, m133, m134, m135, m136, m137, m138, m139, m140, m141, m142, m143, m144, m145, m146, m147, m148, m149, m150, m151, m152, m153, m154, m155, m156, m157, m158, m159, m160, m161, m162, m163, m164, m165, m166, m167, m168, m169, m170, m171, m172, m173, m174, m175, m176, m177, m178, m179, m180, m181, m182, m183, m184, m185, m186, m187
@@ -428,7 +423,7 @@
             //// );
 
 
-
+            #endregion~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 

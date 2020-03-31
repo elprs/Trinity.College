@@ -9,12 +9,17 @@ namespace Trinity.Entities
         public int MarkId { get; set; }
 
         [Required(ErrorMessage = "Required field"), Range(0.0D, 200.0D)]
+        [Display(Name = "Unique code")]
         public double UniqueCode { get; set; }
         [Required(ErrorMessage = "Required field"), Range(0, 100)]
+        [Display(Name = "Assignment mark")]
         public double AssignmentMark { get; set; } = 0.0D;
         [Required(ErrorMessage = "Required field"), Range(0.0D, 100.0D)]
+        [Display(Name = "Oral mark")]
         public double OralMark { get; set; } = 0;
-        public double? TotalMark { get; set; }
+        [Display(Name = "Total mark")]
+        //[NotMapped]
+        //public double TotalMark { get; set; }
 
 
         //Navigation Properties

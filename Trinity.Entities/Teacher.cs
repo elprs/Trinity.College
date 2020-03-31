@@ -8,8 +8,10 @@ namespace Trinity.Entities
     {
         public int TeacherId { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [DataType(DataType.PhoneNumber), Display(Name = "Phone Number")]
         [Required(ErrorMessage = "Required field")]
@@ -18,9 +20,12 @@ namespace Trinity.Entities
         public string Telephone { get; set; }
         [Required(ErrorMessage = "Required field"), EmailAddress]
         public string Email { get; set; }
+        [Display(Name = "Images")]
         public List<string> ImagesURLs { get; set; } = new List<string> { @"Trinity.College\Images\no-image-available.png"}; //images from the lessons
         [CustomValidation(typeof(ValidationMethods), "ValidateGreaterOrEqualToZero")]
+        [Display(Name = "Monthly Salary")]
         public double Salary { get; set; }
+        [Display(Name = "Lesson Video")]
         public string VideoURL { get; set; } = @"Trinity.College\Images\no-image-available.png"; //video from the lessons
 
 

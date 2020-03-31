@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trinity.Entities
 {
@@ -12,7 +11,10 @@ namespace Trinity.Entities
         public string Title { get; set; }
         [Required(ErrorMessage = "Required field")]
         [DataType(DataType.Date)]
+        [Display(Name = "Submission date")]
         public DateTime SubDate { get; set; }
+
+
         //Navigation Properties
         //public int SubjectId { get; set; }
         //public virtual Subject Subject { get; set; }
