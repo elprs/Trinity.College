@@ -17,7 +17,8 @@
 
         protected override void Seed(Trinity.Database.MyDatabase context)
         {
-            #region=================  SEEDING  ==========================
+            #region=================  SEEDING  Courses / Subjects / Teacher / Students ==========================
+
             Course c1 = new Course() { Title = "BootCamp 1", Description = "C#", Type = Entities.Type.Part_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 06, 11), Fee = 900D, PhotoURL = "https://www.afdemp.org/bootcamp/wp-content/uploads/2017/09/Website-Icons1.png" };
             Course c2 = new Course() { Title = "BootCamp 2", Description = "Java", Type = Entities.Type.Full_Time, StartDate = new DateTime(2019, 11, 11), EndDate = new DateTime(2020, 03, 11), Fee = 800D, PhotoURL = "https://www.afdemp.org/bootcamp/wp-content/themes/bootcamp-child/media/LP_Jobs.svg" };
             Course c3 = new Course() { Title = "BootCamp 3", Description = "Python", Type = Entities.Type.Full_Time, StartDate = new DateTime(2020, 1, 1), EndDate = new DateTime(2020, 06, 1), Fee = 1500D , PhotoURL = "https://www.afdemp.org/bootcamp/wp-content/uploads/2016/08/logo.png" };
@@ -143,7 +144,9 @@
             CourseStudent cs39 = new CourseStudent() { Course = c3, Student = s23, IsFeePayed = true };
             c3.CourseStudents = new List<CourseStudent>() { cs37, cs38, cs39 };
 
+            #endregion
 
+            #region ================== SEEDIND Assignments / Marks / Updating data================================
 
 
             Assignment a1 = new Assignment() { Title = "First C# Assignment", SubDate = new DateTime(2020, 03, 01) };
