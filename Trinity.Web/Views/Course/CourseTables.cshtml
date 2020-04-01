@@ -6,40 +6,46 @@
 
 <h2>Course Table</h2>
 
+<div>
+    <em> Sort By : </em>
+    @Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiPrimary })
+    @Html.ActionLink("Type", "CourseTables", "Course", new { sortOrder = ViewBag.TypeSortParam }, new { @class = ViewBag.TyPrimary })
+    @Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, new { @class = ViewBag.SdPrimary })
+    @Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, new { @class = ViewBag.EdPrimary})
+    @Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, new { @class = ViewBag.FePrimary})
+
+</div>
+
+
+
 <table class="table">
     <thead>
         <tr>
             <th>Image</th>
-            <th>Title</th>
+            <th>@Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, null)</th>
             <th>Description</th>
-            <th>Type</th>
-            <th>Start date</th>
-            <th>End date</th>
-            <th>Fee</th>
+            <th>@Html.ActionLink("Type", "CourseTables", "Course", new { sortOrder = ViewBag.TypeSortParam }, null)</th>
+            <th>@Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, null)</th>
+            <th>@Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, null)</th>
+            <th>@Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, null)</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var course in Model)
         {
-        <tr>
-            <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" src="@course.PhotoURL" alt="course image" /></a></td>
-            <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
-            <td> @course.Description</td>
-            <td> @course.Type</td>
-            <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
-            <td>@course.EndDate</td>
-            <td>@course.Fee €</td>
-            <td><button><a href="/Course/SoloDetails/@course.CourseId">Details</button></td>
-            <td>  @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })</td>
-        </tr>
+            <tr>
+                <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" src="@course.PhotoURL" alt="course image" /></a></td>
+                <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
+                <td> @course.Description</td>
+                <td> @course.Type</td>
+                <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
+                <td>@course.EndDate</td>
+                <td>@course.Fee €</td>
+                <td><button><a href="/Course/SoloDetails/@course.CourseId">Details</button></td>
+                <td>  @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })</td>
+            </tr>
         }
 
     </tbody>
 
 </table>
-
-
-@foreach (var course in Model)
-{
-   
-}
