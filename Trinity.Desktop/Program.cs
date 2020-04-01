@@ -16,8 +16,14 @@ namespace Trinity.Desktop
         static void Main(string[] args)
         {
 
-            //Τεστιng CourseREpository 
+            //Τεστιng REpository 
             CourseRepository cr = new CourseRepository();
+            CourseStudentRepository csr = new CourseStudentRepository();
+            StudentRepository s = new StudentRepository();
+           TeacherRepository tr = new TeacherRepository();
+            SubjectRepository sur = new SubjectRepository();
+            AssignmentRepository ar = new AssignmentRepository();
+            MarkRepository mr = new MarkRepository();
            
 
            var lista =  cr.GetAll();
@@ -32,8 +38,20 @@ namespace Trinity.Desktop
                     Console.WriteLine(subject.Teachers.Count);
                 }
             }
+            foreach (var item in csr.GetAll())
+            {
+                Console.WriteLine(item.CourseId);
+            }
+            foreach (var item in s.GetAll())
+            {
+                Console.WriteLine(item.FirstName);
+                Console.WriteLine(item.CourseStudents.Count);
+
+                
+            }
 
             cr.Dispose();
+
 
             Console.WriteLine("-------------------------------------------------");
 
