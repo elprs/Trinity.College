@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Trinity.Entities.Course>
+
+@{
+    ViewBag.Title = "Course Tables";
+}
+
+<h2>Course Table</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Fee</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+        <tr>
+            <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" src="@course.PhotoURL" alt="course image" /></a></td>
+            <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
+            <td> @course.Description</td>
+            <td> @course.Type</td>
+            <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
+            <td>@course.EndDate</td>
+            <td>@course.Fee €</td>
+            <td><button><a href="/Course/SoloDetails/@course.CourseId">Details</button></td>
+            <td>  @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })</td>
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+
+
+@foreach (var course in Model)
+{
+   
+}

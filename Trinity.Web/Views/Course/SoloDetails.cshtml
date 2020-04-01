@@ -1,0 +1,17 @@
+﻿@model Trinity.Entities.Course
+
+@{
+    ViewBag.Title = "Solo Details";
+}
+
+    <h1> @Html.DisplayNameFor(x => Model.Title) : @Html.DisplayFor(x => Model.Title)</h1>
+    <img  width="90" height="90" src="@Model.PhotoURL" alt="course image" />
+<ul>
+    <li>@Html.DisplayNameFor(x => Model.Description) : @Html.DisplayFor(x => Model.Description)</li>
+    <li>@Html.DisplayNameFor(x => Model.Type) : @Html.DisplayFor(x => Model.Type)</li>
+    <li>@Html.DisplayNameFor(x => Model.StartDate) : @Html.DisplayFor(x => Model.StartDate)</li>
+    <li>@Html.DisplayNameFor(x => Model.EndDate) : @Html.DisplayFor(x => Model.EndDate)</li> @*Theleii elegxo gia null*@
+    <li>@Html.DisplayNameFor(x => Model.Fee) : @Html.DisplayFor(x => Model.Fee)€</li>
+
+    <hr />
+    @Html.ActionLink("Back to Courses' table", "CourseTables", "Course")

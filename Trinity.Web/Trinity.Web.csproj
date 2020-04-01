@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestAssignmentsController.cs" />
     <Compile Include="Controllers\TestCoursesController.cs" />
@@ -312,6 +313,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\Components\_NavBar.cshtml" />
     <Content Include="Views\Shared\Components\_Footer.cshtml" />
+    <Content Include="Views\Course\CourseTables.cshtml" />
+    <Content Include="Views\Course\SoloDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
