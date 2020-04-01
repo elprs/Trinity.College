@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Trinity.Entities.Course>
 
 @{
-    ViewBag.Title = "Course Tables";
+    ViewBag.Title = "Courses";
 }
 
-<h2>Course Table</h2>
+<h2>Courses</h2>
 
 <div>
     <em> Sort By : </em>
@@ -34,14 +34,15 @@
         @foreach (var course in Model)
         {
             <tr>
-                <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" src="@course.PhotoURL" alt="course image" /></a></td>
+                <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
                 <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
-                <td> @course.Description</td>
-                <td> @course.Type</td>
+                <td> @Html.DisplayFor(x=>course.Description)</td>
+                <td>  @Html.DisplayFor(x => course.Type)</td>
                 <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
-                <td>@course.EndDate</td>
-                <td>@course.Fee €</td>
-                <td><button><a href="/Course/SoloDetails/@course.CourseId">Details</button></td>
+                <td> @Html.DisplayFor(x => course.EndDate)</td>
+                <td>@Html.DisplayFor(x=>course.Fee) €</td>
+
+                <td><button><a href="/Course/SoloDetails/@course.CourseId">Details</button></td> @*I need ti chose one of the buttons*@
                 <td>  @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })</td>
             </tr>
         }

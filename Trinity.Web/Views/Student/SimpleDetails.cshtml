@@ -1,0 +1,19 @@
+﻿
+
+@model Trinity.Entities.Student
+
+@{
+    ViewBag.Title = "Simple Details";
+}
+
+<h2>Details</h2>
+
+<h1>@Model.FirstName @Model.LastName</h1>
+<img class="img-fluid" width="90" height="90" src="@Model.PhotoURL" alt="Student image" />
+<ul>
+    <li>@Html.DisplayNameFor(x => Model.LastName) : @Html.DisplayFor(x => Model.LastName)</li>
+    <li>@Html.DisplayNameFor(x => x.Telephone) : @Html.DisplayFor(x => x.Telephone)</li>
+    <li>@Html.DisplayNameFor(x => x.Email) : @Html.DisplayFor(x => x.Email)</li>
+</ul>
+    <hr />
+    @Html.ActionLink("Back to Students", "StudentTableAdmin", "Student")

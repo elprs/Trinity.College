@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Trinity.Entities.Student>
+
+@{
+    ViewBag.FirstName = "Students";
+}
+
+<h2>Students</h2>
+
+<div>
+    <em> Sort By : </em>
+    @Html.ActionLink("FirstName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.FirstNameSortParam }, new { @class = ViewBag.FNPrimary })
+    @Html.ActionLink("LastName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.LastNameSortParam }, new { @class = ViewBag.LNPrimary })
+    @Html.ActionLink("Telephone", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.TelephoneSortParam }, new { @class = ViewBag.TePrimary })
+    @Html.ActionLink("Email", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.EmailSortParam }, new { @class = ViewBag.EmPrimary })
+    
+
+</div>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>@Html.ActionLink("FirstName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.FirstNameSortParam }, null)</th>
+            <th>Description</th>
+            <th>@Html.ActionLink("LastName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.LastNameSortParam }, null)</th>
+            <th>@Html.ActionLink("Telephone", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.TelephoneSortParam }, null)</th>
+            <th>@Html.ActionLink("Email", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.EmailSortParam }, null)</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Student in Model)
+        {
+            <tr>
+                <td><a href="/Student/SimpleDetails/@Student.StudentId"> <img width="100" height="100" class="img-fluid" src="@Student.PhotoURL" alt="Student image" /></a></td>
+                <td>  @Html.ActionLink(@Student.FirstName, "SimpleDetails", "Student", new { id = Student.StudentId }, null)</td>
+                <td>  @Html.DisplayFor(x => Student.LastName)</td>
+                <td>@Html.DisplayFor(x=>Student.Telephone)</td>
+                <td> @Html.DisplayFor(x => Student.Email)</td>
+                
+
+                <td><button><a href="/Student/SimpleDetails/@Student.StudentId">Details</button></td> @*I need ti chose one of the buttons*@
+                <td>  @Html.ActionLink("Details", "SimpleDetails", "Student", new { id = Student.StudentId }, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

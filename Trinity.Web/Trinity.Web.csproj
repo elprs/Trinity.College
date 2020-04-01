@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TestAssignmentsController.cs" />
     <Compile Include="Controllers\TestCoursesController.cs" />
     <Compile Include="Controllers\TestMarksController.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\StatsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,10 +317,11 @@
     <Content Include="Views\Shared\Components\_Footer.cshtml" />
     <Content Include="Views\Course\CourseTables.cshtml" />
     <Content Include="Views\Course\SoloDetails.cshtml" />
+    <Content Include="Views\Student\StudentTableAdmin.cshtml" />
+    <Content Include="Views\Student\SimpleDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
