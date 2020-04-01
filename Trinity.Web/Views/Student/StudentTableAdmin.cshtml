@@ -23,11 +23,10 @@
         <tr>
             <th>Image</th>
             <th>@Html.ActionLink("FirstName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.FirstNameSortParam }, null)</th>
-            <th>Description</th>
             <th>@Html.ActionLink("LastName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.LastNameSortParam }, null)</th>
             <th>@Html.ActionLink("Telephone", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.TelephoneSortParam }, null)</th>
             <th>@Html.ActionLink("Email", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.EmailSortParam }, null)</th>
-         
+
         </tr>
     </thead>
     <tbody>
@@ -41,8 +40,8 @@
                 <td> @Html.DisplayFor(x => Student.Email)</td>
                 
 
-                <td><button><a href="/Student/SimpleDetails/@Student.StudentId">Details</button></td> @*I need ti chose one of the buttons*@
-                <td>  @Html.ActionLink("Details", "SimpleDetails", "Student", new { id = Student.StudentId }, new { @class = "btn btn-primary" })</td>
+                <td><button><a href="/Student/SimpleDetails/@Student.StudentId">Details</button></td> 
+          
             </tr>
         }
 

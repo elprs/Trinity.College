@@ -42,7 +42,7 @@
                 <td> @Html.DisplayFor(x => course.EndDate)</td>
                 <td>@Html.DisplayFor(x=>course.Fee) €</td>
 
-                <td><button><a href="/Course/SoloDetails/@course.CourseId">Details</button></td> @*I need ti chose one of the buttons*@
+              
                 <td>  @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })</td>
             </tr>
         }
