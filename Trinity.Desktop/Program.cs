@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Trinity.Entities;
 using Trinity.Database;
 using System.Globalization;
+using Trinity.Services;
 
 namespace Trinity.Desktop
 {
@@ -14,6 +15,27 @@ namespace Trinity.Desktop
     {
         static void Main(string[] args)
         {
+
+            //Τεστιng CourseREpository 
+            CourseRepository cr = new CourseRepository();
+           
+
+           var lista =  cr.GetAll();
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item.Title);
+                Console.WriteLine(item.Subjects.Count);
+
+                foreach (var subject in item.Subjects)
+                {
+                    Console.WriteLine(subject.Title);
+                    Console.WriteLine(subject.Teachers.Count);
+                }
+            }
+
+            cr.Dispose();
+
+            Console.WriteLine("-------------------------------------------------");
 
             Console.OutputEncoding = Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("gr-GR");
