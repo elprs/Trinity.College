@@ -209,7 +209,7 @@
         @*pageSize = (pageSize < 0) ? 0 : pageSize;
             pageNumber = (pageNumber < 0) ? 0 : pageNumber;*@
 
-        @Html.PagedListPager(Model, x => @Url.Action("CourseTable", "Course",
+        @Html.PagedListPager(Model, x => @Url.Action("CourseTables", "Course",
         new
         {
             page = x,

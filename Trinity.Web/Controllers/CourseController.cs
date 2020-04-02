@@ -100,7 +100,7 @@ namespace Trinity.Web.Controllers
             cr.Dispose();
 
             //Pagination
-            int pageSize = pSize;
+            int pageSize = pSize ?? 2;
             int pageNumber = page ?? 1;
             
 
