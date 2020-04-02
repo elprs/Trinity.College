@@ -4,20 +4,38 @@
     ViewBag.Title = "Courses";
 }
 
+
+@*================================Search form==============================================================================*@
 <h2>Courses</h2>
 
+@using (Html.BeginForm("CourseTables", "Course", FormMethod.Get))
+{
+    @Html.TextBox("searchTitle", null, new { placeholder = "Search Title" });
+    @Html.TextBox("searchType", null, new { placeholder = "Search Type" });
+    @Html.TextBox("searchStartDate", null, new { placeholder = "Search StartDate" });
+    @Html.TextBox("searchEndDate", null, new { placeholder = "Search EndDate" });
+    <input type="number" name="searchMinFee" value="" placeholder="Search min Fee" />
+    @Html.TextBox("searchMaxFee", null, new { type = "number", placeholder = "Search max fee" });
+
+    <input type="submit" name="SearchBtn" value="Search" />
+}
+
+<hr />
+
+@*=======================================Sorting Action Links========================================================================*@
 <div>
     <em> Sort By : </em>
     @Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiPrimary })
     @Html.ActionLink("Type", "CourseTables", "Course", new { sortOrder = ViewBag.TypeSortParam }, new { @class = ViewBag.TyPrimary })
     @Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, new { @class = ViewBag.SdPrimary })
-    @Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, new { @class = ViewBag.EdPrimary})
-    @Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, new { @class = ViewBag.FePrimary})
+    @Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, new { @class = ViewBag.EdPrimary })
+    @Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, new { @class = ViewBag.FePrimary })
 
 </div>
 
+<hr />
 
-
+@*==================================Course properties' values - TABLE ================================================*@
 <table class="table">
     <thead>
         <tr>
@@ -28,6 +46,7 @@
             <th>@Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, null)</th>
             <th>@Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, null)</th>
             <th>@Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, null)</th>
+
         </tr>
     </thead>
     <tbody>
@@ -36,17 +55,59 @@
             <tr>
                 <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
                 <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
-                <td> @Html.DisplayFor(x=>course.Description)</td>
+                <td> @Html.DisplayFor(x => course.Description)</td>
                 <td>  @Html.DisplayFor(x => course.Type)</td>
                 <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
                 <td> @Html.DisplayFor(x => course.EndDate)</td>
-                <td>@Html.DisplayFor(x=>course.Fee) €</td>
+                <td>@Html.DisplayFor(x => course.Fee) €</td>
 
-              
-                <td>  @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })</td>
+                <td>
+                    @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })
+                </td>
             </tr>
         }
 
     </tbody>
 
+</table>
+
+<hr />
+
+
+@*============================Course - Subjects and Course - number of students TABLE==============================================*@
+
+<h2>Courses - Subjects</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>@Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, null)</th>
+            <th>Subjects</th>
+            <th>Number of students</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
+                <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
+                <td>
+                    <ul>
+                        @foreach (var subject in course.Subjects)
+                        {
+                            <li>@Html.DisplayFor(x => subject.Title)</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    @course.CourseStudents.Count
+                </td>
+            </tr>
+        }
+
+    </tbody>
 </table>

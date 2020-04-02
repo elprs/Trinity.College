@@ -17,7 +17,7 @@ namespace Trinity.Services
         //GetAll()
         public IEnumerable<Course> GetAll()
         {
-            return db.Courses.ToList();
+            return db.Courses.Include(x => x.Subjects).Include(x => x.CourseStudents).ToList();
         }
 
         //GetByID
