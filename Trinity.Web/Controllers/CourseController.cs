@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Trinity.Entities;
 using Trinity.Services;
+using PagedList.Mvc;
+using PagedList;
 
 namespace Trinity.Web.Controllers
 {
@@ -21,8 +23,10 @@ namespace Trinity.Web.Controllers
             ViewBag.CurrentEndDate = searchEndDate;
             ViewBag.CurrentMinFee = searchMinFee;
             ViewBag.CurrentMaxFee = searchMaxFee;
+
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.CurrentpSize = pSize;
+
 
             ViewBag.TitleSortParam = String.IsNullOrEmpty(sortOrder) ? "TitleDesc" : "";
             ViewBag.TypeSortParam = sortOrder == "TypeAsc" ? "TypeDesc" : "TypeAsc";
@@ -32,11 +36,11 @@ namespace Trinity.Web.Controllers
 
 
 
-            ViewBag.TiPrimary = "btn-sm btn-primary";
-            ViewBag.TyPrimary = "btn-sm btn-primary";
-            ViewBag.SdPrimary = "btn-sm btn-primary";
-            ViewBag.EdPrimary = "btn-sm btn-primary";
-            ViewBag.FePrimary = "btn-sm btn-primary";
+            ViewBag.TiView = "btn-sm btn-primary";
+            ViewBag.TyView = "btn-sm btn-primary";
+            ViewBag.SdView = "btn-sm btn-primary";
+            ViewBag.EdView = "btn-sm btn-primary";
+            ViewBag.FeView = "btn-sm btn-primary";
 
 
 
@@ -78,31 +82,29 @@ namespace Trinity.Web.Controllers
 
 
             //Sorting
-
-
-
             switch (sortOrder)
             {
-                case "TitleDesc": courses = courses.OrderByDescending(x => x.Title).ThenBy(x => x.Fee); ViewBag.TiPrimary = "btn-sm btn-success"; break;
-                case "TypeAsc": courses = courses.OrderBy(x => x.Type).ThenBy(x => x.Fee); ViewBag.TyPrimary = "btn-sm btn-primary"; break;
-                case "TypeDesc": courses = courses.OrderByDescending(x => x.Type).ThenBy(x => x.Fee); ViewBag.TyPrimary = "btn-sm btn-success"; break;
-                case "StartDateAsc": courses = courses.OrderBy(x => x.StartDate).ThenBy(x => x.Fee); ViewBag.SdPrimary = "btn-sm btn-primary"; break;
-                case "StartDateDesc": courses = courses.OrderByDescending(x => x.StartDate).ThenBy(x => x.Fee); ViewBag.SdPrimary = "btn-sm btn-success"; break;
-                case "EndDateAsc": courses = courses.OrderBy(x => x.EndDate).ThenBy(x => x.Fee); ViewBag.EdPrimary = "btn-sm btn-primary"; break;
-                case "EndDateDesc": courses = courses.OrderByDescending(x => x.EndDate).ThenBy(x => x.Fee); ViewBag.EdPrimary = "btn-sm btn-success"; break;
-                case "FeeAsc": courses = courses.OrderBy(x => x.Fee).ThenBy(x => x.Title); ViewBag.FePrimary = "btn-sm btn-primary"; break;
-                case "FeeDesc": courses = courses.OrderByDescending(x => x.Fee).ThenBy(x => x.Title); ViewBag.FePrimary = "btn-sm btn-success"; break;
+                case "TitleDesc": courses = courses.OrderByDescending(x => x.Title).ThenBy(x => x.Fee); ViewBag.TiView = "btn-sm btn-success"; break;
+                case "TypeAsc": courses = courses.OrderBy(x => x.Type).ThenBy(x => x.Fee); ViewBag.TyView = "btn-sm btn-primary"; break;
+                case "TypeDesc": courses = courses.OrderByDescending(x => x.Type).ThenBy(x => x.Fee); ViewBag.TyView = "btn-sm btn-success"; break;
+                case "StartDateAsc": courses = courses.OrderBy(x => x.StartDate).ThenBy(x => x.Fee); ViewBag.SdView = "btn-sm btn-primary"; break;
+                case "StartDateDesc": courses = courses.OrderByDescending(x => x.StartDate).ThenBy(x => x.Fee); ViewBag.SdView = "btn-sm btn-success"; break;
+                case "EndDateAsc": courses = courses.OrderBy(x => x.EndDate).ThenBy(x => x.Fee); ViewBag.EdView = "btn-sm btn-primary"; break;
+                case "EndDateDesc": courses = courses.OrderByDescending(x => x.EndDate).ThenBy(x => x.Fee); ViewBag.EdView = "btn-sm btn-success"; break;
+                case "FeeAsc": courses = courses.OrderBy(x => x.Fee).ThenBy(x => x.Title); ViewBag.FeView = "btn-sm btn-primary"; break;
+                case "FeeDesc": courses = courses.OrderByDescending(x => x.Fee).ThenBy(x => x.Title); ViewBag.FeView = "btn-sm btn-success"; break;
 
 
-                default: courses = courses.OrderBy(x => x.Title); ViewBag.TiPrimary = "btn-sm btn-primary"; break;
+                default: courses = courses.OrderBy(x => x.Title); ViewBag.TiView = "btn-sm btn-primary"; break;
             }
             cr.Dispose();
 
-            //int pageSize = pSize ?? 3;
-            //int pageNumber = page ?? 1;  //nullable coehelesing operator
-            //return View(Directors.ToPagedList(pageNumber, pageSize));
+            //Pagination
+            int pageSize = pSize;
+            int pageNumber = page ?? 1;
+            
 
-            return View(courses);
+            return View(courses.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: TestCourses/Details/5
