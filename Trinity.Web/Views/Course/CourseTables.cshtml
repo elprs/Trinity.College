@@ -5,7 +5,7 @@
 }
 
 
-@*================================Search form==============================================================================*@
+@*================================  Search form  ==============================================================================*@
 <h2>Courses</h2>
 
 @using (Html.BeginForm("CourseTables", "Course", FormMethod.Get))
@@ -16,13 +16,16 @@
     @Html.TextBox("searchEndDate", null, new { placeholder = "Search EndDate" });
     <input type="number" name="searchMinFee" value="" placeholder="Search min Fee" />
     @Html.TextBox("searchMaxFee", null, new { type = "number", placeholder = "Search max fee" });
+    string valueOfViewBag = ViewBag.CurrentSortOrder;
+    @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
+
 
     <input type="submit" name="SearchBtn" value="Search" />
 }
 
 <hr />
 
-@*=======================================Sorting Action Links========================================================================*@
+@*=======================================  Sorting Action Links  ========================================================================*@
 <div>
     <em> Sort By : </em>
     @Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiPrimary })
@@ -35,7 +38,7 @@
 
 <hr />
 
-@*==================================Course properties' values - TABLE ================================================*@
+@*==================================  Courses' properties' values TABLE ================================================*@
 <table class="table">
     <thead>
         <tr>
@@ -74,7 +77,7 @@
 <hr />
 
 
-@*============================Course - Subjects and Course - number of students TABLE==============================================*@
+@*============================ Subjects-Course AND number of students TABLE  ==============================================*@
 
 <h2>Courses - Subjects</h2>
 
