@@ -37,18 +37,15 @@ namespace Trinity.Web.Models
            
         }
 
-
         //  Unfruitfull attemts ---  Learning Area  ( to be continued ) ... ===================================================
         public IEnumerable<IGrouping<ICollection<CourseStudent>, Course>> StudentsPerCourse { get; set; }
-        public int AssignmentsCountPerCourse { get; set; }
-        public int StudentsCountPerSubject { get; set; }
         public double StudentsAverageMarkPerSubject { get; set; }
         public double StudentsAverageMarkPerAssignment { get; set; }
         public double StudentsAverageMarkPerAssignmentPerCourse { get; set; }
 
 
 
-        //FIA TON CONTROLLER KAI TO VIEW
+        //ΓIA TON CONTROLLER KAI TO VIEW
 
 
         //Unfruitfull attemts ---  Learning Area

@@ -135,6 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AssignmentController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
@@ -333,6 +334,8 @@
     <Content Include="Views\Stats\InterConnectedModelStats.cshtml" />
     <Content Include="Views\Teacher\TeacherTables.cshtml" />
     <Content Include="Views\Teacher\SimpleDetails.cshtml" />
+    <Content Include="Views\Assignment\SimpleDetails.cshtml" />
+    <Content Include="Views\Assignment\AssignmentTables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

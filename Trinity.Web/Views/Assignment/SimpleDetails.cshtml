@@ -1,0 +1,13 @@
+﻿@model Trinity.Entities.Assignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1> @Html.DisplayNameFor(x => Model.Title) : @Html.DisplayFor(x => Model.Title)</h1>
+
+<ul>
+    <li>@Html.DisplayNameFor(x => Model.SubDate) : @Html.DisplayFor(x => Model.SubDate)</li>
+
+    <hr />
+    @Html.ActionLink("Back to Assignments", "AssignmentTables", "Assignment")

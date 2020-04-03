@@ -1,0 +1,132 @@
+﻿
+@model PagedList.IPagedList<Trinity.Entities.Assignment>
+@using PagedList;
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+
+@{
+    ViewBag.Title = "Assignments";
+}
+
+
+@*================================  Drop down items for pagination  ==============================================================================*@
+
+<div>
+    @{
+        SelectListItem a1 = new SelectListItem() { Text = "2", Value = "2" };
+        SelectListItem a2 = new SelectListItem() { Text = "3", Value = "3" };
+        SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
+        SelectListItem a4 = new SelectListItem() { Text = "15", Value = "15" };
+        SelectListItem a5 = new SelectListItem() { Text = "30", Value = "30" };
+        List<SelectListItem> dropDownItems = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
+    }
+
+</div>
+@*================================  Search form  ==============================================================================*@
+<h2>Assignments</h2>
+<hr />
+<hr />
+<div class="searchBox" style="display:flex">
+    @using (Html.BeginForm("AssignmentTables", "Assignment", FormMethod.Get))
+    {
+        @Html.TextBox("searchTitle", null, new { placeholder = "Search Title" });
+        @Html.TextBox("searchSubDate", null, new { placeholder = "Search SubDate" });
+       
+        string valueOfViewBag = ViewBag.CurrentSortOrder;
+        @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
+        @Html.DropDownList("pSize", dropDownItems)
+
+        <input type="submit" name="SearchBtn" value="Search" />
+    }
+</div>
+
+
+<hr />
+
+@*=======================================  Sorting Action Links  ========================================================================*@
+<div>
+    <em> Sort By : </em>
+    @Html.ActionLink("Title", "AssignmentTables", "Assignment", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiView })
+    @Html.ActionLink("Submission Date", "AssignmentTables", "Assignment", new { sortOrder = ViewBag.SubDateSortParam }, new { @class = ViewBag.SubdView })
+  
+
+</div>
+
+<hr />
+
+@*==================================  Assignments' properties' values TABLE ================================================*@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+              
+                <th>
+                    @Html.ActionLink("Title", "AssignmentTables", "Assignment",
+                   new
+                        {
+                            sortOrder = ViewBag.TitleSortParam,
+                        searchTitle = ViewBag.CurrentTitle,
+                       searchSubDate = ViewBag.CurrentSubDate,
+                       pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.TiView })
+
+                </th>
+                
+
+                <th>
+                    @Html.ActionLink("Submission Date", "AssignmentTables", "Assignment", new
+                    {
+                        sortOrder = ViewBag.SubDateSortParam,
+                         searchTitle = ViewBag.CurrentTitle,
+                       searchSubDate = ViewBag.CurrentSubDate,
+                       pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.TiView })
+                </th>
+
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+            @foreach (var assignment in Model)
+            {
+            <tr>
+
+                <td>  @Html.ActionLink(@assignment.Title, "SimpleDetails", "Assignment", new { id = assignment.AssignmentId }, null)</td>
+
+                <td>@assignment.SubDate.Day/@assignment.SubDate.Month/@assignment.SubDate.Year</td>
+
+                <td>
+                    @Html.ActionLink("Details", "SimpleDetails", "Assignment", new { id = assignment.AssignmentId }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+
+<hr />
+
+
+
+@*================================  Pagination  ==============================================================================*@
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+   
+
+    @Html.PagedListPager(Model, x => @Url.Action("AssignmentTables", "Assignment",
+    new
+    {
+        page = x,
+        sortOrder = ViewBag.CurrentSortOrder,
+        searchTitle = ViewBag.CurrentTitle,
+        searchSubDate = ViewBag.CurrentSubDate,
+        pSize = ViewBag.CurrentpSize
+    }))
+</div>
+<hr />
+

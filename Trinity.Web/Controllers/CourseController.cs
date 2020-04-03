@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PagedList;
+using System;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Trinity.Entities;
 using Trinity.Services;
-using PagedList.Mvc;
-using PagedList;
 
 namespace Trinity.Web.Controllers
 {
