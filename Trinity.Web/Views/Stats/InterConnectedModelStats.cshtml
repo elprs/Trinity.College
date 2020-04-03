@@ -4,7 +4,9 @@
     ViewBag.Title = "InterConnectedModelStats";
 }
 
+@*-----------------------Statistics about Courses----------------------------------------*@
 <hr />
+
 <h2>Statistics on Courses</h2>
 <hr />
 <table class="table">
@@ -14,12 +16,9 @@
             <th>Subjects</th>
             <th>Students</th>
             <th>Assigments per Course</th>
-
         </tr>
     </thead>
-
     <tbody>
-
         @foreach (var course in Model.Courses)
         {
             <tr>
@@ -38,28 +37,28 @@
                         @foreach (var subject in course.CourseStudents)
                         {
                             <li> @subject.Student.FirstName @subject.Student.LastName</li>
-
                         }
                     </ul>
                 </td>
-
                 <td>
                     Total : @course.CourseStudents.Count
                 </td>
-
             </tr>
-
         }
-
-
     </tbody>
 </table>
 
 
 <hr />
+
+@*-----------------------Statistics about Subjects----------------------------------------*@
+
 <hr />
+
 <h2>Statistics on subjects </h2>
+
 <hr />
+
 <table class="table">
     <thead>
         <tr>
@@ -67,12 +66,9 @@
             <th>Teachers</th>
             <th>Assignment Title</th>
             <th>Assigments per subject</th>
-
         </tr>
     </thead>
-
     <tbody>
-
         @foreach (var subject in Model.Subjects)
         {
             <tr>
@@ -87,8 +83,6 @@
                     </ul>
                     Total : @subject.Teachers.Count
                 </td>
-
-
                 <td>
                     <ul>
                         @foreach (var assignment in subject.Assignments)
@@ -98,16 +92,11 @@
                         }
                     </ul>
                 </td>
-
                 <td>
                     Total : @subject.Assignments.Count
                 </td>
-
             </tr>
-
         }
-
-
     </tbody>
 </table>
 <hr />

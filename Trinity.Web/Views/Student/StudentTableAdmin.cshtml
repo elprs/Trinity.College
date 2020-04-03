@@ -7,11 +7,7 @@
     ViewBag.FirstName = "Students";
 }
 
-
-
-
 @*================================  Drop down items for pagination  ==============================================================================*@
-
 <div>
     @{
         SelectListItem a1 = new SelectListItem() { Text = "2", Value = "2" };
@@ -21,16 +17,16 @@
         SelectListItem a5 = new SelectListItem() { Text = "30", Value = "30" };
         List<SelectListItem> dropDownItems = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
     }
-
 </div>
 
-
+<hr />
 
 @*================================  Search form  ==============================================================================*@
 
 <h2>Students</h2>
 
 <hr />
+
 <div class="searchBox" style="display:flex">
     @using (Html.BeginForm("StudentTableAdmin", "Student", FormMethod.Get, new { @class = "form inline" }))
     {
@@ -38,7 +34,6 @@
         @Html.TextBox("searchLastName", null, new { placeholder = "Search Last Name" });
         @Html.TextBox("searchTelephone", null, new { placeholder = "Search Telephone" });
         @Html.TextBox("searchEmail", null, new { placeholder = "Search Email" });
-        @*<input type="number" name="searchMinFee" value="" placeholder="Search min Fee" />*@
 
         string valueOfViewBag = ViewBag.CurrentSortOrder;
         @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
@@ -47,9 +42,6 @@
         <input type="submit" name="SearchBtn" value="Search" />
     }
 </div>
-
-
-
 
 <hr />
 
@@ -66,99 +58,96 @@
 <hr />
 
 @*==================================  Students' properties' values TABLE ================================================*@
-<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>
-                    @Html.ActionLink("FirstName", "StudentTableAdmin", "Student", new
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>
+                @Html.ActionLink("FirstName", "StudentTableAdmin", "Student",
+               new
                     {
                         sortOrder = ViewBag.FirstNameSortParam,
-                        searchFirstName = ViewBag.CurrentFirstName,
-                        searchLastName = ViewBag.CurrentLastName,
-                        searchTelephone = ViewBag.CurrentTelephone,
-                        searchEmail = ViewBag.CurrentEmail,
+                    searchFirstName = ViewBag.CurrentFirstName,
+                    searchLastName = ViewBag.CurrentLastName,
+                    searchTelephone = ViewBag.CurrentTelephone,
+                    searchEmail = ViewBag.CurrentEmail,
+                    pSize = ViewBag.CurrentpSize
+                },
+               new { @class = ViewBag.FNView })
+            </th>
+            <th>
+                @Html.ActionLink("LastName", "StudentTableAdmin", "Student", new
+                {
+                   sortOrder = ViewBag.LastNameSortParam,
+                   searchFirstName = ViewBag.CurrentFirstName,
+                   searchLastName = ViewBag.CurrentLastName,
+                   searchTelephone = ViewBag.CurrentTelephone,
+                   searchEmail = ViewBag.CurrentEmail,
                    pSize = ViewBag.CurrentpSize
-                    }, new { @class = ViewBag.FNView })
+                },
+                new { @class = ViewBag.LNView })
+            </th>
 
-                </th>
-                <th>
-                    @Html.ActionLink("LastName", "StudentTableAdmin", "Student", new
+            <th>
+                @Html.ActionLink("Telephone", "StudentTableAdmin", "Student",
+               new
                     {
-                        sortOrder = ViewBag.LastNameSortParam,
-                        searchFirstName = ViewBag.CurrentFirstName,
-                       searchLastName = ViewBag.CurrentLastName,
-                       searchTelephone = ViewBag.CurrentTelephone,
-                       searchEmail = ViewBag.CurrentEmail,
-                        pSize = ViewBag.CurrentpSize
-                    }, new { @class = ViewBag.LNView })
-                </th>
-
-                <th>
-                    @Html.ActionLink("Telephone", "StudentTableAdmin", "Student", new
-                    {
-                        sortOrder = ViewBag.TelephoneSortParam,
-                        searchFirstName = ViewBag.CurrentFirstName,
-                       searchLastName = ViewBag.CurrentLastName,
-                       searchTelephone = ViewBag.CurrentTelephone,
-                       searchEmail = ViewBag.CurrentEmail,
-                        pSize = ViewBag.CurrentpSize
-                    }, new { @class = ViewBag.TeView })
-                </th>
-
-                <th>
-                    @Html.ActionLink("Email", "StudentTableAdmin", "Student", new
-                    {
-                        sortOrder = ViewBag.EmailSortParam,
-                        searchFirstName = ViewBag.CurrentFirstName,
-                        searchLastName = ViewBag.CurrentLastName,
-                        searchTelephone = ViewBag.CurrentTelephone,
-                        searchEmail = ViewBag.CurrentEmail,
-                        pSize = ViewBag.CurrentpSize
-                    }, new { @class = ViewBag.EmView })
-                </th>
-
-
-
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var student in Model)
-            {
-                <tr>
-                    <td><a href="/Student/SimpleDetails/@student.StudentId"> <img width="100" height="100" class="img-fluid" src="@student.PhotoURL" alt="Student image" /></a></td>
-                    <td>  @Html.ActionLink((string.Format("{0}", student.FirstName)), "SimpleDetails", "Student", new { id = student.StudentId }, null)</td>
-                    <td>  @Html.DisplayFor(x => student.LastName)</td>
-                    <td>@Html.DisplayFor(x => student.Telephone)</td>
-                    <td> @Html.DisplayFor(x => student.Email)</td>
-
-                    <td><button><a href="/Student/SimpleDetails/@student.StudentId">Details</button></td>
-
-                </tr>
-            }
-
-        </tbody>
-
-    </table>
-
-
-    @*================================  Pagination  ==============================================================================*@
-    <div>
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-
-        @Html.PagedListPager(Model, x => @Url.Action("StudentTableAdmin", "Student",
-        new
+                   sortOrder = ViewBag.TelephoneSortParam,
+                   searchFirstName = ViewBag.CurrentFirstName,
+                   searchLastName = ViewBag.CurrentLastName,
+                   searchTelephone = ViewBag.CurrentTelephone,
+                   searchEmail = ViewBag.CurrentEmail,
+                   pSize = ViewBag.CurrentpSize
+                },
+               new { @class = ViewBag.TeView })
+            </th>
+            <th>
+                @Html.ActionLink("Email", "StudentTableAdmin", "Student", new
+                {
+                    sortOrder = ViewBag.EmailSortParam,
+                    searchFirstName = ViewBag.CurrentFirstName,
+                    searchLastName = ViewBag.CurrentLastName,
+                    searchTelephone = ViewBag.CurrentTelephone,
+                    searchEmail = ViewBag.CurrentEmail,
+                    pSize = ViewBag.CurrentpSize
+                },
+                new { @class = ViewBag.EmView })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
         {
-            page = x,
-            sortOrder = ViewBag.CurrentSortOrder,
-            searchFirstName = ViewBag.CurrentFirstName,
-            searchLastName = ViewBag.CurrentLastName,
-            searchTelephone = ViewBag.CurrentTelephone,
-            searchEmail = ViewBag.CurrentEmail,
-            pSize = ViewBag.CurrentpSize
-        }))
-    </div>
-    <hr />
+            <tr>
+                <td><a href="/Student/SimpleDetails/@student.StudentId"> <img width="100" height="100" class="img-fluid" src="@student.PhotoURL" alt="Student image" /></a></td>
+                <td>@Html.ActionLink((string.Format("{0}", student.FirstName)), "SimpleDetails", "Student", new { id = student.StudentId }, null)</td>
+                <td>@Html.DisplayFor(x => student.LastName)</td>
+                <td>@Html.DisplayFor(x => student.Telephone)</td>
+                <td>@Html.DisplayFor(x => student.Email)</td>
+
+                <td>
+                    <button><a href="/Student/SimpleDetails/@student.StudentId">Details</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+@*================================  Pagination  ==============================================================================*@
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, x => @Url.Action("StudentTableAdmin", "Student",
+    new
+    {
+        page = x,
+        sortOrder = ViewBag.CurrentSortOrder,
+        searchFirstName = ViewBag.CurrentFirstName,
+        searchLastName = ViewBag.CurrentLastName,
+        searchTelephone = ViewBag.CurrentTelephone,
+        searchEmail = ViewBag.CurrentEmail,
+        pSize = ViewBag.CurrentpSize
+    }))
+</div>
+<hr />
