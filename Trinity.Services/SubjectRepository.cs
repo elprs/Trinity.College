@@ -11,7 +11,6 @@ namespace Trinity.Services
 {
     public class SubjectRepository
     {
-
         MyDatabase db = new MyDatabase();
 
         //GetAll()
@@ -23,7 +22,6 @@ namespace Trinity.Services
         //GetByID
         public Subject GetById(int? id)
         {
-
             return db.Subjects.Find(id);
         }
 

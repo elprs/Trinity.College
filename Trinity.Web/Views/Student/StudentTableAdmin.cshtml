@@ -32,7 +32,7 @@
 
 <hr />
 <div class="searchBox" style="display:flex">
-    @using (Html.BeginForm("StudentTableAdmin", "Student", FormMethod.Get))
+    @using (Html.BeginForm("StudentTableAdmin", "Student", FormMethod.Get, new { @class = "form inline" }))
     {
         @Html.TextBox("searchFirstName", null, new { placeholder = "Search FistName" });
         @Html.TextBox("searchLastName", null, new { placeholder = "Search Last Name" });

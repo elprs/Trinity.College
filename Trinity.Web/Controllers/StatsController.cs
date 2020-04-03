@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using Trinity.Entities;
 using Trinity.Services;
 using Trinity.Web.Models;
 
@@ -49,11 +45,9 @@ namespace Trinity.Web.Controllers
 
         public  ActionResult InterConnectedModelStats()
         {
-
             AllEntities allTogether = new AllEntities();
 
             return View(allTogether);
-
         }
     }
 }

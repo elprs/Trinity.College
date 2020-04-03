@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Trinity.Database;
-using System.Threading.Tasks;
-using Trinity.Entities;
 using System.Data.Entity;
+using System.Linq;
+using Trinity.Database;
+using Trinity.Entities;
 
 namespace Trinity.Services
 {
     public class AssignmentRepository
     {
-
         MyDatabase db = new MyDatabase();
 
         //GetAll()
@@ -23,7 +20,6 @@ namespace Trinity.Services
         //GetByID
         public Assignment GetById(int? id)
         {
-
             return db.Assignments.Find(id);
         }
 

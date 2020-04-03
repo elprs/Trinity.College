@@ -16,7 +16,7 @@ namespace Trinity.Desktop
         static void Main(string[] args)
         {
 
-            //Τεστιng REpository 
+            //Τεστιng Repository 
             CourseRepository cr = new CourseRepository();
             CourseStudentRepository csr = new CourseStudentRepository();
             StudentRepository s = new StudentRepository();
@@ -55,6 +55,8 @@ namespace Trinity.Desktop
 
             Console.WriteLine("-------------------------------------------------");
 
+
+            //Testing requirements 
             Console.OutputEncoding = Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("gr-GR");
             using (MyDatabase db = new MyDatabase())

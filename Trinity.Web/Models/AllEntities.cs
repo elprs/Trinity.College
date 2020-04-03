@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Trinity.Entities;
 using Trinity.Services;
 
@@ -45,9 +43,7 @@ namespace Trinity.Web.Models
 
 
 
-        //ΓIA TON CONTROLLER KAI TO VIEW
-
-
+        //ΓIA TON CONTROLLER KAI TO VIEW ( to be continued ) 
         //Unfruitfull attemts ---  Learning Area
         #region ====== no luck ========================
         //vm.StudentsPerCourse = from course in students

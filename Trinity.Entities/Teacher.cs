@@ -26,8 +26,7 @@ namespace Trinity.Entities
         [Display(Name = "Monthly Salary")]
         public double Salary { get; set; }
         [Display(Name = "Lesson Video")]
-        public string VideoURL { get; set; } = @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg"; //video from the lessons
-
+        public string VideoURL { get; set; } = @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg";
 
         //Navigation Properties
         public virtual ICollection<Subject> Subjects { get; set; }

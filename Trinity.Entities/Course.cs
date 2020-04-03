@@ -22,8 +22,6 @@ namespace Trinity.Entities
        public Type Type { get; set; }
         [Required(ErrorMessage = "Required field"), MaxLength(50), MinLength(2)]
         public string Description { get; set; }
-       
-        
         [Display(Name = "Image")]
         public string PhotoURL { get; set; } = @"https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg";
         [Required(ErrorMessage = "Required field")]
@@ -32,6 +30,5 @@ namespace Trinity.Entities
         //Navigation Properties
         public virtual ICollection<CourseStudent> CourseStudents { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
-
     }
 }

@@ -13,24 +13,19 @@ namespace Trinity.Web.Controllers
         // GET: Assignment
         public ActionResult AssignmentTables(string sortOrder, string searchTitle, string searchSubDate,  int? page, int? pSize)
         {
-
+            //==============Viewbags====================================
             ViewBag.CurrentTitle = searchTitle;
             ViewBag.CurrentSubDate = searchSubDate;
           
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.CurrentpSize = pSize;
 
-
             ViewBag.TitleSortParam = String.IsNullOrEmpty(sortOrder) ? "TitleDesc" : "";
             ViewBag.SubDateSortParam = sortOrder == "SubDateAsc" ? "SubDateDesc" : "SubDateAsc";
            
-
-
             ViewBag.TiView = "btn-sm btn-primary";
             ViewBag.SubdView = "btn-sm btn-primary";
             
-
-
             AssignmentRepository cr = new AssignmentRepository();
             var assignments = cr.GetAll();
 
@@ -47,22 +42,23 @@ namespace Trinity.Web.Controllers
                 assignments = assignments.Where(x => x.SubDate.ToString().ToUpper().Contains(searchSubDate.ToString().ToUpper()));
             }
             
-
-            //Sorting
+            //=======================Sorting====================================
             switch (sortOrder)
             {
                 case "TitleDesc": assignments = assignments.OrderByDescending(x => x.Title).ThenBy(x => x.SubDate); ViewBag.TiView = "btn-sm btn-success"; break;
-                case "SubDateAsc": assignments = assignments.OrderBy(x => x.SubDate); ViewBag.SubdView = "btn-sm btn-primary"; break;
-                case "SubDateDesc": assignments = assignments.OrderByDescending(x => x.SubDate); ViewBag.SubdView = "btn-sm btn-success"; break;
+                case "SubDateAsc": assignments = assignments.OrderBy(x => x.SubDate); 
+                    ViewBag.SubdView = "btn-sm btn-primary"; break;
+                case "SubDateDesc": assignments = assignments.OrderByDescending(x => x.SubDate); 
+                    ViewBag.SubdView = "btn-sm btn-success"; break;
                 
-                default: assignments = assignments.OrderBy(x => x.Title); ViewBag.TiView = "btn-sm btn-primary"; break;
+                default: assignments = assignments.OrderBy(x => x.Title); 
+                    ViewBag.TiView = "btn-sm btn-primary"; break;
             }
             cr.Dispose();
 
-            //Pagination
+            //==========================Pagination=====================================
             int pageSize = pSize ?? 5;
             int pageNumber = page ?? 1;
-
 
             return View(assignments.ToPagedList(pageNumber, pageSize));
         }

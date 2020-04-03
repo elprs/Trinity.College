@@ -27,14 +27,14 @@
 <h2>Courses</h2>
 <hr />
 <div class="searchBox" style="display:flex">
-    @using (Html.BeginForm("CourseTables", "Course", FormMethod.Get))
+    @using (Html.BeginForm("CourseTables", "Course", FormMethod.Get, new { @class = "form inline" }))
     {
         @Html.TextBox("searchTitle", null, new { placeholder = "Search Title" });
         @Html.TextBox("searchType", null, new { placeholder = "Search Type" });
         @Html.TextBox("searchStartDate", null, new { placeholder = "Search StartDate" });
         @Html.TextBox("searchEndDate", null, new { placeholder = "Search EndDate" });
         <input type="number" name="searchMinFee" value="" placeholder="Search min Fee" />
-        @Html.TextBox("searchMaxFee", null, new { type = "number", placeholder = "Search max fee" });
+       @Html.TextBox("searchMaxFee", null, new { type = "number", placeholder = "Search max fee" });
         string valueOfViewBag = ViewBag.CurrentSortOrder;
         @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
         @Html.DropDownList("pSize", dropDownItems)

@@ -13,7 +13,7 @@ namespace Trinity.Web.Controllers
         // GET: Teacher
         public ActionResult TeacherTables(string sortOrder, string searchFirstName, string searchLastName, string searchTelephone, string searchEmail, string searchSalary, int? page, int? pSize)
         {
-
+            //==============Viewbags====================================
             ViewBag.CurrentFirstName = searchFirstName;
             ViewBag.CurrentLastName = searchLastName;
             ViewBag.CurrentTelephone = searchTelephone;
@@ -29,19 +29,14 @@ namespace Trinity.Web.Controllers
             ViewBag.EmailSortParam = sortOrder == "EmailAsc" ? "EmailDesc" : "EmailAsc";
             ViewBag.SalarySortParam = sortOrder == "SalaryAsc" ? "SalaryDesc" : "SalaryAsc";
 
-
             ViewBag.FNPrimary = "btn-sm btn-primary";
             ViewBag.LNPrimary = "btn-sm btn-primary";
             ViewBag.TePrimary = "btn-sm btn-primary";
             ViewBag.EmPrimary = "btn-sm btn-primary";
             ViewBag.SaPrimary = "btn-sm btn-primary";
 
-
-
             TeacherRepository tr = new TeacherRepository();
             var teachers = tr.GetAll();
-
-
 
             //======================FILTERS===============================
             //Filtering  FirstName
@@ -70,10 +65,7 @@ namespace Trinity.Web.Controllers
                 teachers = teachers.Where(x => x.Salary.ToString().Contains(searchSalary));
             }
 
-
-
-
-            ////Sorting
+            //Sorting
 
             switch (sortOrder)
             {
@@ -87,9 +79,6 @@ namespace Trinity.Web.Controllers
                 case "SalaryAsc": teachers = teachers.OrderBy(x => x.Salary); ViewBag.SaPrimary = "btn-sm btn-primary"; break;
                 case "SalaryDesc": teachers = teachers.OrderByDescending(x => x.Salary); ViewBag.SaPrimary = "btn-sm btn-success"; break;
 
-
-
-
                 default: teachers = teachers.OrderBy(x => x.FirstName); ViewBag.FNPrimary = "btn-sm btn-primary"; break;
             }
 
@@ -97,7 +86,6 @@ namespace Trinity.Web.Controllers
 
             int pageSize = pSize ?? 2;
             int pageNumber = page ?? 1;
-
 
             return View(teachers.ToPagedList(pageNumber, pageSize));
         }

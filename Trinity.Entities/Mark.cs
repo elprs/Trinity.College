@@ -7,7 +7,6 @@ namespace Trinity.Entities
     {
         //This class references the Marks of a Subject for every Student
         public int MarkId { get; set; }
-
         [Required(ErrorMessage = "Required field"), Range(0.0D, 200.0D)]
         [Display(Name = "Unique code")]
         public double UniqueCode { get; set; }
@@ -20,7 +19,6 @@ namespace Trinity.Entities
         [Display(Name = "Total mark")]
         [NotMapped]
         public double TotalMark { get; set; }
-
 
         //Navigation Properties
         public int StudentId { get; set; }

@@ -16,7 +16,7 @@ namespace Trinity.Web.Controllers
         // GET: Student
         public ActionResult StudentTableAdmin(string sortOrder, string searchFirstName, string searchLastName, string searchTelephone, string searchEmail,  int? page, int? pSize)
         {
-
+            //==============Viewbags====================================
             ViewBag.CurrentFirstName = searchFirstName;
             ViewBag.CurrentLastName = searchLastName;
             ViewBag.CurrentTelephone = searchTelephone;
@@ -30,18 +30,13 @@ namespace Trinity.Web.Controllers
             ViewBag.TelephoneSortParam = sortOrder == "TelephoneAsc" ? "TelephoneDesc" : "TelephoneAsc";
             ViewBag.EmailSortParam = sortOrder == "EmailAsc" ? "EmailDesc" : "EmailAsc";
 
-
             ViewBag.FNPrimary = "btn-sm btn-primary";
             ViewBag.LNPrimary = "btn-sm btn-primary";
             ViewBag.TePrimary = "btn-sm btn-primary";
             ViewBag.EmPrimary = "btn-sm btn-primary";
 
-
-
             StudentRepository cr = new StudentRepository();
             var students = cr.GetAll();
-
-
 
             //======================FILTERS===============================
             //Filtering  FirstName
@@ -65,23 +60,22 @@ namespace Trinity.Web.Controllers
                 students = students.Where(x => x.Email.Contains(searchEmail));
             }
 
-
-
-
-            ////Sorting
-
+            //======================Sorting===============================
             switch (sortOrder)
             {
-                case "FirstNameDesc": students = students.OrderByDescending(x => x.FirstName); ViewBag.FNPrimary = "btn-sm btn-success"; break;
-                case "LastNameAsc": students = students.OrderBy(x => x.LastName); ViewBag.LNPrimary = "btn-sm btn-primary"; break;
-                case "LastNameDesc": students = students.OrderByDescending(x => x.LastName); ViewBag.LNPrimary = "btn-sm btn-success"; break;
-                case "TelephoneAsc": students = students.OrderBy(x => x.Telephone); ViewBag.TePrimary = "btn-sm btn-primary"; break;
-                case "TelephoneDesc": students = students.OrderByDescending(x => x.Telephone); ViewBag.TePrimary = "btn-sm btn-success"; break;
-                case "EmailAsc": students = students.OrderBy(x => x.Email); ViewBag.EmPrimary = "btn-sm btn-primary"; break;
+                case "FirstNameDesc": students = students.OrderByDescending(x => x.FirstName); 
+                    ViewBag.FNPrimary = "btn-sm btn-success"; break;
+                case "LastNameAsc": students = students.OrderBy(x => x.LastName); 
+                    ViewBag.LNPrimary = "btn-sm btn-primary"; break;
+                case "LastNameDesc": students = students.OrderByDescending(x => x.LastName); 
+                    ViewBag.LNPrimary = "btn-sm btn-success"; break;
+                case "TelephoneAsc": students = students.OrderBy(x => x.Telephone); 
+                    ViewBag.TePrimary = "btn-sm btn-primary"; break;
+                case "TelephoneDesc": students = students.OrderByDescending(x => x.Telephone); 
+                    ViewBag.TePrimary = "btn-sm btn-success"; break;
+                case "EmailAsc": students = students.OrderBy(x => x.Email); 
+                    ViewBag.EmPrimary = "btn-sm btn-primary"; break;
                 case "EmailDesc": students = students.OrderByDescending(x => x.Email); ViewBag.EmPrimary = "btn-sm btn-success"; break;
-
-
-
 
                 default: students = students.OrderBy(x => x.FirstName); ViewBag.FNPrimary = "btn-sm btn-primary"; break;
             }
@@ -90,12 +84,11 @@ namespace Trinity.Web.Controllers
             int pageSize = pSize ?? 3;
             int pageNumber = page ?? 1; 
 
-
             return View(students.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: TestStudents/Details/5
-        public ActionResult SimpleDetails(int? id)//       public ActionResult SimpleDetails(int? id)
+        public ActionResult SimpleDetails(int? id)
         {
             StudentRepository cr = new StudentRepository();
             if (id == null)
@@ -110,6 +103,5 @@ namespace Trinity.Web.Controllers
             cr.Dispose();
             return View(student);
         }
-
     }
 }

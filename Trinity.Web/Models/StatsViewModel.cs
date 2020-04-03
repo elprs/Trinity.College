@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Trinity.Entities;
-
-namespace Trinity.Web.Models
+﻿namespace Trinity.Web.Models
 {
     public class StatsViewModel
     {
@@ -14,7 +8,6 @@ namespace Trinity.Web.Models
         public int TeachersCount { get; set; }
         public int MarksCount { get; set; }
         public int AssignmentsCount { get; set; }
-
 
     }
     

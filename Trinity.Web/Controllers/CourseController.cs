@@ -13,7 +13,7 @@ namespace Trinity.Web.Controllers
         // GET: Course
         public ActionResult CourseTables(string sortOrder, string searchTitle, string searchType, string searchStartDate, string searchEndDate, double? searchMinFee, double? searchMaxFee, int? page, int? pSize)
         {
-
+            //==============Viewbags====================================
             ViewBag.CurrentTitle = searchTitle;
             ViewBag.CurrentType = searchType;
             ViewBag.CurrentStartDate = searchStartDate;
@@ -24,21 +24,17 @@ namespace Trinity.Web.Controllers
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.CurrentpSize = pSize;
 
-
             ViewBag.TitleSortParam = String.IsNullOrEmpty(sortOrder) ? "TitleDesc" : "";
             ViewBag.TypeSortParam = sortOrder == "TypeAsc" ? "TypeDesc" : "TypeAsc";
             ViewBag.StartDateSortParam = sortOrder == "StartDateAsc" ? "StartDateDesc" : "StartDateAsc";
             ViewBag.EndDateSortParam = sortOrder == "EndDateAsc" ? "EndDateDesc" : "EndDateAsc";
             ViewBag.FeeSortParam = sortOrder == "FeeAsc" ? "FeeDesc" : "FeeAsc";
 
-
-
             ViewBag.TiView = "btn-sm btn-primary";
             ViewBag.TyView = "btn-sm btn-primary";
             ViewBag.SdView = "btn-sm btn-primary";
             ViewBag.EdView = "btn-sm btn-primary";
             ViewBag.FeView = "btn-sm btn-primary";
-
 
 
             CourseRepository cr = new CourseRepository();
@@ -78,7 +74,7 @@ namespace Trinity.Web.Controllers
             }
 
 
-            //Sorting
+            //======================Sorting===============================
             switch (sortOrder)
             {
                 case "TitleDesc": courses = courses.OrderByDescending(x => x.Title).ThenBy(x => x.Fee); ViewBag.TiView = "btn-sm btn-success"; break;
@@ -100,12 +96,11 @@ namespace Trinity.Web.Controllers
             int pageSize = pSize ?? 2;
             int pageNumber = page ?? 1;
             
-
             return View(courses.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: TestCourses/Details/5
-        public ActionResult SoloDetails(int? id)//       public ActionResult SimpleDetails(int? id)
+        public ActionResult SoloDetails(int? id)
         {
             CourseRepository cr = new CourseRepository();
             if (id == null)

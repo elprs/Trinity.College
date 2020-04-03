@@ -57,7 +57,6 @@ namespace Trinity.Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", mark.StudentId);
             return View(mark);
         }
