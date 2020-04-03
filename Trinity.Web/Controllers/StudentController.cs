@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Trinity.Entities;
 using Trinity.Services;
+using PagedList.Mvc;
+using PagedList;
 
 namespace Trinity.Web.Controllers
 {
@@ -19,6 +21,7 @@ namespace Trinity.Web.Controllers
             ViewBag.CurrentLastName = searchLastName;
             ViewBag.CurrentTelephone = searchTelephone;
             ViewBag.CurrentEmail = searchEmail;
+
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.CurrentpSize = pSize;
 
@@ -26,7 +29,6 @@ namespace Trinity.Web.Controllers
             ViewBag.LastNameSortParam = sortOrder == "LastNameAsc" ? "LastNameDesc" : "LastNameAsc";
             ViewBag.TelephoneSortParam = sortOrder == "TelephoneAsc" ? "TelephoneDesc" : "TelephoneAsc";
             ViewBag.EmailSortParam = sortOrder == "EmailAsc" ? "EmailDesc" : "EmailAsc";
-            ViewBag.DetailsSortParam = sortOrder == "DetailsAsc" ? "DetailsDesc" : "DetailsAsc";
 
 
             ViewBag.FNPrimary = "btn-sm btn-primary";
@@ -38,34 +40,35 @@ namespace Trinity.Web.Controllers
 
             StudentRepository cr = new StudentRepository();
             var students = cr.GetAll();
-            cr.Dispose();
 
 
-            ////======================FILTERS===============================
-            ////Filtering  FirstName
-            //if (!string.IsNullOrWhiteSpace(searchfirstname))
-            //{
-            //    Students = Students.Where(x => x.FirstName.ToUpper().Contains(searchfirstname.ToUpper()));
-            //}
-            ////Filtering  LastName
-            //if (!string.IsNullOrWhiteSpace(searchlastname))
-            //{
-            //    Students = Students.Where(x => x.LastName.ToUpper().Contains(searchlastname.ToUpper()));
-            //}
-            ////Filtering  Minimum Age
-            //if (!(searchminage is null)) //40
-            //{
-            //    Students = Students.Where(x => x.Age >= searchminage);
-            //}
-            ////Filtering  Maximum Age
-            //if (!(searchmaxage is null)) //50
-            //{
-            //    Students = Students.Where(x => x.Age <= searchmaxage);
-            //}
+
+            //======================FILTERS===============================
+            //Filtering  FirstName
+            if (!string.IsNullOrWhiteSpace(searchFirstName))
+            {
+                students = students.Where(x => x.FirstName.ToUpper().Contains(searchFirstName.ToUpper()));
+            }
+            //Filtering  LastName
+            if (!string.IsNullOrWhiteSpace(searchLastName))
+            {
+                students = students.Where(x => x.LastName.ToUpper().Contains(searchLastName.ToUpper()));
+            }
+            //Filtering  Telephone
+            if (!(searchTelephone is null))
+            {
+                students = students.Where(x => x.Telephone.Contains(searchTelephone));
+            }
+            //Filtering Email
+            if (!(searchEmail is null))
+            {
+                students = students.Where(x => x.Email.Contains(searchEmail));
+            }
+
+
+
 
             ////Sorting
-
-
 
             switch (sortOrder)
             {
@@ -82,12 +85,13 @@ namespace Trinity.Web.Controllers
 
                 default: students = students.OrderBy(x => x.FirstName); ViewBag.FNPrimary = "btn-sm btn-primary"; break;
             }
+            cr.Dispose();
 
-            //int pageSize = pSize ?? 3;
-            //int pageNumber = page ?? 1;  //nullable coehelesing operator
-            //return View(students.ToPagedList(pageNumber, pageSize));
+            int pageSize = pSize ?? 3;
+            int pageNumber = page ?? 1; 
 
-            return View(students);
+
+            return View(students.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: TestStudents/Details/5

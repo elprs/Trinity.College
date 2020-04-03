@@ -75,7 +75,7 @@ namespace Trinity.Web.Controllers
                 courses = courses.Where(x => x.Fee >= searchMinFee);
             }
             //Filtering  Maximum Fee
-            if (!(searchMaxFee is null)) //50
+            if (!(searchMaxFee is null))
             {
                 courses = courses.Where(x => x.Fee <= searchMaxFee);
             }

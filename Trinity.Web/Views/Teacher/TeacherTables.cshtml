@@ -1,10 +1,10 @@
-﻿@model PagedList.IPagedList<Trinity.Entities.Student>
+﻿@model PagedList.IPagedList<Trinity.Entities.Teacher>
 @using PagedList;
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" />
 
 @{
-    ViewBag.FirstName = "Students";
+    ViewBag.FirstName = "Teachers";
 }
 
 
@@ -28,19 +28,20 @@
 
 @*================================  Search form  ==============================================================================*@
 
-<h2>Students</h2>
+<h2>Teachers</h2>
 
 <hr />
 <div class="searchBox" style="display:flex">
-    @using (Html.BeginForm("StudentTableAdmin", "Student", FormMethod.Get))
+    @using (Html.BeginForm("TeacherTables", "Teacher", FormMethod.Get))
     {
-        @Html.TextBox("searchFirstName", null, new { placeholder = "Search FistName" });
+        @Html.TextBox("searchFirstName", null, new { placeholder = "Search Fist Name" });
         @Html.TextBox("searchLastName", null, new { placeholder = "Search Last Name" });
         @Html.TextBox("searchTelephone", null, new { placeholder = "Search Telephone" });
         @Html.TextBox("searchEmail", null, new { placeholder = "Search Email" });
-        @*<input type="number" name="searchMinFee" value="" placeholder="Search min Fee" />*@
+        <input type="number" name="searchSalary" value="" placeholder="Search salary />
 
         string valueOfViewBag = ViewBag.CurrentSortOrder;
+
         @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
         @Html.DropDownList("pSize", dropDownItems)
 
@@ -56,23 +57,23 @@
 @*=======================================  Sorting Action Links  ========================================================================*@
 <div>
     <em> Sort By : </em>
-    @Html.ActionLink("FirstName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.FirstNameSortParam }, new { @class = ViewBag.FNPrimary })
-    @Html.ActionLink("LastName", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.LastNameSortParam }, new { @class = ViewBag.LNPrimary })
-    @Html.ActionLink("Telephone", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.TelephoneSortParam }, new { @class = ViewBag.TePrimary })
-    @Html.ActionLink("Email", "StudentTableAdmin", "Student", new { sortOrder = ViewBag.EmailSortParam }, new { @class = ViewBag.EmPrimary })
+    @Html.ActionLink("FirstName", "TeacherTables", "Teacher", new { sortOrder = ViewBag.FirstNameSortParam }, new { @class = ViewBag.FNPrimary })
+    @Html.ActionLink("LastName", "TeacherTables", "Teacher", new { sortOrder = ViewBag.LastNameSortParam }, new { @class = ViewBag.LNPrimary })
+    @Html.ActionLink("Telephone", "TeacherTables", "Teacher", new { sortOrder = ViewBag.TelephoneSortParam }, new { @class = ViewBag.TePrimary })
+    @Html.ActionLink("Email", "TeacherTables", "Teacher", new { sortOrder = ViewBag.EmailSortParam }, new { @class = ViewBag.EmPrimary })
 
 </div>
 
 <hr />
 
-@*==================================  Students' properties' values TABLE ================================================*@
+@*==================================  Teachers' properties' values TABLE ================================================*@
 <div>
     <table class="table">
         <thead>
             <tr>
                 <th>Image</th>
                 <th>
-                    @Html.ActionLink("FirstName", "StudentTableAdmin", "Student", new
+                    @Html.ActionLink("FirstName", "TeacherTables", "Teacher", new
                     {
                         sortOrder = ViewBag.FirstNameSortParam,
                         searchFirstName = ViewBag.CurrentFirstName,
@@ -84,7 +85,7 @@
 
                 </th>
                 <th>
-                    @Html.ActionLink("LastName", "StudentTableAdmin", "Student", new
+                    @Html.ActionLink("LastName", "TeacherTables", "Teacher", new
                     {
                         sortOrder = ViewBag.LastNameSortParam,
                         searchFirstName = ViewBag.CurrentFirstName,
@@ -96,7 +97,7 @@
                 </th>
 
                 <th>
-                    @Html.ActionLink("Telephone", "StudentTableAdmin", "Student", new
+                    @Html.ActionLink("Telephone", "TeacherTables", "Teacher", new
                     {
                         sortOrder = ViewBag.TelephoneSortParam,
                         searchFirstName = ViewBag.CurrentFirstName,
@@ -108,7 +109,7 @@
                 </th>
 
                 <th>
-                    @Html.ActionLink("Email", "StudentTableAdmin", "Student", new
+                    @Html.ActionLink("Email", "TeacherTables", "Teacher", new
                     {
                         sortOrder = ViewBag.EmailSortParam,
                         searchFirstName = ViewBag.CurrentFirstName,
@@ -125,16 +126,16 @@
         </thead>
 
         <tbody>
-            @foreach (var student in Model)
+            @foreach (var Teacher in Model)
             {
                 <tr>
-                    <td><a href="/Student/SimpleDetails/@student.StudentId"> <img width="100" height="100" class="img-fluid" src="@student.PhotoURL" alt="Student image" /></a></td>
-                    <td>  @Html.ActionLink((string.Format("{0}", student.FirstName)), "SimpleDetails", "Student", new { id = student.StudentId }, null)</td>
-                    <td>  @Html.DisplayFor(x => student.LastName)</td>
-                    <td>@Html.DisplayFor(x => student.Telephone)</td>
-                    <td> @Html.DisplayFor(x => student.Email)</td>
+                    <td><a href="/Teacher/SimpleDetails/@Teacher.TeacherId"> <img width="100" height="100" class="img-fluid" src="@Teacher.PhotoURL" alt="Teacher image" /></a></td>
+                    <td>  @Html.ActionLink((string.Format("{0}", Teacher.FirstName)), "SimpleDetails", "Teacher", new { id = Teacher.TeacherId }, null)</td>
+                    <td>  @Html.DisplayFor(x => Teacher.LastName)</td>
+                    <td>@Html.DisplayFor(x => Teacher.Telephone)</td>
+                    <td> @Html.DisplayFor(x => Teacher.Email)</td>
 
-                    <td><button><a href="/Student/SimpleDetails/@student.StudentId">Details</button></td>
+                    <td><button><a href="/Teacher/SimpleDetails/@Teacher.TeacherId">Details</button></td>
 
                 </tr>
             }
@@ -149,7 +150,7 @@
         Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
 
-        @Html.PagedListPager(Model, x => @Url.Action("StudentTableAdmin", "Student",
+        @Html.PagedListPager(Model, x => @Url.Action("TeacherTables", "Teacher",
         new
         {
             page = x,

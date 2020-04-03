@@ -1,0 +1,131 @@
+﻿@model Trinity.Web.Models.AllEntities
+
+@{
+    ViewBag.Title = "InterConnectedModelStats";
+}
+
+<hr/>
+<h2>Statistics</h2>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Courses</th>
+            <th>Subjects</th>
+            <th>Students</th>
+            <th>Assigments per Course</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var course in Model.Courses)
+        {
+            <tr>
+                <td> @string.Format("{0}", course.Title)</td>
+                <td>
+                    <ul>
+                        @foreach (var subject in course.Subjects)
+                        {
+                            <li>@Html.DisplayFor(x => subject.Title)</li>
+
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var subject in course.CourseStudents)
+                        {
+                          <li> @subject.Student.FirstName @subject.Student.LastName</li>
+
+                        }
+                    </ul>
+                </td>
+                
+                <td>
+                   Total : @course.CourseStudents.Count
+                </td>
+
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
+
+
+<hr />
+<hr/>
+<h2>More Statistics</h2>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Subjects</th>
+            <th>Teachers</th>
+            <th>Assignment Title</th>
+            <th>Assigments per subject</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var subject in Model.Subjects)
+        {
+        <tr>
+            <td> @string.Format("{0}", subject.Title)</td>
+            <td>
+                <ul>
+                    @foreach (var teacher in subject.Teachers)
+                    {
+                        <li> @string.Format("{0} {1}", teacher.FirstName, teacher.LastName)</li>
+
+                    }
+                </ul>
+                Total : @subject.Teachers.Count
+          </td>
+
+
+                    <td>
+                        <ul>
+                            @foreach (var assignment in subject.Assignments)
+                            {
+                                <li>@assignment.Title</li>
+
+                            }
+                        </ul>
+                    </td>
+
+                    <td>
+                        Total : @subject.Assignments.Count
+                    </td>
+
+                </tr>
+
+        }
+
+
+    </tbody>
+</table>
+
+
+<hr />
+
+
+@*double sum = 0;
+    int counter = 0;
+
+    foreach (var assignment in subject.Assignments)
+    {
+        <li>@Html.DisplayFor(x => assignment.Title)</li>
+        foreach (var mark in assignment.Marks)
+        {
+            sum = sum + mark.AssignmentMark;
+            counter++;
+        }
+    }
+    @sum / @counter;*@
+

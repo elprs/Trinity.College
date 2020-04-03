@@ -47,12 +47,12 @@ namespace Trinity.Web.Controllers
             return View(vm);
         }
 
-        public  ActionResult InterModelStats()
+        public  ActionResult InterConnectedModelStats()
         {
 
-            SubjectCourseStudent suCs1 = new SubjectCourseStudent();
+            AllEntities allTogether = new AllEntities();
 
-            return View(suCs1);
+            return View(allTogether);
 
         }
     }

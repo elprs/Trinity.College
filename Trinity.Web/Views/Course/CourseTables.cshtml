@@ -66,15 +66,16 @@
             <tr>
                 <th>Image</th>
                 <th>
-                    @Html.ActionLink("Title", "CourseTables", "Course", new
-                    {
-                        sortOrder = ViewBag.TitleSortParam,
+                    @Html.ActionLink("Title", "CourseTables", "Course",
+                   new
+                        {
+                            sortOrder = ViewBag.TitleSortParam,
                         searchTitle = ViewBag.CurrentTitle,
-                                                                                                                        searchType = ViewBag.CurrentType,
-                                                                                                                        searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                        searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                        searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                        searchMaxFee = ViewBag.CurrentMaxFee,
+                       searchType = ViewBag.CurrentType,
+                       searchStartDate = ViewBag.CurrentStartDate,
+                       searchEndDate = ViewBag.CurrentEndDate,
+                       searchMinFee = ViewBag.CurrentMinFee,
+                       searchMaxFee = ViewBag.CurrentMaxFee,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.TiView })
 
@@ -85,12 +86,12 @@
                     {
                         sortOrder = ViewBag.TypeSortParam,
                         searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                searchType = ViewBag.CurrentType,
-                                                                                                                                searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                searchMaxFee = ViewBag.CurrentMaxFee,
-                        pSize = ViewBag.CurrentpSize
+                        searchType = ViewBag.CurrentType,
+                        searchStartDate = ViewBag.CurrentStartDate,
+                        searchEndDate = ViewBag.CurrentEndDate,
+                        searchMinFee = ViewBag.CurrentMinFee,
+                        searchMaxFee = ViewBag.CurrentMaxFee,
+
                     }, new { @class = ViewBag.TyView })
                 </th>
 
@@ -99,11 +100,11 @@
                     {
                         sortOrder = ViewBag.StartDateSortParam,
                         searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                    searchType = ViewBag.CurrentType,
-                                                                                                                                    searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                    searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                    searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee,
+                        searchType = ViewBag.CurrentType,
+                        searchStartDate = ViewBag.CurrentStartDate,
+                        searchEndDate = ViewBag.CurrentEndDate,
+                        searchMinFee = ViewBag.CurrentMinFee,
+                        searchMaxFee = ViewBag.CurrentMaxFee,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.SdView })
                 </th>
@@ -113,11 +114,11 @@
                     {
                         sortOrder = ViewBag.EndDateSortParam,
                         searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                    searchType = ViewBag.CurrentType,
-                                                                                                                                    searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                    searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                    searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee,
+                        searchType = ViewBag.CurrentType,
+                        searchStartDate = ViewBag.CurrentStartDate,
+                        searchEndDate = ViewBag.CurrentEndDate,
+                        searchMinFee = ViewBag.CurrentMinFee,
+                        searchMaxFee = ViewBag.CurrentMaxFee,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.EdView })
                 </th>
@@ -127,11 +128,11 @@
                     {
                         sortOrder = ViewBag.FeeSortParam,
                         searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                    searchType = ViewBag.CurrentType,
-                                                                                                                                    searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                    searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                    searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee,
+                       searchType = ViewBag.CurrentType,
+                       searchStartDate = ViewBag.CurrentStartDate,
+                       searchEndDate = ViewBag.CurrentEndDate,
+                       searchMinFee = ViewBag.CurrentMinFee,
+                       searchMaxFee = ViewBag.CurrentMaxFee,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.FeView })
                 </th>
@@ -194,11 +195,6 @@
                             {
                                 <li>@Html.DisplayFor(x => subject.Title)</li>
 
-                                @*den leitourgei : The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
-                                    foreach (var item in subject.Assignments)
-                                {
-                                    <li>@Html.DisplayFor(x => item.Title)</li>
-                                }*@
                             }
                         </ul>
                     </td>
@@ -213,82 +209,6 @@
 
 </div>
 <hr />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*<div>
-
-        <h2>Average mark of all students per subject  AND per course</h2>
-        <hr />
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-
-                    <th>Average per subject </th>
-                    <th>Number of students</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var course in Model)
-                {
-                    double sum = 0D;
-                    int count = 0;
-                    <tr>
-                        <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
-                        <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
-                        <td>
-                            <ul>
-                                @foreach (var subject in course.Subjects)
-                                {
-                                    <li>@Html.DisplayFor(x => subject.Title)</li>
-                                    foreach (var assignment in subject.Assignments)
-                                    {
-                                       foreach (var mark in assignment.Marks)
-                                       {
-                                           sum = sum + mark.AssignmentMark;
-                                            count++;
-
-                                       }
-                                    }
-                                    double averagePerSubject = sum / count;
-                                    <li>@averagePerSubject</li>
-                                }
-                            </ul>
-                        </td>
-                        <td>
-                            @course.CourseStudents.Count
-                        </td>
-                    </tr>
-                }
-
-            </tbody>
-        </table>
-
-    </div>
-    <hr />*@
-
 
 
 
