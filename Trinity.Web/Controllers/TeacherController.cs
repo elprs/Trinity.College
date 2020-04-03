@@ -11,7 +11,7 @@ namespace Trinity.Web.Controllers
     public class TeacherController : Controller
     {
         // GET: Teacher
-        public ActionResult TeacherTableAdmin(string sortOrder, string searchFirstName, string searchLastName, string searchTelephone, string searchEmail, string searchSalary, int? page, int? pSize)
+        public ActionResult TeacherTables(string sortOrder, string searchFirstName, string searchLastName, string searchTelephone, string searchEmail, string searchSalary, int? page, int? pSize)
         {
 
             ViewBag.CurrentFirstName = searchFirstName;

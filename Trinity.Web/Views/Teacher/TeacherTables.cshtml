@@ -34,11 +34,11 @@
 <div class="searchBox" style="display:flex">
     @using (Html.BeginForm("TeacherTables", "Teacher", FormMethod.Get))
     {
-        @Html.TextBox("searchFirstName", null, new { placeholder = "Search Fist Name" });
+        @Html.TextBox("searchFirstName", null, new { placeholder = "Search First Name" });
         @Html.TextBox("searchLastName", null, new { placeholder = "Search Last Name" });
         @Html.TextBox("searchTelephone", null, new { placeholder = "Search Telephone" });
         @Html.TextBox("searchEmail", null, new { placeholder = "Search Email" });
-        <input type="number" name="searchSalary" value="" placeholder="Search salary />
+        <input type="number" name="searchSalary" value="" placeholder="Search salary" />
 
         string valueOfViewBag = ViewBag.CurrentSortOrder;
 
@@ -61,6 +61,7 @@
     @Html.ActionLink("LastName", "TeacherTables", "Teacher", new { sortOrder = ViewBag.LastNameSortParam }, new { @class = ViewBag.LNPrimary })
     @Html.ActionLink("Telephone", "TeacherTables", "Teacher", new { sortOrder = ViewBag.TelephoneSortParam }, new { @class = ViewBag.TePrimary })
     @Html.ActionLink("Email", "TeacherTables", "Teacher", new { sortOrder = ViewBag.EmailSortParam }, new { @class = ViewBag.EmPrimary })
+    @Html.ActionLink("Salary", "TeacherTables", "Teacher", new { sortOrder = ViewBag.SalarySortParam }, new { @class = ViewBag.SaPrimary })
 
 </div>
 
@@ -71,27 +72,29 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Image</th>
+                <th>Video</th>
                 <th>
-                    @Html.ActionLink("FirstName", "TeacherTables", "Teacher", new
+                    @Html.ActionLink("First Name", "TeacherTables", "Teacher", new
                     {
                         sortOrder = ViewBag.FirstNameSortParam,
                         searchFirstName = ViewBag.CurrentFirstName,
                         searchLastName = ViewBag.CurrentLastName,
                         searchTelephone = ViewBag.CurrentTelephone,
                         searchEmail = ViewBag.CurrentEmail,
+                        searchSalary = ViewBag.CurrentSalary,
                    pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.FNView })
 
                 </th>
                 <th>
-                    @Html.ActionLink("LastName", "TeacherTables", "Teacher", new
+                    @Html.ActionLink("Last Name", "TeacherTables", "Teacher", new
                     {
                         sortOrder = ViewBag.LastNameSortParam,
                         searchFirstName = ViewBag.CurrentFirstName,
                        searchLastName = ViewBag.CurrentLastName,
                        searchTelephone = ViewBag.CurrentTelephone,
                        searchEmail = ViewBag.CurrentEmail,
+                       searchSalary = ViewBag.CurrentSalary,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.LNView })
                 </th>
@@ -104,6 +107,7 @@
                        searchLastName = ViewBag.CurrentLastName,
                        searchTelephone = ViewBag.CurrentTelephone,
                        searchEmail = ViewBag.CurrentEmail,
+                       searchSalary = ViewBag.CurrentSalary,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.TeView })
                 </th>
@@ -116,8 +120,23 @@
                         searchLastName = ViewBag.CurrentLastName,
                         searchTelephone = ViewBag.CurrentTelephone,
                         searchEmail = ViewBag.CurrentEmail,
+                        searchSalary = ViewBag.CurrentSalary,
                         pSize = ViewBag.CurrentpSize
                     }, new { @class = ViewBag.EmView })
+                </th>
+
+
+                <th>
+                    @Html.ActionLink("Salary", "TeacherTables", "Teacher", new
+                    {
+                        sortOrder = ViewBag.SalarySortParam,
+                        searchFirstName = ViewBag.CurrentFirstName,
+                        searchLastName = ViewBag.CurrentLastName,
+                        searchTelephone = ViewBag.CurrentTelephone,
+                        searchSalary = ViewBag.CurrentSalary,
+                        searchEmail = ViewBag.CurrentEmail,
+                        pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.SaView })
                 </th>
 
 
@@ -126,16 +145,17 @@
         </thead>
 
         <tbody>
-            @foreach (var Teacher in Model)
+            @foreach (var teacher in Model)
             {
                 <tr>
-                    <td><a href="/Teacher/SimpleDetails/@Teacher.TeacherId"> <img width="100" height="100" class="img-fluid" src="@Teacher.PhotoURL" alt="Teacher image" /></a></td>
-                    <td>  @Html.ActionLink((string.Format("{0}", Teacher.FirstName)), "SimpleDetails", "Teacher", new { id = Teacher.TeacherId }, null)</td>
-                    <td>  @Html.DisplayFor(x => Teacher.LastName)</td>
-                    <td>@Html.DisplayFor(x => Teacher.Telephone)</td>
-                    <td> @Html.DisplayFor(x => Teacher.Email)</td>
+                    <td><a href="/Teacher/SimpleDetails/@teacher.TeacherId"> <img width="100" height="100" class="img-fluid" src="@teacher.VideoURL" alt="Teacher video" /></a></td>
+                    <td>  @Html.ActionLink((string.Format("{0}", teacher.FirstName)), "SimpleDetails", "Teacher", new { id = teacher.TeacherId }, null)</td>
+                    <td>  @Html.DisplayFor(x => teacher.LastName)</td>
+                    <td>@Html.DisplayFor(x => teacher.Telephone)</td>
+                    <td> @Html.DisplayFor(x => teacher.Email)</td>
+                    <td> @Html.DisplayFor(x => teacher.Salary)</td>
 
-                    <td><button><a href="/Teacher/SimpleDetails/@Teacher.TeacherId">Details</button></td>
+                    <td><button><a href="/Teacher/SimpleDetails/@teacher.TeacherId">Details</button></td>
 
                 </tr>
             }
@@ -159,6 +179,7 @@
             searchLastName = ViewBag.CurrentLastName,
             searchTelephone = ViewBag.CurrentTelephone,
             searchEmail = ViewBag.CurrentEmail,
+            searchSalary = ViewBag.CurrentSalary,
             pSize = ViewBag.CurrentpSize
         }))
     </div>

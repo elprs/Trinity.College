@@ -1,8 +1,18 @@
-﻿@model Trinity.Entities.Teacher
+﻿
+@model Trinity.Entities.Teacher
 
 @{
-    ViewBag.Title = "SimpleDetails";
+    ViewBag.Title = "Simple Details";
 }
 
-<h2>SimpleDetails</h2>
+<h2>Details</h2>
 
+<h1>@Model.FirstName @Model.LastName</h1>
+<img class="img-fluid" width="90" height="90" src="@Model.VideoURL" alt="Teacher image" />
+<ul>
+    <li>@Html.DisplayNameFor(x => Model.LastName) : @Html.DisplayFor(x => Model.LastName)</li>
+    <li>@Html.DisplayNameFor(x => x.Telephone) : @Html.DisplayFor(x => x.Telephone)</li>
+    <li>@Html.DisplayNameFor(x => x.Email) : @Html.DisplayFor(x => x.Email)</li>
+</ul>
+<hr />
+@Html.ActionLink("Back to Teachers", "TeacherTables", "Teacher")
