@@ -34,7 +34,7 @@
         {
             <tr>
                 <td><a href="/Student/SimpleDetails/@Student.StudentId"> <img width="100" height="100" class="img-fluid" src="@Student.PhotoURL" alt="Student image" /></a></td>
-                <td>  @Html.ActionLink(@Student.FirstName, "SimpleDetails", "Student", new { id = Student.StudentId }, null)</td>
+                <td>  @Html.ActionLink((string.Format("{0}", Student.FirstName)), "SimpleDetails", "Student", new { id = Student.StudentId }, null)</td>
                 <td>  @Html.DisplayFor(x => Student.LastName)</td>
                 <td>@Html.DisplayFor(x=>Student.Telephone)</td>
                 <td> @Html.DisplayFor(x => Student.Email)</td>

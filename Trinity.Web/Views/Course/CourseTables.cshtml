@@ -59,149 +59,184 @@
 
 <hr />
 
+@*==================================  Courses' properties' values TABLE ================================================*@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>
+                    @Html.ActionLink("Title", "CourseTables", "Course", new
+                    {
+                        sortOrder = ViewBag.TitleSortParam,
+                        searchTitle = ViewBag.CurrentTitle,
+                                                                                                                        searchType = ViewBag.CurrentType,
+                                                                                                                        searchStartDate = ViewBag.CurrentStartDate,
+                                                                                                                        searchEndDate = ViewBag.CurrentEndDate,
+                                                                                                                        searchMinFee = ViewBag.CurrentMinFee,
+                                                                                                                        searchMaxFee = ViewBag.CurrentMaxFee,
+                        pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.TiView })
 
+                </th>
+                <th>Description</th>
+                <th>
+                    @Html.ActionLink("Type", "CourseTables", "Course", new
+                    {
+                        sortOrder = ViewBag.TypeSortParam,
+                        searchTitle = ViewBag.CurrentTitle,
+                                                                                                                                searchType = ViewBag.CurrentType,
+                                                                                                                                searchStartDate = ViewBag.CurrentStartDate,
+                                                                                                                                searchEndDate = ViewBag.CurrentEndDate,
+                                                                                                                                searchMinFee = ViewBag.CurrentMinFee,
+                                                                                                                                searchMaxFee = ViewBag.CurrentMaxFee,
+                        pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.TyView })
+                </th>
 
-    <div>
-        @*==================================  Courses' properties' values TABLE ================================================*@
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>
-                        @Html.ActionLink("Title", "CourseTables", "Course", new{ sortOrder = ViewBag.TitleSortParam,        searchTitle = ViewBag.CurrentTitle,
-                                                                                                                            searchType = ViewBag.CurrentType,
-                                                                                                                            searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                            searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                            searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                            searchMaxFee = ViewBag.CurrentMaxFee, pSize = ViewBag.CurrentpSize
-                        }, new { @class = ViewBag.TiView })
-
-                    </th>
-                    <th>Description</th>
-                    <th>
-                        @Html.ActionLink("Type", "CourseTables", "Course", new{sortOrder = ViewBag.TypeSortParam,   searchTitle = ViewBag.CurrentTitle,
+                <th>
+                    @Html.ActionLink("Start Date", "CourseTables", "Course", new
+                    {
+                        sortOrder = ViewBag.StartDateSortParam,
+                        searchTitle = ViewBag.CurrentTitle,
                                                                                                                                     searchType = ViewBag.CurrentType,
                                                                                                                                     searchStartDate = ViewBag.CurrentStartDate,
                                                                                                                                     searchEndDate = ViewBag.CurrentEndDate,
                                                                                                                                     searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee, pSize = ViewBag.CurrentpSize
-                        }, new { @class = ViewBag.TyView })
-                    </th>
+                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee,
+                        pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.SdView })
+                </th>
 
-                    <th>
-                        @Html.ActionLink("Start Date", "CourseTables", "Course", new
-                        {
-                            sortOrder = ViewBag.StartDateSortParam,
-                            searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                        searchType = ViewBag.CurrentType,
-                                                                                                                                        searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                        searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                        searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                        searchMaxFee = ViewBag.CurrentMaxFee, pSize = ViewBag.CurrentpSize
-                        }, new { @class = ViewBag.SdView })
-                    </th>
+                <th>
+                    @Html.ActionLink("End Date", "CourseTables", "Course", new
+                    {
+                        sortOrder = ViewBag.EndDateSortParam,
+                        searchTitle = ViewBag.CurrentTitle,
+                                                                                                                                    searchType = ViewBag.CurrentType,
+                                                                                                                                    searchStartDate = ViewBag.CurrentStartDate,
+                                                                                                                                    searchEndDate = ViewBag.CurrentEndDate,
+                                                                                                                                    searchMinFee = ViewBag.CurrentMinFee,
+                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee,
+                        pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.EdView })
+                </th>
 
-                    <th>
-                        @Html.ActionLink("End Date", "CourseTables", "Course", new
-                        {
-                            sortOrder = ViewBag.EndDateSortParam,
-                            searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                        searchType = ViewBag.CurrentType,
-                                                                                                                                        searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                        searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                        searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                        searchMaxFee = ViewBag.CurrentMaxFee, pSize = ViewBag.CurrentpSize
-                        }, new { @class = ViewBag.EdView })
-                    </th>
+                <th>
+                    @Html.ActionLink("Fee", "CourseTables", "Course", new
+                    {
+                        sortOrder = ViewBag.FeeSortParam,
+                        searchTitle = ViewBag.CurrentTitle,
+                                                                                                                                    searchType = ViewBag.CurrentType,
+                                                                                                                                    searchStartDate = ViewBag.CurrentStartDate,
+                                                                                                                                    searchEndDate = ViewBag.CurrentEndDate,
+                                                                                                                                    searchMinFee = ViewBag.CurrentMinFee,
+                                                                                                                                    searchMaxFee = ViewBag.CurrentMaxFee,
+                        pSize = ViewBag.CurrentpSize
+                    }, new { @class = ViewBag.FeView })
+                </th>
 
-                    <th>
-                        @Html.ActionLink("Fee", "CourseTables", "Course", new
-                        {
-                            sortOrder = ViewBag.FeeSortParam,
-                            searchTitle = ViewBag.CurrentTitle,
-                                                                                                                                        searchType = ViewBag.CurrentType,
-                                                                                                                                        searchStartDate = ViewBag.CurrentStartDate,
-                                                                                                                                        searchEndDate = ViewBag.CurrentEndDate,
-                                                                                                                                        searchMinFee = ViewBag.CurrentMinFee,
-                                                                                                                                        searchMaxFee = ViewBag.CurrentMaxFee, pSize = ViewBag.CurrentpSize
-                        }, new { @class = ViewBag.FeView })
-                    </th>
-
-                </tr>
-            </thead>
+            </tr>
+        </thead>
 
 
 
-            <tbody>
-                @foreach (var course in Model)
-                {
-                    <tr>
-                        <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
-                        <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
-                        <td> @Html.DisplayFor(x => course.Description)</td>
-                        <td>  @Html.DisplayFor(x => course.Type)</td>
-                        <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
-                        <td> @Html.DisplayFor(x => course.EndDate)</td>
-                        <td>@Html.DisplayFor(x => course.Fee) €</td>
-
-                        <td>
-                            @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })
-                        </td>
-                    </tr>
-                }
-
-            </tbody>
-
-        </table>
-    </div>
-
-    <hr />
-
-    @*============================ Subjects-Course AND number of students TABLE  ==============================================*@
-
-    <div>
-
-        <h2>Courses - Subjects</h2>
-        <hr />
-        <table class="table">
-            <thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
                 <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    @*<th>@Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, null)</th>*@
-                    <th>Subjects</th>
-                    <th>Number of students</th>
+                    <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
+                    <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
+                    <td> @Html.DisplayFor(x => course.Description)</td>
+                    <td>  @Html.DisplayFor(x => course.Type)</td>
+                    <td>@course.StartDate.Day/@course.StartDate.Month/@course.StartDate.Year</td>
+                    <td> @Html.DisplayFor(x => course.EndDate)</td>
+                    <td>@Html.DisplayFor(x => course.Fee) €</td>
 
+                    <td>
+                        @Html.ActionLink("Details", "SoloDetails", "Course", new { id = course.CourseId }, new { @class = "btn btn-primary" })
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var course in Model)
-                {
-                    <tr>
-                        <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
-                        <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
-                        <td>
-                            <ul>
-                                @foreach (var subject in course.Subjects)
-                                {
-                                    <li>@Html.DisplayFor(x => subject.Title)</li>
-                                }
-                            </ul>
-                        </td>
-                        <td>
-                            @course.CourseStudents.Count
-                        </td>
-                    </tr>
-                }
+            }
 
-            </tbody>
-        </table>
+        </tbody>
 
-    </div>
+    </table>
+</div>
+
+<hr />
+
+@*============================ Subjects-Course AND number of students TABLE  ==============================================*@
+<div>
+
+    <h2>Courses - Subjects</h2>
     <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                @*<th>@Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, null)</th>*@
+                <th>Subjects</th>
+                <th>Number of students</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td><a href="/Course/SoloDetails/@course.CourseId"> <img width="100" height="100" class="img-fluid" src="@course.PhotoURL" alt="course image" /></a></td>
+                    <td>  @Html.ActionLink(@course.Title, "SoloDetails", "Course", new { id = course.CourseId }, null)</td>
+                    <td>
+                        <ul>
+                            @foreach (var subject in course.Subjects)
+                            {
+                                <li>@Html.DisplayFor(x => subject.Title)</li>
+
+                                @*den leitourgei : The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+                                    foreach (var item in subject.Assignments)
+                                {
+                                    <li>@Html.DisplayFor(x => item.Title)</li>
+                                }*@
+                            }
+                        </ul>
+                    </td>
+                    <td>
+                        @course.CourseStudents.Count
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+<hr />
 
 
-    @*<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div>
 
         <h2>Average mark of all students per subject  AND per course</h2>
         <hr />
@@ -209,7 +244,7 @@
             <thead>
                 <tr>
                     <th>Subject</th>
-    
+
                     <th>Average per subject </th>
                     <th>Number of students</th>
 
@@ -257,25 +292,25 @@
 
 
 
-    @*================================  Pagination  ==============================================================================*@
-    <div>
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-        @*pageSize = (pageSize < 0) ? 0 : pageSize;
-            pageNumber = (pageNumber < 0) ? 0 : pageNumber;*@
+@*================================  Pagination  ==============================================================================*@
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @*pageSize = (pageSize < 0) ? 0 : pageSize;
+        pageNumber = (pageNumber < 0) ? 0 : pageNumber;*@
 
-        @Html.PagedListPager(Model, x => @Url.Action("CourseTables", "Course",
-        new
-        {
-            page = x,
-            sortOrder = ViewBag.CurrentSortOrder,
-            searchTitle = ViewBag.CurrentTitle,
-            searchType = ViewBag.CurrentType,
-            searchStartDate = ViewBag.CurrentStartDate,
-            searchEndDate = ViewBag.CurrentEndDate,
-            searchMinFee = ViewBag.CurrentMinFee,
-            searchMaxFee = ViewBag.CurrentMaxFee,
-            pSize = ViewBag.CurrentpSize
-        }))
-    </div>
-    <hr />
+    @Html.PagedListPager(Model, x => @Url.Action("CourseTables", "Course",
+    new
+    {
+        page = x,
+        sortOrder = ViewBag.CurrentSortOrder,
+        searchTitle = ViewBag.CurrentTitle,
+        searchType = ViewBag.CurrentType,
+        searchStartDate = ViewBag.CurrentStartDate,
+        searchEndDate = ViewBag.CurrentEndDate,
+        searchMinFee = ViewBag.CurrentMinFee,
+        searchMaxFee = ViewBag.CurrentMaxFee,
+        pSize = ViewBag.CurrentpSize
+    }))
+</div>
+<hr />
 

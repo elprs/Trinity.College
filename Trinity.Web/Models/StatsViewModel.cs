@@ -16,14 +16,6 @@ namespace Trinity.Web.Models
         public int AssignmentsCount { get; set; }
 
 
-
-
-        public int AssignmentsCountPerCourse { get; set; }
-        public int TeachersCountPerSubjecr { get; set; }
-        public int StudentsCountPerSubject { get; set; }
-        public double  StudentsAverageMarkPerSubject{ get; set; }
-        public double  StudentsAverageMarkPerAssignment{ get; set; }
-        public double  StudentsAverageMarkPerAssignmentPerCourse{ get; set; }
     }
     
 }
