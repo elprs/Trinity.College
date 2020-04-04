@@ -40,8 +40,7 @@
         string valueOfViewBag = ViewBag.CurrentSortOrder;
         @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
         @Html.DropDownList("pSize", dropDownItems)
-
-        <input type="submit" name="SearchBtn" value="Search" />
+        <input type="submit" name="SearchBtn" value="Search" class="btn btn-primary"/> // ++++++++++++++++++++++++++++++++++++++
     }
 </div>
 
@@ -220,5 +219,6 @@
         pSize = ViewBag.CurrentpSize
     }))
 </div>
+
 <hr />
 
