@@ -18,7 +18,17 @@ namespace Trinity.Entities
         public double OralMark { get; set; } = 0.0D;
         [Display(Name = "Total mark")]
         [NotMapped]
-        public double TotalMark { get; set; }
+        public double TotalMark 
+        { 
+            get 
+            { 
+                double totalMark = (AssignmentMark + OralMark) / 2;
+                return totalMark;
+            }
+
+            set { TotalMark = value; }
+        
+        }
 
         //Navigation Properties
         public int StudentId { get; set; }

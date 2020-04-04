@@ -19,3 +19,14 @@
 
 <hr />
 
+@foreach (var courseStudentCourses in Model.StudentsPerCourse)
+{
+    @courseStudentCourses.
+    
+    foreach (var courseStudent in courseStudentCourses.Key)
+    {
+        @courseStudent.Course.Title
+        <br />
+        @courseStudent.Student.FirstName;
+    }
+}

@@ -56,7 +56,7 @@ namespace Trinity.Desktop
             Console.WriteLine("-------------------------------------------------");
 
 
-            //Testing requirements 
+            //===================Testing requirements ==============================================================
             Console.OutputEncoding = Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("gr-GR");
             using (MyDatabase db = new MyDatabase())
@@ -88,6 +88,8 @@ namespace Trinity.Desktop
 
                         foreach (var assignment in subject.Assignments)
                         {
+                            double sumStudentAssignmentMark = 0;
+                            double sumOfTotalMarksofAllAstudensperSubject = 0;
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.WriteLine(" {0, 40} {1}", "Assignment title : ", assignment.Title);
                             foreach (var mark in assignment.Marks)
@@ -95,15 +97,81 @@ namespace Trinity.Desktop
                                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 Console.WriteLine(" {0, 40} {1} {2}", "Student : ", mark.Student.FirstName, mark.Student.LastName);
                                 Console.ForegroundColor = ConsoleColor.White;
-                                Console.WriteLine(" {0, 40} {1}", "Mark : ", mark.AssignmentMark);
+                                Console.WriteLine(" {0, 40} {1}", "Assignement Mark : ", mark.AssignmentMark);
+                                Console.WriteLine(" {0, 40} {1}", "Total Mark : ", mark.TotalMark);
+                                sumStudentAssignmentMark += mark.AssignmentMark;
+                                sumOfTotalMarksofAllAstudensperSubject += mark.TotalMark;
                                 Console.ForegroundColor = ConsoleColor.White;
-
+                                
                             }
 
+                            //=========testing Average of all students per Subject(=per Assignment) =====================================
+                            Console.WriteLine("================ AVERAGE of all students per Subject =========================="); 
+                            Console.WriteLine(" {0, 40} {1}", "Sum of Assignment Marks : ", sumStudentAssignmentMark);
+                            Console.WriteLine(" {0, 40} {1}", "Sum of Total Marks : ", sumOfTotalMarksofAllAstudensperSubject);
+                            Console.WriteLine(" {0, 40} {1}", "Count of Assignments marked : ", assignment.Marks.Count());
+                            double avg = sumOfTotalMarksofAllAstudensperSubject / assignment.Marks.Count();
+                            double avgAssignment = sumStudentAssignmentMark / assignment.Marks.Count();
+                            Console.WriteLine(" {0, 40} {1}", "Average of assignment Marks : ", avgAssignment);
+                            Console.WriteLine(" {0, 40} {1}", "Average of Total Marks : ", avg);
+                            Console.WriteLine();
+                            Console.WriteLine("=======================================================================");
+                            Console.WriteLine("=======================================================================");
+                            Console.WriteLine("=======================================================================");
+                            Console.WriteLine("=======================================================================");
+                            Console.WriteLine();
+
+
                         }
+
+                        //=======testing Average per student per course==================================================
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine();
+                        Console.WriteLine("***************************************************************************");
+                        Console.WriteLine("******************** Average Mark per Student per Course ******************" );
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("{0, 20} : {1, -20}", "Course title =========================================>  ", course.Title);
+                        
+                        foreach (var courseStudent in course.CourseStudents)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine();
+                            Console.WriteLine(" {0, 40} {1} {2}", "Student : ", courseStudent.Student.FirstName, courseStudent.Student.LastName);
+                            Console.WriteLine();
+                            Console.ForegroundColor = ConsoleColor.White;
+                            double sumStudentTotalMark = 0;
+                            double sumStudentAssignmentMark = 0;
+                            foreach (var mark in courseStudent.Student.Marks)
+                            {
+                                Console.WriteLine("{0, 20} : {1, -20}", "Total Mark per subject ", mark.TotalMark);
+                                Console.WriteLine("{0, 60} : {1, -20}", "Total Mark per assignment ", mark.AssignmentMark);
+                                
+                                sumStudentTotalMark += mark.TotalMark;
+                                sumStudentAssignmentMark += mark.AssignmentMark;
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("================ AVERAGE per student per course ==========================");
+                            Console.WriteLine();
+                            Console.WriteLine(" {0, 40} {1}", "Sum of Total Assignment Marks : ", sumStudentAssignmentMark);
+                            Console.WriteLine(" {0, 40} {1}", "Count of Assignments marked : ", courseStudent.Student.Marks.Count());
+                            double avgAssignment = sumStudentAssignmentMark / courseStudent.Student.Marks.Count();
+                            Console.WriteLine(" {0, 40} {1}", "Average of student's assignment Marks per course: ", avgAssignment);
+                            Console.WriteLine();
+                            Console.WriteLine(" {0, 40} {1}", "Sum of Total Marks : ", sumStudentTotalMark);
+                            Console.WriteLine(" {0, 40} {1}", "Count of marks : ", courseStudent.Student.Marks.Count());
+                            double avg = sumStudentTotalMark / courseStudent.Student.Marks.Count();
+                            Console.WriteLine(" {0, 40} {1}", "Average of student's Total Marks per course: ", avg);
+
+                        }
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.WriteLine("***************************************************************************");
+                        Console.WriteLine("***************************************************************************");
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
 
-                    Console.WriteLine("``````````````````````````````````````````````````````````````````````````````````````````");
+
+                        Console.WriteLine("``````````````````````````````````````````````````````````````````````````````````````````");
                 }
             }
 

@@ -38,6 +38,10 @@ namespace Trinity.Web.Controllers
             vm.AssignmentsCount = assignments.Count();
             vm.MarksCount = marks.Count();
 
+            //experiment
+           vm.StudentsPerCourse = from course in courses
+                        group course by course.CourseStudents into y
+                        select y;
 
 
             return View(vm);
