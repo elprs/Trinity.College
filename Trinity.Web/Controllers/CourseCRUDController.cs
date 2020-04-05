@@ -43,10 +43,32 @@ namespace Trinity.Web.Controllers
         }
 
 
+        // GET: TestCourses/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
 
+        // POST: TestCourses/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "CourseId,Title,StartDate,EndDate,Type,Description,PhotoURL,Fee")] Course course)
+        {
+            CourseRepository courseRepository = new CourseRepository();
+           
 
+            if (ModelState.IsValid)
+            {
+                courseRepository.Insert(course);
+               
+                return RedirectToAction("CourseCrudIndex");
+            }
 
+            return View(course);
+        }
 
 
 

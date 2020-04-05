@@ -1,0 +1,29 @@
+﻿@model Trinity.Entities.Assignment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Assignment</h2>
+
+@using (Html.BeginForm("Create", "AssignmentCRUD", FormMethod.Post, new { @class = "form-group" })) //POST
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        @Html.LabelFor(x => x.Title, "Title")
+        @Html.TextBoxFor(x => x.Title, new { placeholder = "Title", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+    
+    <div>
+        @Html.LabelFor(x => x.SubDate, "Sub date")
+        @Html.TextBoxFor(x => x.SubDate, new { type = "date" })
+        @Html.ValidationMessageFor(model => model.SubDate, "", new { @class = "text-danger" })
+    </div>
+  
+
+    <input type="submit" name="Create Assignment" class="form-check" />
+
+}

@@ -1,0 +1,54 @@
+﻿@model Trinity.Entities.Course
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create course</h2>
+
+@using (Html.BeginForm("Create", "CourseCRUD", FormMethod.Post, new { @class="form-group"})) //POST
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        @Html.LabelFor(x => x.Title, "Title")
+        @Html.TextBoxFor(x => x.Title, new { placeholder = "Title" , @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Type, "Type")
+        @Html.EnumDropDownListFor(x => x.Type, new { placeholder = "Type" })
+        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Description, "Description")
+        @Html.TextBoxFor(x => x.Description, new { placeholder = "Description" })
+        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.StartDate, "Start date")
+        @Html.TextBoxFor(x => x.StartDate, new { type = "date" })
+        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.EndDate, "Finish date")
+        @Html.TextBoxFor(x => x.EndDate, new { type = "date" })
+        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Fee, "Fee")
+        @Html.TextBoxFor(x => x.Fee, new { type = "number", placeholder = "Fee" })
+        @Html.ValidationMessageFor(model => model.Fee, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.PhotoURL, "Image URL ")
+        @Html.TextBoxFor(x => x.PhotoURL, new { placeholder = "Photo URL " })
+        @Html.ValidationMessageFor(model => model.PhotoURL, "", new { @class = "text-danger" })
+    </div>
+
+    @*@Html.CheckBoxFor(x=>x. BOOL)*@
+
+    <input type="submit" name="Create course" class="form-check"/>
+
+}

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Trinity.Entities.Assignment>
+
+@{
+    ViewBag.Title = "Assignments";
+}
+
+<h2>Assignment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Title
+        </th>
+        <th>
+            Submission Date
+        </th>
+        <th>
+            Average assignment mark
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SubDate)
+    </td>
+
+    <td>
+        @{
+            double total = 0;
+            double counter = 0;
+        }
+        @foreach (var mark in item.Marks)
+        {
+            total = total + mark.AssignmentMark;
+            counter++;
+        }
+        @string.Format("{0:n}", (total / counter))
+
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.AssignmentId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.AssignmentId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.AssignmentId })
+    </td>
+
+
+</tr>
+    }
+
+</table>
+

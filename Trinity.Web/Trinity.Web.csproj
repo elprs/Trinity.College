@@ -146,12 +146,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AssignmentController.cs" />
+    <Compile Include="Controllers\AssignmentCrudController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CourseCRUDController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentCRUDController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\TeacherCRUDController.cs" />
     <Compile Include="Controllers\TestAssignmentsController.cs" />
     <Compile Include="Controllers\TestCoursesController.cs" />
     <Compile Include="Controllers\TestMarksController.cs" />
@@ -349,6 +352,16 @@
     <Content Include="Views\Assignment\AssignmentTables.cshtml" />
     <Content Include="Views\CourseCRUD\CourseCrudIndex.cshtml" />
     <Content Include="Views\CourseCRUD\Details.cshtml" />
+    <Content Include="Views\CourseCRUD\Create.cshtml" />
+    <Content Include="Views\StudentCRUD\StudentCrudIndex.cshtml" />
+    <Content Include="Views\StudentCRUD\Details.cshtml" />
+    <Content Include="Views\StudentCRUD\Create.cshtml" />
+    <Content Include="Views\TeacherCRUD\TeacherCrudIndex.cshtml" />
+    <Content Include="Views\TeacherCRUD\Details.cshtml" />
+    <Content Include="Views\TeacherCRUD\Create.cshtml" />
+    <Content Include="Views\AssignmentCrud\AssignmentCrudIndex.cshtml" />
+    <Content Include="Views\AssignmentCrud\Details.cshtml" />
+    <Content Include="Views\AssignmentCrud\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

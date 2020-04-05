@@ -1,0 +1,44 @@
+﻿@model Trinity.Entities.Student
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Student</h2>
+
+@using (Html.BeginForm("Create", "StudentCRUD", FormMethod.Post, new { @class = "form-group" })) //POST
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        @Html.LabelFor(x => x.FirstName, "FirstName")
+        @Html.TextBoxFor(x => x.FirstName, new { placeholder = "First Name", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.LastName, "LastName")
+        @Html.TextBoxFor(x => x.LastName, new { placeholder = "Last Name" })
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Telephone, "Telephone")
+        @Html.TextBoxFor(x => x.Telephone, new { type = "number", placeholder = "Telephone" })
+        @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Email, "Email")
+        @Html.TextBoxFor(x => x.Email, new { type = "email", placeholder = "Email" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.PhotoURL, "Image URL ")
+        @Html.TextBoxFor(x => x.PhotoURL, new { placeholder = "Photo URL " })
+        @Html.ValidationMessageFor(model => model.PhotoURL, "", new { @class = "text-danger" })
+    </div>
+
+    @*@Html.CheckBoxFor(x=>x. BOOL)*@
+
+    <input type="submit" name="Create Student" class="form-check" />
+
+}
