@@ -21,7 +21,6 @@
         <th>
             Average assignment mark
         </th>
-       
     </tr>
 
     @foreach (var item in Model)
@@ -48,8 +47,7 @@
         @string.Format("{0:n}", (total / counter))
 
     </td>
-
-    <td>
+<td>
         @Html.ActionLink("Edit", "Edit", new { id = item.AssignmentId }) |
         @Html.ActionLink("Details", "Details", new { id = item.AssignmentId }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.AssignmentId })

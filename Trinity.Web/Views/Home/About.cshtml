@@ -1,7 +1,70 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+
+
+<h3>ΠΡΟΛΟΓΟΣ</h3>
+
+<p>
+    Στην παρούσα εργασία ο προγραμματισμός ξεκίνησε με στόχο να ενταχθούν όλες οι δυνατότητες σχέσεων που μάθαμε.
+    Ωστόσο η σχέση 1-1 , αντικαταστάθηκε με 1-m. Γι' αυτό το λόγο τα assignments παρέμειναν 1 για κάθε μάθημα,
+    παρόλο που είναι IEnumerable.
+
+</p>
+
+<p> ‘Oπου υπαρχει η οντότητα Course  γράφτηκε χειρόγραφα και οι υπόλοιπες γίναν copy-paste με βάση την πρώτη και τις σημειώσεις μας.</p>
+
+<p> Σχόλια σε Regions κάτω-κάτω είναι δοκιμές τις οποίες θα ήθελα να συνεχίσω, αλλά δεν έχουν χρήσιμη πληροφορία για σας.</p>
+
+<p>To subject, όπως θα φανει και στις σχέσεις που ακολοθούν, ειναι η βασική οντότητα ανάμεσα σε course-teacher-assignments.</p>
+<hr />
+
+<h3>ΠΑΡΑΔΟΧΕΣ</h3>
+
+<p>
+    <div>
+        Οι μαθητές διαλέγουν Courses, που έχουν subjects, που έχουν assignments, που παίρνουν marks, που επιστρέφουν στο μαθητή.
+        ('Η, κοινώς, Ντιλι-ντιλι-το καντήλι!)
+    </div>
+    <hr />
+    <h4> Αναλυτικα:</h4>
+
+
+    <div>
+        O Student έχει πολλά courses.
+    </div>
+    <div>To Course έχει πολλόυς students.</div>
+
+    <div>To Course έχει πολλά subjectes.</div>
+
+    <div> Τo Subject έχει 1 course.</div>
+
+    <div> Τo Subject έχει πολλους Teachers.</div>
+    <div>
+        Ο Teacher έχει πολλά subjects.
+    </div>
+
+    <div> Το Subject έχει πολλές Assignments. (αν και εβαλα μία μόνο για το καθένα)</div>
+
+    <div>To Assignment έχει 1 subject.</div>
+
+    <div> Το Assignment έχει πολλους Marks. (Ο πίνακας mark λειτουργει ως ενδιαμεσος αναμεσα σε student και  assignment, και συμπεριλαμβανει εξτρα properties)</div>
+
+    <div>To Mark έχει 1 assignment.</div>
+
+    <div>Το Μark έχει 1 student.</div>
+    <div>Το Student έχει πολλους marks.</div>
+
+</p>
+
+<h4>ΛΕΙΠΟΥΝ</h4>
+
+<div>Δυνατοτητα να προσθετεις course κατα τη δημουργια του student</div>
+<div>Δυνατοτητα να προσθετεις student κατα τη δημουργια του course</div>
+<div>Εισαγωγη βαθμων στο assignment</div>
+
+<div>Καποια averages</div>
+<div> Ένας πίνακας με όλα student per course per assignment, αν και αυτες οι πληροφοριες ειναι διασπαρτες</div>
+<div>Edit - Delete </div>
+

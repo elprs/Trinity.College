@@ -46,6 +46,8 @@ namespace Trinity.Web.Controllers
         // GET: TestCourses/Create
         public ActionResult Create()
         {
+
+
             return View();
         }
 
@@ -77,3 +79,15 @@ namespace Trinity.Web.Controllers
     }
 
 }
+
+#region ================== Experiment - learing=======================
+
+//CourseStudentRepository courseStudentRepository = new CourseStudentRepository();
+
+//var courseStudents = courseStudentRepository.GetAll()
+//                             .Select(x => new
+//                             {
+//                                 courseID = x.CourseId,
+//                                 studentID = x.StudentId
+//                             });
+#endregion

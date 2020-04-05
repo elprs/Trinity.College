@@ -108,6 +108,10 @@ namespace Trinity.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Course course = cr.GetById(id);
+
+
+
+
             if (course == null)
             {
                 return HttpNotFound();

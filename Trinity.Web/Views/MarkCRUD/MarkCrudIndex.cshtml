@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Trinity.Entities.Mark>
+
+@{
+    ViewBag.Title = "Marks";
+}
+
+<h2>Marks</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+           Assignment Mark
+        </th>
+        <th>
+            Oral Mark
+        </th>
+        <th>
+            Total Mark
+        </th>
+        <th>
+            Assignment
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OralMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMark)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Assignment.Title)
+            </td>
+          
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MarkId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MarkId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MarkId })
+            </td>
+        </tr>
+    }
+
+</table>

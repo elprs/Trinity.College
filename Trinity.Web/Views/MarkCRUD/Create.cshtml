@@ -1,0 +1,38 @@
+﻿@model Trinity.Entities.Mark
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Mark</h2>
+
+@using (Html.BeginForm("Create", "MarkCRUD", FormMethod.Post, new { @class = "form-group" })) //POST
+{
+    @Html.AntiForgeryToken()
+
+
+    <div>
+        @Html.LabelFor(x => x.AssignmentMark, "AssignmentMark")
+        @Html.TextBoxFor(x => x.AssignmentMark, new { placeholder = "Assignment Mark", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.AssignmentMark, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.OralMark, "OralMark")
+        @Html.TextBoxFor(x => x.OralMark, new { placeholder = "OralMark" })
+        @Html.ValidationMessageFor(model => model.OralMark, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.TotalMark, "Total Mark")
+        @Html.TextBoxFor(x => x.TotalMark, new { type = "number" })
+        @Html.ValidationMessageFor(model => model.TotalMark, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.Label("Assignment Id")
+        @Html.DropDownList("AssignmentId")
+    </div>
+
+    <input type="submit" name="Create Mark" class="form-check" />
+
+}

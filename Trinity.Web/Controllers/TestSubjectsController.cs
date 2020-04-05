@@ -62,11 +62,14 @@ namespace Trinity.Web.Controllers
         // GET: TestSubjects/Edit/5
         public ActionResult Edit(int? id)
         {
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Subject subject = db.Subjects.Find(id);
+
+          
             if (subject == null)
             {
                 return HttpNotFound();

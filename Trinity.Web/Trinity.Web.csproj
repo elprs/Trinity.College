@@ -150,6 +150,7 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CourseCRUDController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MarkCRUDController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentCRUDController.cs" />
@@ -362,9 +363,13 @@
     <Content Include="Views\AssignmentCrud\AssignmentCrudIndex.cshtml" />
     <Content Include="Views\AssignmentCrud\Details.cshtml" />
     <Content Include="Views\AssignmentCrud\Create.cshtml" />
+    <Content Include="Views\MarkCRUD\MarkCrudIndex.cshtml" />
+    <Content Include="Views\MarkCRUD\Details.cshtml" />
+    <Content Include="Views\MarkCRUD\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Mark\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
