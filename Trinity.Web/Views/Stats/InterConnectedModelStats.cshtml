@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "InterConnectedModelStats";
 }
+@*========================================== THIS LOGIC SHOULD BE IN THE CONTROLLER ========================================================*@
+
 
 @*-----------------------Statistics about Courses----------------------------------------*@
 <hr />
@@ -50,6 +52,7 @@
 
 
 <hr />
+
 
 @*-----------------------Statistics about Subjects----------------------------------------*@
 
@@ -101,21 +104,101 @@
 </table>
 <hr />
 
-<!-- #region nameUnfruitfull attemts ---  Learning Area  ( to be continued )  -->
-@* //  ... ===================================================
-    double sum = 0;
-        int counter = 0;
+@*==============================MARKS, RELATIONSHIPS AND AVERAGES ================================================================*@
+<hr />
 
-        foreach (var assignment in subject.Assignments)
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Student</th>
+            <th>Subjects and Assignment marks</th>
+            <th>Average mark per course</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var courseStudent in Model.CourseStudents)
         {
-            <li>@Html.DisplayFor(x => assignment.Title)</li>
-            foreach (var mark in assignment.Marks)
-            {
-                sum = sum + mark.AssignmentMark;
-                counter++;
-            }
+            <tr>
+                <td> @string.Format("{0, 20} ", courseStudent.Course.Title)</td>
+                <td>
+
+                    @string.Format("{0} {1}", courseStudent.Student.FirstName, courseStudent.Student.LastName)
+                </td>
+
+                @{
+                    double sumStudentTotalMark = 0;
+                    double sumStudentAssignmentMark = 0;
+                    int counter = 0;
+                    double avgStudent = 0;
+                    double avgTotalStudent = 0;
+
+                }
+                <td>
+                    <ul>
+                        @foreach (var subject in courseStudent.Course.Subjects)
+                        {
+
+                            <li>
+                                @string.Format("Subject title : {0}", subject.Title)
+                            </li>
+
+                            foreach (var assignment in subject.Assignments)
+                            {
+                                <li>
+                                    @string.Format("Assignment title : {0}", assignment.Title)
+
+                                </li>
+                                foreach (var mark in assignment.Marks)
+                                {
+                                    // Printing the assignment's info for the particular student
+                                    if (mark.StudentId == courseStudent.StudentId)
+                                    {
+                                        <ul>
+                                            <li>
+                                                @string.Format("Assignment mark : {0} | Subject Total Subject mark : {1} ", mark.AssignmentMark, mark.TotalMark)
+                                            </li>
+                                        </ul>
+
+                                        //Calculating averages
+                                        ++counter;
+                                        sumStudentAssignmentMark += mark.AssignmentMark;
+                                        sumStudentTotalMark += mark.TotalMark;
+
+                                        avgStudent = sumStudentAssignmentMark / counter;
+                                        avgTotalStudent = sumStudentTotalMark / counter;
+
+                                    }
+
+                                }
+
+                            }
+                        }
+                    </ul>
+                </td>
+
+
+
+                <td>
+                    @*//printing averages*@
+
+                    <ul>
+                        <li>
+                            @string.Format("Average Assignment mark of student: {0:n} ", avgStudent)
+
+                        </li>
+                        <li>
+                            @string.Format("Average total mark of student:  {0:n} ", avgTotalStudent)
+                        </li>
+
+                    </ul>
+                </td>
+
+            </tr>
+
         }
-        @sum / @counter;*@
+    </tbody>
+</table>
 
-
-<!-- #endregion -->
+<hr />

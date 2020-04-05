@@ -38,20 +38,26 @@ namespace Trinity.Web.Controllers
             vm.AssignmentsCount = assignments.Count();
             vm.MarksCount = marks.Count();
 
-            //experiment
-           vm.StudentsPerCourse = from course in courses
-                        group course by course.CourseStudents into y
-                        select y;
-
+           
 
             return View(vm);
         }
 
         public  ActionResult InterConnectedModelStats()
         {
-            AllEntities allTogether = new AllEntities();
+            AllEntities vm = new AllEntities();
 
-            return View(allTogether);
+            //Has the logic in the View
+
+            return View(vm);
         }
+        //public  ActionResult ThreeTableModelStatsTable()
+        //{
+        //    AllEntities vm = new AllEntities();
+
+
+
+        //    return View(vm);
+        //}
     }
 }

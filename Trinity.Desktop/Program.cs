@@ -106,7 +106,7 @@ namespace Trinity.Desktop
                             }
 
                             //=========testing Average of all students per Subject(=per Assignment) =====================================
-                            Console.WriteLine("================ AVERAGE of all students per Subject =========================="); 
+                            Console.WriteLine("================ AVERAGE of all students per Subject - Assignment =========================="); 
                             Console.WriteLine(" {0, 40} {1}", "Sum of Assignment Marks : ", sumStudentAssignmentMark);
                             Console.WriteLine(" {0, 40} {1}", "Sum of Total Marks : ", sumOfTotalMarksofAllAstudensperSubject);
                             Console.WriteLine(" {0, 40} {1}", "Count of Assignments marked : ", assignment.Marks.Count());
