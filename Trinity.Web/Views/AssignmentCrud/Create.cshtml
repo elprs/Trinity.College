@@ -19,7 +19,7 @@
 
     <div>
         @Html.LabelFor(x => x.SubDate, "Sub date")
-        @Html.TextBoxFor(x => x.SubDate, new { type = "date" })
+        @Html.TextBoxFor(x => x.SubDate, new { type = "date" , @class = "form-control" })
         @Html.ValidationMessageFor(model => model.SubDate, "", new { @class = "text-danger" })
     </div>
 

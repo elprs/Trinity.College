@@ -19,12 +19,12 @@
 
     <div>
         @Html.LabelFor(x => x.OralMark, "OralMark")
-        @Html.TextBoxFor(x => x.OralMark, new { placeholder = "OralMark" })
+        @Html.TextBoxFor(x => x.OralMark, new { placeholder = "OralMark" , @class = "form-control" })
         @Html.ValidationMessageFor(model => model.OralMark, "", new { @class = "text-danger" })
     </div>
     <div>
         @Html.LabelFor(x => x.TotalMark, "Total Mark")
-        @Html.TextBoxFor(x => x.TotalMark, new { type = "number" })
+        @Html.TextBoxFor(x => x.TotalMark, new { type = "number" , @class = "form-control" })
         @Html.ValidationMessageFor(model => model.TotalMark, "", new { @class = "text-danger" })
     </div>
 

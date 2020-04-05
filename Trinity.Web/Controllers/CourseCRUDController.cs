@@ -73,6 +73,39 @@ namespace Trinity.Web.Controllers
         }
 
 
+        // GET: TestCourses/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            CourseRepository courseRepository = new CourseRepository();
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Course course = courseRepository.GetById(id);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+
+
+            return View(course);
+        }
+        // POST: TestCourses/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "CourseId,Title,StartDate,EndDate,Type,Description,PhotoURL,Fee")] Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                CourseRepository courseRepository = new CourseRepository();
+                courseRepository.Update(course);
+                return RedirectToAction("CourseCrudIndex");
+            }
+            return View(course);
+        }
 
 
 

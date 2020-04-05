@@ -366,6 +366,7 @@
     <Content Include="Views\MarkCRUD\MarkCrudIndex.cshtml" />
     <Content Include="Views\MarkCRUD\Details.cshtml" />
     <Content Include="Views\MarkCRUD\Create.cshtml" />
+    <Content Include="Views\CourseCRUD\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
