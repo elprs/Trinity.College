@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Trinity.Entities.Course>
+
+@{
+    ViewBag.Title = "CourseCrudIndex";
+}
+
+<h2>CourseCrudIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Image
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th>
+           Fee
+        </th>
+        <th>
+           Subjects
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        <img  width="100" height="100" class="img-fluid" src="@item.PhotoURL" alt="course Image" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StartDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EndDate)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Fee)€
+    </td>
+    <td>
+        <ul>
+           @foreach (var subject in item.Subjects)
+           {
+               <li>@subject.Title</li>
+           }
+        </ul>
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+    </td>
+</tr>
+}
+
+</table>
