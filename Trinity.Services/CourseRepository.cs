@@ -33,10 +33,31 @@ namespace Trinity.Services
         }
 
         //Update
-        public void Update(Course c)
+        public void Update(Course c, IEnumerable<int> selectedSubjectsIds) //++++++++++++++++++++++++++++++++++++++++++++++++
         {
+            //++++++++++++++++++++++++++++++++ apo edo eos...>>>>>>>>>>>>
+            //Katharise ka8e subject apo to course
+            //exomai kai diabazo kai tin exo mono gia anagnosi
+            db.Courses.Attach(c); //anagnosi
+            db.Entry(c).Collection("Subjects")  //elakai fortwse to course kai ti sullogi pou exo mazi toyu -->ta subjectsd
+                       .Load(); ////fortwsi //
+            c.Subjects.Clear(); //katharise // to course na min exei kanena subjects
+            db.SaveChanges(); // sose allages
+
+           //checking for null
+            if (!(selectedSubjectsIds is null ))
+            foreach (var id in selectedSubjectsIds)
+            {
+                Subject subject = db.Subjects.Find(id);
+                if (subject != null)
+                {
+                    c.Subjects.Add(subject);
+                }
+            }
+            db.SaveChanges();
             db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();
+            //++++++++++++++++++++++++++++++++++++++...>>>>EDO!!!
         }
 
         //Delete

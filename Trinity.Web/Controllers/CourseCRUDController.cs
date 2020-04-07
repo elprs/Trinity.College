@@ -88,6 +88,30 @@ namespace Trinity.Web.Controllers
                 return HttpNotFound();
             }
 
+            SubjectRepository subjectRepository = new SubjectRepository();
+            //var subjects = subjectRepository.GetAll()
+            //                                .Select(x => new
+            //                                {
+            //                                    SubjectId = x.SubjectId,
+            //                                    SubjectTitle = x.Title
+            //                                });
+
+
+            //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            ViewBag.SelectedSubjectsIds = subjectRepository.GetAll()
+                                                        .Select(x => new SelectListItem()
+                                                        {
+                                                            Value = x.SubjectId.ToString(),
+                                                            Text = string.Format("{0}", x.Title)
+                                                        });
+
+            //ViewBag.SubjectSelectedIds = SelectedSubjectsIds; //ton enan
+            //ViewBag.SelectedSubjects = new SelectList(subjects, "SubjectId", "SubjectTitle"); // OLA 
+
+
+
+
+
 
             return View(course);
         }
@@ -96,12 +120,13 @@ namespace Trinity.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseId,Title,StartDate,EndDate,Type,Description,PhotoURL,Fee")] Course course)
+        public ActionResult Edit([Bind(Include = "CourseId,Title,StartDate,EndDate,Type,Description,PhotoURL,Fee")] Course course, IEnumerable<int> SelectedSubjectsIds) //+++++++++++++++++++++++ 
+            //den mpainei int?/giati o,ti epilekso sto view exei ari8mo sigoura
         {
             if (ModelState.IsValid)
             {
                 CourseRepository courseRepository = new CourseRepository();
-                courseRepository.Update(course);
+                courseRepository.Update(course, SelectedSubjectsIds); //++++++++++++++++++++++++++++++
                 return RedirectToAction("CourseCrudIndex");
             }
             return View(course);
@@ -113,7 +138,7 @@ namespace Trinity.Web.Controllers
 
 }
 
-#region ================== Experiment - learing=======================
+#region ================== Experiment - learning=======================
 
 //CourseStudentRepository courseStudentRepository = new CourseStudentRepository();
 
@@ -123,4 +148,24 @@ namespace Trinity.Web.Controllers
 //                                 courseID = x.CourseId,
 //                                 studentID = x.StudentId
 //                             });
+
+
+
+
+//    //Grouping Course Student
+//            svm.StudentsPerCourse = students
+//                         .SelectMany(x => x.Courses.Select(y => new
+//                         {
+//                             Key = y,
+//                             Value = x
+//                         }))
+//                         .GroupBy(y => y.Key, x => x.Value);
+//​[15:16]
+//Xenofontas Vlachogiannis
+//    svm ειναι το ονομα του modelou για τα στατσ.
+//​[15:16]
+//Xenofontas Vlachogiannis
+//    Students ειναι το student.GetAll()
+
+
 #endregion

@@ -12,6 +12,8 @@
 {
     @Html.AntiForgeryToken()
 
+    @Html.HiddenFor(x => x.CourseId); // +++++++++++++++++++++++++++++++    
+
 
     <div>
         @Html.LabelFor(x => x.Title, "Title")
@@ -49,6 +51,9 @@
         @Html.ValidationMessageFor(model => model.PhotoURL, "", new { @class = "text-danger" })
     </div>
 
+   <div>
+       @Html.ListBox("SelectedSubjectsIds");
+   </div>
     <input type="submit" name="Edit course" class="form-check" />
 
 }
