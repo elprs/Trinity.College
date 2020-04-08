@@ -83,6 +83,7 @@ namespace Trinity.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Course course = courseRepository.GetById(id);
+
             if (course == null)
             {
                 return HttpNotFound();
@@ -132,8 +133,40 @@ namespace Trinity.Web.Controllers
             return View(course);
         }
 
+        //// GET: TestCourses/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Course course = db.Courses.Find(id);
+        //    if (course == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(course);
+        //}
 
+        //// POST: TestCourses/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Course course = db.Courses.Find(id);
+        //    db.Courses.Remove(course);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 
 }

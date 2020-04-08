@@ -1,0 +1,36 @@
+﻿
+
+@model Trinity.Entities.Assignment
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Assignment</h2>
+
+@using (Html.BeginForm("Edit", "AssignmentCRUD", FormMethod.Post, new { @class = "form-group" })) 
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(x => x.AssignmentId); 
+
+
+    <div>
+        @Html.LabelFor(x => x.Title, "Title")
+        @Html.TextBoxFor(x => x.Title, new { placeholder = "Title", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.SubDate, "Sub date")
+        @Html.EditorFor(x => x.SubDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.SubDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Marks, "Marks ")
+        <br />
+        @Html.ListBox( "selectedMarkIDs", null, new { style = "width: 100px;height:280px" })
+    </div>
+    <input type="submit" name="Edit Assignment" class="form-check" />
+
+}

@@ -51,9 +51,11 @@
         @Html.ValidationMessageFor(model => model.PhotoURL, "", new { @class = "text-danger" })
     </div>
 
-   <div>
-       @Html.ListBox("SelectedSubjectsIds");
-   </div>
+    <div>
+        @Html.LabelFor(x => x.Subjects, "Subjects ")
+        <br />
+        @Html.ListBox("SelectedSubjectsIds", null, new { style = "width: 200px;height:200px" })
+    </div>
     <input type="submit" name="Edit course" class="form-check" />
 
 }
