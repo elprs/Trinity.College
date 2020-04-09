@@ -46,14 +46,14 @@ namespace Trinity.Services
 
            //checking for null
             if (!(selectedSubjectsIds is null ))
-                foreach (var id in selectedSubjectsIds)
+            foreach (var id in selectedSubjectsIds)
+            {
+                Subject subject = db.Subjects.Find(id);
+                if (subject != null)
                 {
-                    Subject subject = db.Subjects.Find(id);
-                    if (subject != null)
-                    {
-                        c.Subjects.Add(subject);
-                    }
+                    c.Subjects.Add(subject);
                 }
+            }
             db.SaveChanges();
             db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();

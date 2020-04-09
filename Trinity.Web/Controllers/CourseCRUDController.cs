@@ -83,20 +83,12 @@ namespace Trinity.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Course course = courseRepository.GetById(id);
-
             if (course == null)
             {
                 return HttpNotFound();
             }
 
             SubjectRepository subjectRepository = new SubjectRepository();
-            //var subjects = subjectRepository.GetAll()
-            //                                .Select(x => new
-            //                                {
-            //                                    SubjectId = x.SubjectId,
-            //                                    SubjectTitle = x.Title
-            //                                });
-
 
             //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             ViewBag.SelectedSubjectsIds = subjectRepository.GetAll()

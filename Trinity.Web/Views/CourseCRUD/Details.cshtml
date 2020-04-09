@@ -55,7 +55,7 @@
         </dt>
 
         <dd>
-            <img  width="100" height="100" class="img-fluid" src=" @Html.DisplayFor(model => model.PhotoURL)" alt="course image" />
+            <img width="100" height="100" class="img-fluid" src=" @Html.DisplayFor(model => model.PhotoURL)" alt="course image" />
         </dd>
 
         <dt>
@@ -65,7 +65,14 @@
         <dd>
             @Html.DisplayFor(model => model.Fee)€
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subjects)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Subjects)
+        </dd>
+       
     </dl>
 </div>
 <p>

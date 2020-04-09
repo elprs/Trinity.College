@@ -433,6 +433,7 @@
     <Content Include="Views\MarkCRUD\Create.cshtml" />
     <Content Include="Views\CourseCRUD\Edit.cshtml" />
     <Content Include="Views\AssignmentCrud\Edit.cshtml" />
+    <Content Include="Views\StudentCRUD\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

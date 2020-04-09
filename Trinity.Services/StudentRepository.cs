@@ -33,8 +33,26 @@ namespace Trinity.Services
         }
 
         //Update
-        public void Update(Student s)
+        public void Update(Student s, IEnumerable<int> selectedMarkIds)
         {
+            db.Students.Attach(s);
+            db.Entry(s).Collection("Marks").Load();
+            s.Marks.Clear();
+            db.SaveChanges();
+
+            //checking for null
+            if (!(selectedMarkIds is null))
+            {
+                foreach (var id in selectedMarkIds)
+                {
+                    Mark mark = db.Marks.Find(id);
+                    if (mark != null)
+                    {
+                        s.Marks.Add(mark);
+                    }
+                }
+            }
+            db.SaveChanges();
             db.Entry(s).State = EntityState.Modified;
             db.SaveChanges();
         }

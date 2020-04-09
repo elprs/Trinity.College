@@ -52,11 +52,17 @@
             <img width="100" height="100" class="img-fluid" src=" @Html.DisplayFor(model => model.PhotoURL)" alt="Student image" />
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Marks)
+        </dd>
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "StudentCrudIndex")
 </p>
 
